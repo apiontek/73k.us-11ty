@@ -5,6 +5,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const postcss = require("postcss");
+const postcssImport = require("postcss-import");
 const postcssNesting = require("postcss-nesting");
 const autoprefixer = require("autoprefixer");
 const cssNano = require("cssnano");
@@ -55,6 +56,7 @@ module.exports = function(eleventyConfig) {
 				if (this.type === 'css') {
 					// Same as Eleventy transforms, this.page is available here.
 					let result = await postcss([
+            postcssImport,
             postcssNesting,
             autoprefixer,
             cssNano
