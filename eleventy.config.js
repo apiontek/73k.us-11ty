@@ -4,6 +4,10 @@ const markdownItAnchor = require("markdown-it-anchor");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginBundle = require("@11ty/eleventy-plugin-bundle");
+const postcss = require("postcss");
+const postcssNesting = require("postcss-nesting");
+const autoprefixer = require("autoprefixer");
+const cssNano = require("cssnano");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
@@ -11,7 +15,16 @@ const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
 
 module.exports = function(eleventyConfig) {
-	// Copy the contents of the `public` folder to the output folder
+  // 2023-06-18 apiontek - also using this in winstats html
+    // nunjucks template engine options
+    eleventyConfig.setNunjucksEnvironmentOptions({
+      throwOnUndefined: true,
+      trimBlocks: true,
+      lstripBlocks: true,
+    });
+  
+
+  // Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({
 		"./public/": "/",
@@ -35,7 +48,24 @@ module.exports = function(eleventyConfig) {
 	});
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-	eleventyConfig.addPlugin(pluginBundle);
+	eleventyConfig.addPlugin(pluginBundle, {
+		transforms: [
+			async function(content) {
+				// this.type returns the bundle name.
+				if (this.type === 'css') {
+					// Same as Eleventy transforms, this.page is available here.
+					let result = await postcss([
+            postcssNesting,
+            autoprefixer,
+            cssNano
+          ]).process(content, { from: this.page.inputPath, to: null });
+					return result.css;
+				}
+
+				return content;
+			}
+		]
+	});
 
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {

@@ -54,6 +54,10 @@ html {
 }
 body {
 	max-width: 40em;
+  background-image: url("/img/splash-bg.svg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 10000px 10000px;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -148,7 +152,8 @@ header {
 	gap: 1em .5em;
 	flex-wrap: wrap;
 	align-items: center;
-	padding: 1em;
+  padding-top: 10em;
+	padding-bottom: 1em;
 }
 .home-link {
 	font-size: 1em; /* 16px /16 */
