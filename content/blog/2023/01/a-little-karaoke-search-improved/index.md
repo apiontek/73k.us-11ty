@@ -17,15 +17,10 @@ They also released a little standalone version of this that you can host yoursel
 Well, the pieces finally all fell into place and I had a fun little time trying to keep things reasonably simple while implementing what I wanted:
 
 - Search is now active; results update as you type
-
 - Search is available always, even when song requests are closed
-
 - Song requests handled in a modal dialog
-
 - Search queries trim more whitespace
-
 - styles & fonts changed to my preference
-
 - css & js optimized (there's so little, this was a little silly, but it made me happy)
 
 Much of the above was enabled by [new.css](https://newcss.net/) and [htmx](https://htmx.org/), projects I had fun using for the first time.
