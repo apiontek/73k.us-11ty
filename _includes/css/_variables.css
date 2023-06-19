@@ -1,9 +1,19 @@
 /* Defaults */
 :root {
-	--font-family: 'IBM Plex Sans', 'Open Sans', Roboto, 'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana, 'Verdana Ref', -apple-system, system-ui, sans-serif;
+  --73k-splash-c0: rgba(0,30,90,1);
+  --73k-splash-c1: rgba(0,118,158,1);
+  --73k-splash-c2: rgba(2,149,167,1);
+  --73k-splash-c3: rgba(120,186,174,1);
+  --73k-splash-c4: rgba(255,237,191,1);
+  --73k-splash-c5: rgba(253,179,106,1);
+  --73k-splash-c6: rgba(255,117,28,1);
+  --73k-splash-c7: rgba(254,62,0,1);
+  --73k-splash-c8: rgb(136, 68, 36);
+
+  --font-family: 'IBM Plex Sans', 'Open Sans', Roboto, 'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana, 'Verdana Ref', -apple-system, system-ui, sans-serif;
   --font-family-headers: 'Friz Quadrata Std', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
-  --body-max-width: 800px;
+  --body-max-width: 80ch;
 }
 
 /* Theme colors */
@@ -12,12 +22,15 @@
 	--color-gray-50: #C0C0C0;
 	--color-gray-90: #333;
 
-	--background-color: #fff;
+	--background-color: rgb(225, 232, 235);
 
-	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050F;
+	--text-color: rgb(23, 23, 23);
+  --text-color-link: var(--73k-splash-c7);
+  --text-color-link-decoration: var(--73k-splash-c8);
+  --text-color-link-active: var(--73k-splash-c6);
+  --text-color-link-active-decoration: var(--73k-splash-c2);
+  --text-color-link-visited: var(--73k-splash-c8);
+  --text-color-link-visited-decoration: var(--73k-splash-c7);
 
 	--syntax-tab-size: 2;
 }
@@ -28,11 +41,14 @@
 		--color-gray-50: #C0C0C0;
 		--color-gray-90: #dad8d8;
 
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
+		--background-color: rgba(41, 44, 51, 1);
 
-		--background-color: #15202b;
+    --text-color: rgba(238, 238, 238, 1);
+		--text-color-link: var(--73k-splash-c6);
+    --text-color-link-decoration: var(--73k-splash-c5);
+		--text-color-link-active: var(--73k-splash-c4);
+		--text-color-link-active-decoration: var(--73k-splash-c2);
+		--text-color-link-visited: var(--73k-splash-c5);
+		--text-color-link-visited-decoration: var(--73k-splash-c4);
 	}
 }

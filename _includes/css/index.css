@@ -8,6 +8,7 @@ body {
 	padding: 0;
 	margin: 0 auto;
 	font-family: var(--font-family);
+  font-size: 1.05rem;
 	color: var(--text-color);
 }
 html {
@@ -47,13 +48,16 @@ p {
 
 a[href] {
 	color: var(--text-color-link);
+  text-decoration-color: var(--text-color-link-decoration);
 }
 a[href]:visited {
 	color: var(--text-color-link-visited);
+  text-decoration-color: var(--text-color-link-visited-decoration);
 }
 a[href]:hover,
 a[href]:active {
 	color: var(--text-color-link-active);
+  text-decoration-color: var(--text-color-link-active-decoration);
 }
 
 main {
