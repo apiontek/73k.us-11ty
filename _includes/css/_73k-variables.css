@@ -16,7 +16,8 @@
   --73k-head-font: 'Cooper Black', Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
 
   /* --73k-body-bg: rgb(213, 224, 226); */
-  --73k-body-bg: rgb(215, 222, 225);
+  /* --73k-body-bg: rgb(215, 222, 225); */
+  --73k-body-bg: rgb(255, 240, 217);
   --73k-text: rgb(23, 23, 23);
   --73k-link: #000;
   --73k-body-font: 'IBM Plex Sans', Helvetica, Arial, 'Open Sans', Roboto, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
@@ -47,7 +48,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* --73k-body-bg: rgba(28, 34, 49, 1); */
-    --73k-body-bg: rgba(31, 34, 41, 1);
+    --73k-body-bg: rgb(255, 240, 217);
+    /* --73k-body-bg: rgba(31, 34, 41, 1); */
+    --73k-body-bg: rgba(0, 15, 38, 1);
     --73k-text: rgba(233, 233, 233, 1);
     --73k-link: #fff;
     /* --73k-splash-head-text: #57413c; */
