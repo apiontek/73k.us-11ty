@@ -17,13 +17,14 @@ const pluginImages = require("./eleventy.config.images.js");
 
 module.exports = function(eleventyConfig) {
   // 2023-06-18 apiontek - also using this in winstats html
-    // nunjucks template engine options
-    eleventyConfig.setNunjucksEnvironmentOptions({
-      throwOnUndefined: true,
-      trimBlocks: true,
-      lstripBlocks: true,
-    });
-  
+  // nunjucks template engine options
+  eleventyConfig.setNunjucksEnvironmentOptions({
+    throwOnUndefined: true,
+    trimBlocks: true,
+    lstripBlocks: true,
+  });
+  // 2023-06-20 apiontek - shortcode for year, for copyright
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   // Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
@@ -131,6 +132,8 @@ module.exports = function(eleventyConfig) {
 	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
+  eleventyConfig.setServerOptions({ showAllHosts: true });
 
 	return {
 		// Control which files Eleventy will process

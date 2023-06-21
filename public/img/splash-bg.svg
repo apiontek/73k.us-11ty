@@ -11,10 +11,10 @@
     bottom: 50
     sixteen: 48
     -->
-  <path shape-rendering="crispEdges" stroke="rgba(0,30,90,1)" fill="none" stroke-width="6" d="
-    M 4550,41
-    H 5450
-    "></path>
+  <!-- <path shape-rendering="crispEdges" stroke="rgba(0,30,90,1)" fill="none" stroke-width="16" d="
+    M 4608,40
+    H 5392
+    "></path> -->
 
 
   <!-- line 1
@@ -23,14 +23,14 @@
     bottom: 66
     sixteen: 64
     -->
-  <path shape-rendering="crispEdges" stroke="rgba(0,118,158,1)" fill="none" stroke-width="6" d="
-    M 4550,57
-    H 5450
+  <path shape-rendering="crispEdges" stroke="rgba(0,118,158,1)" fill="none" stroke-width="16" d="
+    M 4608,40
+    H 5392
     "></path>
 
   <!-- line 0 points -->
-  <circle cx="5450" cy="32" r="2" fill="red"></circle>
-  <circle cx="5450" cy="48" r="2" fill="red"></circle>
+  <!-- <circle cx="5392" cy="32" r="2" fill="red"></circle>
+  <circle cx="5392" cy="48" r="2" fill="red"></circle> -->
 
   <!-- line 2
     top: 64
@@ -38,9 +38,9 @@
     bottom: 82
     sixteen: 80
     -->
-  <path shape-rendering="crispEdges" stroke="rgba(2,149,167,1)" fill="none" stroke-width="6" d="
-    M 4550,73
-    H 5450
+  <path shape-rendering="crispEdges" stroke="rgba(2,149,167,1)" fill="none" stroke-width="16" d="
+    M 4608,56
+    H 5392
     "></path>
 
   <!-- line 3
@@ -49,9 +49,9 @@
     bottom: 98
     sixteen: 96
     -->
-  <path shape-rendering="crispEdges" stroke="rgba(120,186,174,1)" fill="none" stroke-width="6" d="
-    M 4550,89
-    H 5450
+  <path shape-rendering="crispEdges" stroke="rgba(120,186,174,1)" fill="none" stroke-width="16" d="
+    M 4608,72
+    H 5392
     "></path>
 
   <!-- line 4
@@ -60,9 +60,9 @@
     bottom: 114
     sixteen: 112
     -->
-  <path shape-rendering="crispEdges" stroke="rgba(255,237,191,1)" fill="none" stroke-width="6" d="
-    M 4550,105
-    H 5450
+  <path shape-rendering="crispEdges" stroke="rgba(255,237,191,1)" fill="none" stroke-width="16" d="
+    M 4608,88
+    H 5392
     "></path>
 
   <!-- line 5
@@ -71,9 +71,9 @@
     bottom: 130
     sixteen: 128
     -->
-  <path shape-rendering="crispEdges" stroke="rgba(253,179,106,1)" fill="none" stroke-width="6" d="
-    M 4550,121
-    H 5450
+  <path shape-rendering="crispEdges" stroke="rgba(253,179,106,1)" fill="none" stroke-width="16" d="
+    M 4608,104
+    H 5392
     "></path>
 
   <!-- line 6
@@ -82,9 +82,9 @@
     bottom: 146
     sixteen: 144
     -->
-  <path shape-rendering="crispEdges" stroke="rgba(255,117,28,1)" fill="none" stroke-width="6" d="
-    M 4550,137
-    H 5450
+  <path shape-rendering="crispEdges" stroke="rgba(255,117,28,1)" fill="none" stroke-width="16" d="
+    M 4608,120
+    H 5392
     "></path>
 
   <!-- line 7
@@ -93,9 +93,9 @@
     bottom: 162
     sixteen: 160
     -->
-  <path shape-rendering="crispEdges" stroke="rgba(254,62,0,1)" fill="none" stroke-width="6" d="
-    M 4550,153
-    H 5450
+  <path shape-rendering="crispEdges" stroke="rgba(254,62,0,1)" fill="none" stroke-width="16" d="
+    M 4608,136
+    H 5392
     "></path>
 
   <!-- line 8
@@ -104,11 +104,16 @@
     bottom: 176
     sixteen: 176
     -->
-  <path shape-rendering="crispEdges" stroke="rgb(136, 68, 36)" fill="none" stroke-width="6" d="
-    M 4550,168
-    H 5450
+  <path shape-rendering="crispEdges" stroke="rgb(136, 136, 136)" fill="none" stroke-width="16" d="
+    M 4608,152
+    H 5392
     "></path>
 
+  <circle cx="4608" cy="88" r="2" fill="red"></circle>
+  <circle cx="4608" cy="104" r="2" fill="red"></circle>
+  <circle cx="4608" cy="120" r="2" fill="red"></circle>
+  <circle cx="4608" cy="136" r="2" fill="red"></circle>
+  <circle cx="4608" cy="152" r="2" fill="red"></circle>
 
   <!-- <path d="M30,1h40l29,29v40l-29,29h-40l-29-29v-40z" stroke="#000" fill="none"/> 
   <path d="M31,3h38l28,28v38l-28,28h-38l-28-28v-38z" fill="#a23"/> 

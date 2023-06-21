@@ -1,0 +1,106 @@
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Layout & Main Styles */
+html,
+body {
+	font-family: var(--font-family);
+	color: var(--text-color);
+}
+html {
+	overflow-y: scroll;
+	background-color: var(--background-color);
+  /* background-image: url("/img/splash-bg.svg"); */
+  background-image: url( "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210000%22%20height%3D%2210000%22%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%280%2C118%2C158%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%2040h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%282%2C149%2C167%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%2056h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%28120%2C186%2C174%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%2072h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%28255%2C237%2C191%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%2088h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%28253%2C179%2C106%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%20104h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%28255%2C117%2C28%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%20120h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%28254%2C62%2C0%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%20136h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22%23888%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%20152h784%22%2F%3E%3Ccircle%20cx%3D%224608%22%20cy%3D%2288%22%20r%3D%222%22%20fill%3D%22red%22%2F%3E%3Ccircle%20cx%3D%224608%22%20cy%3D%22104%22%20r%3D%222%22%20fill%3D%22red%22%2F%3E%3Ccircle%20cx%3D%224608%22%20cy%3D%22120%22%20r%3D%222%22%20fill%3D%22red%22%2F%3E%3Ccircle%20cx%3D%224608%22%20cy%3D%22136%22%20r%3D%222%22%20fill%3D%22red%22%2F%3E%3Ccircle%20cx%3D%224608%22%20cy%3D%22152%22%20r%3D%222%22%20fill%3D%22red%22%2F%3E%3Cscript%2F%3E%3C%2Fsvg%3E" );
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 10000px 10000px;
+}
+body {
+
+  display: grid;
+  justify-content: center;
+  grid-template-columns: [body-l] 1fr [content-l] minmax(auto, 80ch) [content-r] 1fr [body-r];
+  grid-template-rows:
+    [body-t head-t] calc(var(--splash-buffer-size) + calc(7 * var(--splash-stripe-size)))
+    [head-b main-t] auto
+    [main-b foot-t] max-content
+    [foot-b body-b];
+  width: 100vw;
+  height: 100vh;
+
+  & > header {
+    grid-area: head-t / content-l / head-b / content-r;
+    display: grid;
+    grid-template-columns: [content-l] auto [content-r];
+    grid-template-rows:
+      [head-t nav-t] var(--splash-buffer-size)
+      [nav-b splash-t] calc(7 * var(--splash-stripe-size))
+      [splash-b head-b];
+    align-items: center;
+    & > a[href].home-link {
+      grid-area: splash-t / content-l / splash-b / content-r;
+      font-family: var(--font-family-splash);
+      font-weight: 700;
+      font-size: 5rem;
+      color: rgba(56, 46, 34, 1);
+      text-decoration: none;
+    }
+    & > nav {
+      grid-area: nav-t / content-l / nav-b / content-r;
+    }
+  }
+
+  & > main {
+    grid-area: main-t / content-l / main-b / content-r;
+    margin-top: var(--layout-spacing);
+  }
+
+  & > footer {
+    grid-area: foot-t / content-l / foot-b / content-r;
+    margin-top: auto;
+    padding-top: var(--layout-spacing);
+  }
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-headers);
+  font-weight: 400;
+}
+
+p {
+  margin: 1em 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+  font-size: smaller;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}

@@ -64,7 +64,7 @@ a[href] {
 header {
   padding-top: 2.6em;
   & > a[href] {
-    color: rgba(56, 46, 34, 1);
+    /* color: rgba(56, 46, 34, 1); */
     text-shadow:
     -1px 0px 0px var(--text-color),
     0px -1px 0px var(--text-color),
@@ -72,14 +72,17 @@ header {
     0px 1px 0px var(--text-color)
     ;
     /* color: var(--text-color); */
-    font-family: 'Cooper Black', Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+    /* font-family: 'Cooper Black', Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif; */
+    font-family: 'Lazenby Computer', sans-serif;
+    font-weight: 700;
     /* font-family: var(--font-family-headers); */
     font-size: 5rem;
     text-decoration: none;
     &:visited,
     &:hover,
     &:active {
-      color: rgba(56, 46, 34, 1);
+      color: var(--text-color-link);
+      /* color: rgba(56, 46, 34, 1); */
       /* color: var(--text-color); */
     }
   }  
