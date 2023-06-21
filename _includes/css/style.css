@@ -104,3 +104,19 @@ p {
 .nav a[href][aria-current="page"] {
 	text-decoration: underline;
 }
+
+
+/* Links */
+a[href] {
+	color: var(--text-color-link);
+  text-decoration-color: var(--text-color-link-decoration);
+  &:visited {
+    color: var(--text-color-link-visited);
+    text-decoration-color: var(--text-color-link-visited-decoration);
+  }
+  &:hover,
+  &:active {
+    color: var(--text-color-link-active);
+    text-decoration-color: var(--text-color-link-active-decoration);
+  }
+}

@@ -19,4 +19,35 @@
 
   --splash-buffer-size: 32px;
   --splash-stripe-size: 16px;
+
+}
+
+
+/* Theme colors */
+:root {
+  --background-color: #CECECE;
+  --text-color: #22262A;
+
+  --text-color-link: #0000AA;
+  --text-color-link-decoration: #00AA00;
+  --text-color-link-active: #0000AA;
+  --text-color-link-active-decoration: #AA5500;
+  --text-color-link-visited: #AA00AA;
+  --text-color-link-visited-decoration: #AAAA00;
+
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+    --background-color: #000000;
+    --text-color: #D3D7CF;
+
+    --text-color-link: #55FF55;
+    --text-color-link-decoration: #0000AA;
+		--text-color-link-active: #55FF55;
+		--text-color-link-active-decoration: #FFFF55;
+		--text-color-link-visited: #00AA00;
+		--text-color-link-visited-decoration: #AA5500;
+
+	}
 }
