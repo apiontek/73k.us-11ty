@@ -9,6 +9,8 @@ const postcssImport = require("postcss-import");
 const postcssNesting = require("postcss-nesting");
 const autoprefixer = require("autoprefixer");
 const cssNano = require("cssnano");
+const esbuild = require("esbuild");
+
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
@@ -63,7 +65,15 @@ module.exports = function(eleventyConfig) {
             cssNano
           ]).process(content, { from: this.page.inputPath, to: null });
 					return result.css;
-				}
+				} else if (this.type === 'js') {
+          let result = await esbuild.transform(content, {
+            minify: true,
+            sourcemap: false,
+            legalComments: "none",
+            treeShaking: true      
+          });
+          return result.code;
+        }
 
 				return content;
 			}
