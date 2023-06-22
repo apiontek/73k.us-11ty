@@ -3,17 +3,7 @@
   --layout-spacing: max(4vh, 2rem);
 
   --font-family: 'IBM Plex Sans', 'Open Sans', Roboto, 'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana, 'Verdana Ref', -apple-system, system-ui, sans-serif;
-
   --font-family-splash: 'Supercomputer', 'Cooper Black', 'Lazenby Computer', Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
-  /* --font-family-splash: 'Cooper Black', Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif; */
-  /* --font-family-splash: 'Supercomputer', sans-serif; */
-  /* --font-family-splash: 'Lazenby Computer', sans-serif; */
-
-  /* --font-family-splash: 'ParaAminobenzoic', sans-serif; */
-  /* --font-family-splash: 'Two Fifty Six Bytes', sans-serif; */
-  /* --font-family-splash: 'Dignity Of Labour', sans-serif; */
-
-
   --font-family-headers: 'Friz Quadrata Std', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 
