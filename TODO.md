@@ -1,18 +1,22 @@
 # 73k new site TODO
 
-- [ ] initial basic setup w/old content
-- [ ] svg background proof-of-concept
+- [X] ~~*svg background proof-of-concept*~~ [2023-06-23]
+- [ ] eleventy dev vs prod
+  - [ ] cross env?
+  - [ ] only embed my svg js if in DEV
 - [ ] css ... start with a clean basic css?
-  - [ ] sanitize.css ... was used for wp73k vite splash project
-  - [ ] postcss-import ... was used for wp73k vite splash project
-  - [ ] grid layout
-  - [ ] fonts
-  - [ ] colors
+  - [X] ~~*grid layout*~~ [2023-06-23]
+  - [X] ~~*fonts*~~ [2023-06-23]
+  - [X] ~~*colors*~~ [2023-06-23]
   - [ ] ...
-  - [ ] svg background
-  - [ ] mobile media type, smaller screens? Any changes?
-    - [ ] at least: for background-image, use background-size to scale down the SVG & header?
+- [ ] svg background ...
+  - [ ] css background-size to scale down the SVG & header? mobile media query?
+- [ ] initial basic setup w/old content
 - [ ] blog post images -- make them work!
+- [ ] blog post code syntax highlighting
+  - [ ] special monospace font?
+  - [ ] prism theme?
+  - [ ] customizations?
 - [ ] critical css / non-critical css?
 - [ ] bundler can do html / svg ... for svg icons, do i want to use any?
 - [ ] start bringing in old content from wayback machine?

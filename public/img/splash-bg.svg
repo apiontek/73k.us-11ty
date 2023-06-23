@@ -1,8 +1,8 @@
-<!-- <svg height="500" width="500">
-  <circle cx="250" cy="50" r="40" stroke="green" height="4" fill="yellow" />
-</svg>  -->
+<!-- <svg xmlns="http://www.w3.org/2000/svg" height="10000" width="10000">
+  <circle cx="5000" cy="50" r="40" stroke="green" height="4" fill="yellow" />
+</svg> -->
 <svg xmlns="http://www.w3.org/2000/svg" width="10000" height="10000">
-  <!-- <circle cx="5000" cy="50" r="40" stroke="green" height="4" fill="yellow" /> -->
+  <circle cx="5000" cy="50" r="40" stroke="green" height="4" fill="yellow" />
 
 
   <!-- line 0

@@ -28,22 +28,28 @@ body {
 
   display: grid;
   justify-content: center;
-  grid-template-columns: [body-l] 1fr [content-l] minmax(auto, 80ch) [content-r] 1fr [body-r];
+  grid-template-columns: [body-l] 1fr [content-l] minmax(auto, 90ch) [content-r] 1fr [body-r];
   grid-template-rows:
-    [body-t head-t] calc(var(--splash-buffer-size) + calc(7 * var(--splash-stripe-size)))
+    [body-t head-t] calc(var(--splash-buffer-size) + calc(var(--splash-line-count) * var(--splash-line-size)))
     [head-b main-t] auto
     [main-b foot-t] max-content
     [foot-b body-b];
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 1rem;
 
+  & > header,
+  & > main,
+  & > footer {
+    padding: 0 1rem;
+  }
   & > header {
     grid-area: head-t / content-l / head-b / content-r;
     display: grid;
     grid-template-columns: [content-l] auto [content-r];
     grid-template-rows:
       [head-t nav-t] var(--splash-buffer-size)
-      [nav-b splash-t] calc(7 * var(--splash-stripe-size))
+      [nav-b splash-t] calc(var(--splash-line-count) * var(--splash-line-size))
       [splash-b head-b];
     align-items: center;
     & > a[href].home-link {
@@ -113,6 +119,10 @@ a[href] {
   &:visited {
     color: var(--text-color-link-visited);
     text-decoration-color: var(--text-color-link-visited-decoration);
+    header#head73k > nav & {
+      color: var(--text-color-link);
+      text-decoration-color: var(--text-color-link-decoration);
+    }
   }
   &:hover,
   &:active {

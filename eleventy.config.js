@@ -65,14 +65,14 @@ module.exports = function (eleventyConfig) {
             cssNano,
           ]).process(content, { from: this.page.inputPath, to: null })
           return result.css
-        } else if (this.type === "js") {
-          let result = await esbuild.transform(content, {
-            minify: true,
-            sourcemap: false,
-            legalComments: "none",
-            treeShaking: true,
-          })
-          return result.code
+        // } else if (this.type === "js") {
+        //   let result = await esbuild.transform(content, {
+        //     minify: true,
+        //     sourcemap: false,
+        //     legalComments: "none",
+        //     treeShaking: true,
+        //   })
+        //   return result.code
         }
 
         return content
@@ -83,9 +83,7 @@ module.exports = function (eleventyConfig) {
   // Filters
   eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
     // Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-    return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
-      format || "dd LLLL yyyy"
-    )
+    return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy")
   })
 
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
@@ -120,9 +118,7 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-    return (tags || []).filter(
-      (tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1
-    )
+    return (tags || []).filter((tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1)
   })
 
   // Customize Markdown library settings:
