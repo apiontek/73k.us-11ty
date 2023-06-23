@@ -1,22 +1,27 @@
 # 73k new site TODO
 
+- [X] ~~*initial basic setup w/old content*~~ [2023-06-23]
 - [X] ~~*svg background proof-of-concept*~~ [2023-06-23]
-- [ ] eleventy dev vs prod
-  - [ ] cross env?
-  - [ ] only embed my svg js if in DEV
+- [X] ~~*eleventy dev vs prod*~~ [2023-06-23]
+  - [X] ~~*cross env?*~~ [2023-06-23]
+  - [X] ~~*only embed my svg js if in DEV*~~ [2023-06-23]
 - [ ] css ... start with a clean basic css?
   - [X] ~~*grid layout*~~ [2023-06-23]
   - [X] ~~*fonts*~~ [2023-06-23]
   - [X] ~~*colors*~~ [2023-06-23]
-  - [ ] ...
-- [ ] svg background ...
+- blog styling
+  - [X] ~~*text-muted color?*~~ [2023-06-23]
+  - [X] ~~*style date-published*~~ [2023-06-23]
+  - [X] ~~*style tags*~~ [2023-06-23]
+  - [X] ~~*style next/prev*~~ [2023-06-23]
+  - [ ] images: make the work right
+  - [ ] code style
+    - monospace font?
+    - prism theme for syntax highlighting
+    - inline lang highlighting?
+    - customizations?
+- svg background on mobile?
   - [ ] css background-size to scale down the SVG & header? mobile media query?
-- [ ] initial basic setup w/old content
-- [ ] blog post images -- make them work!
-- [ ] blog post code syntax highlighting
-  - [ ] special monospace font?
-  - [ ] prism theme?
-  - [ ] customizations?
 - [ ] critical css / non-critical css?
 - [ ] bundler can do html / svg ... for svg icons, do i want to use any?
 - [ ] start bringing in old content from wayback machine?

@@ -15,6 +15,10 @@ function getCosFromDegrees(degrees) {
 function getSinFromDegrees(degrees) {
   return Math.sin((degrees * Math.PI) / 180)
 }
+// round to 3 decimals, accurately
+function roundTo3(num) {
+  return Math.round((num + Number.EPSILON) * 1000) / 1000
+}
 
 // getSvg param values are in px
 function getSvg({
@@ -167,12 +171,12 @@ function getSvg({
 
     // create the line path
     let pathString = ""
-    pathString += `M ${startX},${startY} `
-    pathString += `L ${arcLeftStartX},${arcLeftStartY} `
+    pathString += `M ${roundTo3(startX)},${startY} `
+    pathString += `L ${roundTo3(arcLeftStartX)},${roundTo3(arcLeftStartY)} `
     pathString += `A ${arcLeftRad} ${arcLeftRad} 0 0 1 ${mainStartX} ${mainY} `
     pathString += `H ${mainEndX} `
-    pathString += `A ${arcRightRad} ${arcRightRad} 0 0 0 ${arcRightEndX} ${arcRightEndY} `
-    pathString += `L ${endX},${endY}`
+    pathString += `A ${arcRightRad} ${arcRightRad} 0 0 0 ${roundTo3(arcRightEndX)} ${roundTo3(arcRightEndY)} `
+    pathString += `L ${roundTo3(endX)},${endY}`
     // console.log(pathString)
     let svgPath = document.createElementNS(xmlns, "path")
     if (validShapeRendering) {
