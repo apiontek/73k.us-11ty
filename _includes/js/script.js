@@ -113,7 +113,7 @@ function getSvg({
     if (0 < i && i < totalLineCount - 1) {
       color = colors[i + lineStart - 1]
     }
-    console.log(`line ${i} color: ${color}`)
+    // console.log(`line ${i} color: ${color}`)
 
     // main (center) line Y & other values that may change if aliased renderer is used
     let mainY = bufferSize + linePlacement + i * lineSize

@@ -17,6 +17,9 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy")
 const pluginDrafts = require("./eleventy.config.drafts.js")
 const pluginImages = require("./eleventy.config.images.js")
 
+// extra environment data for eleventy
+const env = require("./_data/env");
+
 module.exports = function (eleventyConfig) {
   // 2023-06-18 apiontek - also using this in winstats html
   // nunjucks template engine options
@@ -65,7 +68,7 @@ module.exports = function (eleventyConfig) {
             cssNano,
           ]).process(content, { from: this.page.inputPath, to: null })
           return result.css
-        } else if (this.type === "js") {
+        } else if (this.type === "js" && env.isProd) {
           let result = await esbuild.transform(content, {
             minify: true,
             sourcemap: false,

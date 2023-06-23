@@ -48,9 +48,12 @@
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 
-    {%- js %}
-      {% include "_includes/js/script.js" %}
-    {% endjs %}
+    {% if env.isProd %}
+    {% else %}
+      {%- js %}
+        {% include "_includes/js/script.js" %}
+      {% endjs %}
+    {% endif %}
 
 	</head>
 	<body>
@@ -61,7 +64,7 @@
       
       {# <img src="/img/splash-bg.svg" /> #}
 
-			<a href="/" class="home-link">{{ metadata.title }}</a>
+			<div><a href="/" class="home-link">{{ metadata.title }}</a></div>
 
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
 			<nav>
@@ -80,7 +83,13 @@
 
 		<footer>&copy; {% year %} Adam Piontek</footer>
 
-    <script>{% getBundle "js" %}</script>
+    {% if env.isProd %}
+    {% else %}
+    <script>
+      {% getBundle "js" %}
+    </script>
+    {% endif %}
+
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 	</body>
 </html>

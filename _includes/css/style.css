@@ -18,8 +18,7 @@ body {
 html {
 	overflow-y: scroll;
 	background-color: var(--background-color);
-  /* background-image: url("/img/splash-bg.svg"); */
-  background-image: url( "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210000%22%20height%3D%2210000%22%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%280%2C118%2C158%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%2040h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%282%2C149%2C167%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%2056h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%28120%2C186%2C174%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%2072h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%28255%2C237%2C191%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%2088h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%28253%2C179%2C106%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%20104h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%28255%2C117%2C28%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%20120h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22rgba%28254%2C62%2C0%2C1%29%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%20136h784%22%2F%3E%3Cpath%20shape-rendering%3D%22crispEdges%22%20stroke%3D%22%23888%22%20fill%3D%22none%22%20stroke-width%3D%2216%22%20d%3D%22M4608%20152h784%22%2F%3E%3Ccircle%20cx%3D%224608%22%20cy%3D%2288%22%20r%3D%222%22%20fill%3D%22red%22%2F%3E%3Ccircle%20cx%3D%224608%22%20cy%3D%22104%22%20r%3D%222%22%20fill%3D%22red%22%2F%3E%3Ccircle%20cx%3D%224608%22%20cy%3D%22120%22%20r%3D%222%22%20fill%3D%22red%22%2F%3E%3Ccircle%20cx%3D%224608%22%20cy%3D%22136%22%20r%3D%222%22%20fill%3D%22red%22%2F%3E%3Ccircle%20cx%3D%224608%22%20cy%3D%22152%22%20r%3D%222%22%20fill%3D%22red%22%2F%3E%3Cscript%2F%3E%3C%2Fsvg%3E" );
+  background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="10000" height="10000"%3E%3Cpath shape-rendering="auto" stroke="transparent" stroke-width="20" fill="none" d="M -12773.772251323167,10032 L 4496,61.29234185504083 A 144 144 0 0 1 4568 42 H 5432 A 16 16 0 0 0 5442.284601754985 38.256711089903646 L 5526.0132896002315,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%2300769e" stroke-width="20" fill="none" d="M -12741.772251323167,10032 L 4504,75.14874831559185 A 128 128 0 0 1 4568 58 H 5432 A 32 32 0 0 0 5452.569203509969 50.5134221798073 L 5550.904870829998,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%230295a7" stroke-width="20" fill="none" d="M -12709.772251323167,10032 L 4512,89.00515477614286 A 112 112 0 0 1 4568 74 H 5432 A 48 48 0 0 0 5462.853805264954 62.77013326971095 L 5575.796452059763,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%2378baae" stroke-width="20" fill="none" d="M -12677.772251323167,10032 L 4520,102.86156123669389 A 96 96 0 0 1 4568 90 H 5432 A 64 64 0 0 0 5473.138407019938 75.0268443596146 L 5600.68803328953,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%23ffedbf" stroke-width="20" fill="none" d="M -12645.772251323167,10032 L 4528,116.7179676972449 A 80 80 0 0 1 4568 106 H 5432 A 80 80 0 0 0 5483.423008774923 87.28355544951825 L 5625.579614519297,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%23fdb36a" stroke-width="20" fill="none" d="M -12613.772251323166,10032 L 4536,130.57437415779592 A 64 64 0 0 1 4568 122 H 5432 A 96 96 0 0 0 5493.7076105299075 99.5402665394219 L 5650.471195749064,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%23ff751c" stroke-width="20" fill="none" d="M -12581.772251323167,10032 L 4544,144.43078061834694 A 48 48 0 0 1 4568 138 H 5432 A 112 112 0 0 0 5503.992212284892 111.79697762932555 L 5675.36277697883,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%23fe3e00" stroke-width="16" fill="none" d="M -12553.236352938304,10032 L 4552,156.28718707889797 A 32 32 0 0 1 4568 152 H 5432 A 128 128 0 0 0 5514.276814039877 122.0536887192292 L 5697.870851023408,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="transparent" stroke-width="16" fill="none" d="M -12521.236352938306,10032 L 4560,170.14359353944897 A 16 16 0 0 1 4568 168 H 5432 A 144 144 0 0 0 5524.561415794862 134.31039980913283 L 5722.762432253176,-32"%3E%3C/path%3E%3C/svg%3E');
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 10000px 10000px;
@@ -52,12 +51,13 @@ body {
       [nav-b splash-t] calc(var(--splash-line-count) * var(--splash-line-size))
       [splash-b head-b];
     align-items: center;
-    & > a[href].home-link {
+    & > div > a[href].home-link {
+      display: inline !important;
       grid-area: splash-t / content-l / splash-b / content-r;
       font-family: var(--font-family-splash);
       font-weight: 700;
       font-size: 5rem;
-      color: rgba(56, 46, 34, 1);
+      color: var(--text-head-link);
       text-decoration: none;
     }
     & > nav {
