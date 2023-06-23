@@ -65,14 +65,14 @@ module.exports = function (eleventyConfig) {
             cssNano,
           ]).process(content, { from: this.page.inputPath, to: null })
           return result.css
-        // } else if (this.type === "js") {
-        //   let result = await esbuild.transform(content, {
-        //     minify: true,
-        //     sourcemap: false,
-        //     legalComments: "none",
-        //     treeShaking: true,
-        //   })
-        //   return result.code
+        } else if (this.type === "js") {
+          let result = await esbuild.transform(content, {
+            minify: true,
+            sourcemap: false,
+            legalComments: "none",
+            treeShaking: true,
+          })
+          return result.code
         }
 
         return content

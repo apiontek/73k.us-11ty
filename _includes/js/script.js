@@ -3,7 +3,6 @@
  * This script is not meant for live use with the production-build static website.
  */
 
-
 // calculate tangent value from degrees
 function getTanFromDegrees(degrees) {
   return Math.tan((degrees * Math.PI) / 180)
@@ -41,10 +40,10 @@ function getSvg({
   ],
 }) {
   // convert px values
-  headWidth = parseInt(headWidth.replace("px",""))
-  bufferSize = parseInt(bufferSize.replace("px",""))
-  lineSize = parseInt(lineSize.replace("px",""))
-  lineWidth = parseInt(lineWidth.replace("px",""))
+  headWidth = parseInt(headWidth.replace("px", ""))
+  bufferSize = parseInt(bufferSize.replace("px", ""))
+  lineSize = parseInt(lineSize.replace("px", ""))
+  lineWidth = parseInt(lineWidth.replace("px", ""))
 
   // convert other int values
   lineStart = parseInt(lineStart)
@@ -57,10 +56,10 @@ function getSvg({
   bufferSize -= lineSize
 
   // validate shape-rendering value
-  let validShapeRenderingValues = ["auto","optimizeSpeed","crispEdges","geometricPrecision"]
+  let validShapeRenderingValues = ["auto", "optimizeSpeed", "crispEdges", "geometricPrecision"]
   let validShapeRendering = validShapeRenderingValues.includes(shapeRendering)
   // if shape-rendering is likely anti-aliased we will overlap
-  let aliasedShapeRenderers = ["auto","geometricPrecision"]
+  let aliasedShapeRenderers = ["auto", "geometricPrecision"]
 
   // set some useful initial values
   let xmlns = "http://www.w3.org/2000/svg"
@@ -102,16 +101,16 @@ function getSvg({
   let arcRightCY = bufferSize + linePlacement - 1 * lineSize
 
   // left-hand tilted line startY
-  let startY = svgSize + (2 * lineSize)
+  let startY = svgSize + 2 * lineSize
 
   // right-hand tilted line endY
-  let endY = (-1 * 2 * lineSize)
+  let endY = -1 * 2 * lineSize
 
   // loop to create the colored splash lines
   for (let i = 0; i < totalLineCount; i++) {
     // set line stroke color
     let color = "transparent"
-    if (0 < i && i < (totalLineCount - 1)) {
+    if (0 < i && i < totalLineCount - 1) {
       color = colors[i + lineStart - 1]
     }
     console.log(`line ${i} color: ${color}`)
@@ -123,7 +122,7 @@ function getSvg({
     let thisArcRightCY = arcRightCY
     // if this is not the last line, adjust these values if aliased renderer is used
     if (
-      (i < (totalLineCount - 2)) &&
+      i < totalLineCount - 2 &&
       validShapeRendering &&
       aliasedShapeRenderers.includes(shapeRendering)
     ) {
@@ -135,30 +134,32 @@ function getSvg({
 
     // arc left radius and end point
     let arcLeftRad = (totalLineCount - i) * lineSize
-    let arcLeftStartX = (arcLeftCX) + (arcLeftRad * getCosFromDegrees(90 + tiltDegreesStart))
-    let arcLeftStartY = -1 * ((-1 * thisArcLeftCY) + (arcLeftRad * getSinFromDegrees(90 + tiltDegreesStart)))
+    let arcLeftStartX = arcLeftCX + arcLeftRad * getCosFromDegrees(90 + tiltDegreesStart)
+    let arcLeftStartY =
+      -1 * (-1 * thisArcLeftCY + arcLeftRad * getSinFromDegrees(90 + tiltDegreesStart))
 
     // arc right radius and end point
     let arcRightRad = (i + 1) * lineSize
-    let arcRightEndX = (arcRightCX) + (arcRightRad * getCosFromDegrees((3 * 90) + tiltDegreesEnd))
-    let arcRightEndY = -1 * ((-1 * thisArcRightCY) + (arcRightRad * getSinFromDegrees(((3 * 90) + tiltDegreesEnd))))
+    let arcRightEndX = arcRightCX + arcRightRad * getCosFromDegrees(3 * 90 + tiltDegreesEnd)
+    let arcRightEndY =
+      -1 * (-1 * thisArcRightCY + arcRightRad * getSinFromDegrees(3 * 90 + tiltDegreesEnd))
 
     // startY
     // start tilted line B and X (in Y = mX + B); m is slope calculated above
-    let startB, startX;
+    let startB, startX
     if (tiltDegreesStart > 0) {
-      startB = ((-1 * arcLeftStartY) - (slopeStart * arcLeftStartX))
-      startX = ((-1 * startY) - startB) / slopeStart
+      startB = -1 * arcLeftStartY - slopeStart * arcLeftStartX
+      startX = (-1 * startY - startB) / slopeStart
     } else {
       startX = 0
       startY = mainY
     }
 
     // end tilted line B and X (in Y = mX + B); m is slope calculated above
-    let endB, endX;
+    let endB, endX
     if (tiltDegreesEnd > 0) {
-      endB = ((-1 * arcRightEndY) - (slopeEnd * arcRightEndX))
-      endX = ((-1 * endY) - endB) / slopeEnd
+      endB = -1 * arcRightEndY - slopeEnd * arcRightEndX
+      endX = (-1 * endY - endB) / slopeEnd
     } else {
       endX = svgSize
       endY = mainY
@@ -174,7 +175,9 @@ function getSvg({
     pathString += `L ${endX},${endY}`
     // console.log(pathString)
     let svgPath = document.createElementNS(xmlns, "path")
-    if (validShapeRendering) { svgPath.setAttribute("shape-rendering", shapeRendering) }
+    if (validShapeRendering) {
+      svgPath.setAttribute("shape-rendering", shapeRendering)
+    }
     svgPath.setAttribute("stroke", color)
     svgPath.setAttribute("stroke-width", strokeWidth)
     svgPath.setAttribute("fill", "none")
@@ -237,11 +240,12 @@ window.onload = function () {
     "--splash-line-count",
     "--splash-tilt-degrees-start",
     "--splash-tilt-degrees-end",
-    "--splash-shape-rendering"
+    "--splash-shape-rendering",
   ]
   window.splashOpts = {}
+  let optName
   cssVarNames.forEach((v) => {
-    optName = v.replace("--splash-","").replace(/-([a-z])/g, g => g[1].toUpperCase())
+    optName = v.replace("--splash-", "").replace(/-([a-z])/g, (g) => g[1].toUpperCase())
     window.splashOpts[optName] = htmlComputedStyle.getPropertyValue(v)
   })
 
@@ -252,13 +256,15 @@ window.onload = function () {
   // window.splashOpts.colors.forEach((c, i) => console.log(`--splash-c${i}: ${c}`))
 
   // Get the width in px of the header
-  window.splashOpts.headWidth = window.getComputedStyle(document.getElementById("head73k"), null).getPropertyValue("width") // 768px for example
+  window.splashOpts.headWidth = window
+    .getComputedStyle(document.getElementById("head73k"), null)
+    .getPropertyValue("width") // 768px for example
 
   // output collect opts to console
   console.log(window.splashOpts)
 
   // create new SVG document
-  let splashSvg = getSvg(splashOpts)
+  let splashSvg = getSvg(window.splashOpts)
   // log the raw XML for the new SVG
   let splashSvgStr = splashSvg.outerHTML
   // console.log(`raw XML for new SVG: ${splashSvgStr}`)
