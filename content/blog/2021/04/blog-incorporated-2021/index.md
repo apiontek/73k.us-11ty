@@ -30,7 +30,7 @@ I also found code hot-reloading wasn’t working great if I added or removed a f
 
 The Dashbit posts referenced above on basing an elixir site off markdown files both cover basic live reloading, but I found I needed to add the following to my Blog module to ensure it was recompiled:
 
-```
+```elixir
 post_paths_hash = :erlang.md5(post_paths)
 
 def __mix_recompile__?() do
@@ -43,7 +43,7 @@ Following that change, new markdown files are recognized and included as expecte
 
 And, FWIW, here’s my modified highlighter module using chroma (I’ve exported the CSS styles separately (like so: `~/go/bin/chroma -s base16-snazzy --html-styles > _chroma.css`) to include in my `app.scss`. If you use purgecss like me, you’ll need to add the `.chroma` class to the safelist for the webpack plugin: `safelist: {greedy: [/phx/, /topbar/, /inline/, /chroma/]}` .)
 
-```
+```elixir
 defmodule Home73k.Highlighter do
   @moduledoc """
   Performs code highlighting.

@@ -24,7 +24,7 @@ One option would be to create a whole separate router pipeline to skip the `plug
 
 But luckily, there’s a new [put\_root\_layout/2](https://hexdocs.pm/phoenix/Phoenix.Controller.html#put_root_layout/2) that we can leverage like so:
 
-```
+```elixir
 defmodule YourAppWeb.RSSController do
   use YourAppWeb, :controller
   plug :put_layout, false

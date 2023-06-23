@@ -14,12 +14,8 @@
   - [X] ~~*style date-published*~~ [2023-06-23]
   - [X] ~~*style tags*~~ [2023-06-23]
   - [X] ~~*style next/prev*~~ [2023-06-23]
+  - [X] ~~*code style*~~ [2023-06-23]
   - [ ] images: make the work right
-  - [ ] code style
-    - monospace font?
-    - prism theme for syntax highlighting
-    - inline lang highlighting?
-    - customizations?
 - svg background on mobile?
   - [ ] css background-size to scale down the SVG & header? mobile media query?
 - [ ] critical css / non-critical css?

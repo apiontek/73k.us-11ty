@@ -78,7 +78,7 @@ function getSvg({
   splashSvg.setAttribute("width", svgSize)
   splashSvg.setAttribute("height", svgSize)
 
-  // reference circle
+  // // reference circle
   // let svgCircle1 = document.createElementNS(xmlns, "circle")
   // svgCircle1.setAttribute("cx", "5000")
   // svgCircle1.setAttribute("cy", ((lineCount - 2) * lineSize))
@@ -271,7 +271,7 @@ window.onload = function () {
   let splashSvg = getSvg(window.splashOpts)
   // log the raw XML for the new SVG
   let splashSvgStr = splashSvg.outerHTML
-  // console.log(`raw XML for new SVG: ${splashSvgStr}`)
+  console.log(`raw XML for new SVG: ${splashSvgStr}`)
   // build the CSS URL string for background-image:
   let newHtmlBackgroundImage = `url('data:image/svg+xml;utf8,${splashSvgStr
     .replaceAll(`#`, `%23`)

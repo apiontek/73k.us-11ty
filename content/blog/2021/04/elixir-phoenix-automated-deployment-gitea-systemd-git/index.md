@@ -24,7 +24,7 @@ First, the Phoenix deployment makes use of [Releases](https://hexdocs.pm/phoenix
 
 This means the general upload procedure looks like this, and I can put it in a bash script to make updating a bit easier:
 
-```
+```bash
 #!/usr/bin/env bash
 
 cd /opt/myapp73k
@@ -58,7 +58,7 @@ sudo /bin/systemctl restart myapp73k.service
 
 To allow the user that’s running the script to invoke `sudo` we need to give it explicit permission, e.g. by placing the following in a file like `/etc/sudoers.d/deploy_hooks`:
 
-```
+```conf
 git     ALL=(runuser) NOPASSWD: /home/runuser/deploy_hooks/deploy-myapp73k.sh
 runuser ALL=          NOPASSWD: /bin/systemctl restart myapp73k.service
 ```
@@ -75,7 +75,7 @@ For git to run the deployment script after the repository receives a new commit,
 
 My hook looks something like this:
 
-```
+```bash
 #!/usr/bin/env bash
 while read oldrev newrev refname
 do
@@ -92,7 +92,7 @@ Here we can see the hook checks the branch first, and if master, runs `sudo -u r
 
 That should just about do it, but as an extra note, here’s the elixir phoenix release systemd unit:
 
-```
+```ini
 [Unit]
 Description=MyApp73k service
 After=local-fs.target network.target

@@ -6,7 +6,10 @@
   --font-family: 'IBM Plex Sans', 'Open Sans', Roboto, 'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana, 'Verdana Ref', -apple-system, system-ui, sans-serif;
   --font-family-splash: 'Supercomputer', 'Cooper Black', 'Lazenby Computer', Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   --font-family-headers: 'Friz Quadrata Std', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+	--font-family-monospace: 'JetBrains Mono', Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+
+  --syntax-tab-size: 2;
+  --standard-border-radius: 5px;
 
   --splash-buffer-size: 48px;
   --splash-line-size: 16px;
@@ -44,6 +47,10 @@
   --text-color-link-visited-decoration: #00AA00;
 
   --text-head-link: rgba(56, 46, 34, 1);
+
+  --text-color-code: rgb(0, 90, 142);
+
+  --border-color: #555555;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,5 +66,8 @@
 		--text-color-link-visited: #FF55FF;
 		--text-color-link-visited-decoration: #00AAAA;
 
+    --text-color-code: rgb(130, 170, 255);
+
+    --border-color: #AAAAAA;
 	}
 }

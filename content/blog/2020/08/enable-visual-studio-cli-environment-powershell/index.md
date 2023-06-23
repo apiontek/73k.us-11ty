@@ -24,7 +24,7 @@ The built-in PowerShell (5.1 right now) will load a [profile](https://docs.micro
 
 For each version where I want the environment set up, I place the following code in the profile:
 
-```
+```powershell
 function Invoke-CmdScript {
   param(
     [String] $scriptName 

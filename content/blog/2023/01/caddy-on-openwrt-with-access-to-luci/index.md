@@ -17,7 +17,7 @@ Note: I have extra storage mounted at `/mnt/sda1`; adapt as needed.
 
 First, on the ER-4, none of the [MIPS downloads](https://caddyserver.com/download) worked for me, so I had to build it myself:
 
-```
+```shell
 opkg install git-http golang
 mkdir /mnt/sda1/caddy-build
 cd /mnt/sda1/caddy-build
@@ -34,7 +34,7 @@ caddy version
 
 Having built it, and confirmed it runs with that last `caddy version` command, I did the following to stop & disable uhttpd, and set up caddy:
 
-```
+```shell
 service uhttpd stop
 service uhttpd disable
 mkdir -p /etc/caddy/conf; mkdir /etc/caddy/data
@@ -47,7 +47,7 @@ nano /etc/caddy/Caddyfile
 
 The Caddyfile contents that worked for me:
 
-```
+```caddy
 {
 	order cgi before respond
 }
@@ -82,7 +82,7 @@ I still wanted to serve a custom index.html from /www so I just made that the ro
 
 Finally, an OpenWrt init script at `/etc/init.d/caddy`:
 
-```
+```shell
 #!/bin/sh /etc/rc.common
 
 PROG=/usr/bin/caddy
@@ -105,7 +105,7 @@ start_service() {
 
 And then to enable the service, test that it works, and examples of updating & reloading the Caddyfile:
 
-```
+```shell
 service caddy enable
 service caddy start
 netstat -lnpt | grep -e 80 -e 443
@@ -116,7 +116,7 @@ netstat -lnpt | grep -e 80 -e 443
 
 One of the neat things about this is easy SSL and reverse proxying. Since I also use the [OpenWrt AdGuard Home service](https://openwrt.org/docs/guide-user/services/dns/adguard-home), I'm able to include this in the Caddyfile for easy access:
 
-```
+```caddy
 adguard.home {
 	tls internal
 	reverse_proxy localhost:8081
@@ -125,14 +125,14 @@ adguard.home {
 
 And the DNS is working because the AdGuardHome is configured for upstream DNS:
 
-```
+```conf
 [/home/]127.0.0.1:54
 [//]127.0.0.1:54
 ```
 
 ...and the OpenWrt dnsmasq `/etc/config/dhcp` contains:
 
-```
+```conf
 config dnsmasq
 	option domainneeded '1'
 	option local '/home/'
