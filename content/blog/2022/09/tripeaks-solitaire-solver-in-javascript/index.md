@@ -10,6 +10,9 @@ tags:
 coverImage: "tripeaks-preview.png"
 ---
 
+{% image "./tripeaks-preview.png", "A preview of a tripeaks card game layout." %}
+
+
 I've created an online [Tripeaks Solver](https://tripeaks.73k.us/).
 
 This is based on the excellent work done by [IgniparousTempest on Github](https://github.com/IgniparousTempest/javascript-tri-peaks-solitaire-solver) — see [his demo here](https://igniparoustempest.github.io/tri-peaks-solitaire-solver/).

@@ -13,12 +13,12 @@ A couple years back I was into the idea of Lana Del Rey’s album “Ultraviolen
 
 Naturally I ended up writing some alternate lyrics. There’s only two; I never got around to doing “Buccaneer Baby” (for “Brooklyn Baby”). Anyway, I figured I should put them online for posterity…
 
-### Songs by Lana Del Arr, from the hit album “Ultrapirates”
+## Songs by Lana Del Arr, from the hit album “Ultrapirates”
 
 (credit to Katie​ for the title & artist)
 
-- [“Florida Cargo” (to the tune of “Florida Kilos”)](#floridacargo)
-- [“The Other Schooner” (to the tune of “The Other Woman”)](#otherschooner)
+- [“Florida Cargo” (to the tune of “Florida Kilos”)](#florida-cargo-to-the-tune-of-florida-kilos)
+- [“The Other Schooner” (to the tune of “The Other Woman”)](#the-other-schooner-to-the-tune-of-the-other-woman)
 
 ### “Florida Cargo” (to the tune of “Florida Kilos”)
 

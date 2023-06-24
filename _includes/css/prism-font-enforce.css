@@ -3,4 +3,5 @@ pre[class*=language-] {
 	font-family: var(--font-family-monospace) !important;
   font-size: 0.9em !important;
 	line-height: 1.375 !important; /* 22px /16 */
+  border-radius: var(--standard-border-radius);
 }

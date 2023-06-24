@@ -57,6 +57,9 @@ body {
   & > main {
     grid-area: main-t / content-l / main-b / content-r;
     margin-top: var(--layout-spacing);
+    & > h1:first-child {
+      margin-bottom: 0;
+    }
   }
 
   & > footer {
@@ -70,6 +73,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-headers);
   font-weight: 400;
+  margin-bottom: 0.5em;
+  & + p {
+    margin-top: 0;
+  }
 }
 :is(h1, h2, h3) {
   line-height: 1.2;
@@ -85,10 +92,12 @@ p {
   }
   footer & {
     border-top: 1px solid var(--border-color);
-    padding-top: 0.25em;
     font-size: 0.9rem;
     color: var(--text-muted);
   }
+}
+ul {
+  margin: 1em 0;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -248,13 +257,14 @@ h2 + .header-anchor {
 
 .links-nextprev {
   list-style: none;
-  border-top: 1px dashed var(--color-gray-20);
-  padding: 1em 0;
+  border-top: 1px dashed var(--border-color);
+  padding: 0.5em 0 0;
+  margin-top: 1.5em;
   color: var(--text-muted);
 }
 
 
-
+/* Code styling defaults */
 pre,
 code {
 	font-family: var(--font-family-monospace);
@@ -274,6 +284,7 @@ pre:not([class*="language-"]) {
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
+  border-radius: var(--standard-border-radius);
 }
 code {
   color: var(--text-color-code);
@@ -285,4 +296,48 @@ kbd {
   border-bottom: 3px solid var(--border-color);
   border-radius: var(--standard-border-radius);
   padding: 0.1rem 0.4rem;
+}
+
+
+/* Image scaling help */
+img, picture, video, canvas, svg {
+  object-fit: scale-down;
+}
+img.scale {
+  width: unset;
+  height: unset;
+  border-radius: var(--standard-border-radius);
+}
+img + em,
+picture + em {
+  font-size: smaller;
+  align-self: center;
+}
+
+
+
+/* Blockquotes */
+blockquote {
+	padding: 1rem 1.25rem;
+  color: var(--border-color);
+	background: var(--bquote-background-color);
+	border-left: 5px solid var(--bquote-border-color);
+  & *:first-child {
+    padding-top: 0;
+    margin-top: 0;
+  }
+  & *:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* hr in a blog post */
+main > p + hr {
+  border-top: 1px solid var(--border-color);
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  width: 50%;
+  margin: 0 auto;
 }

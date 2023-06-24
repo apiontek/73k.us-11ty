@@ -50,7 +50,9 @@
 
   --text-color-code: rgb(0, 90, 142);
 
-  --border-color: #555555;
+  --border-color: #777777;
+  --bquote-background-color: #BEBEBE;
+  --bquote-border-color: #AAAAAA;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -68,6 +70,8 @@
 
     --text-color-code: rgb(130, 170, 255);
 
-    --border-color: #AAAAAA;
+    --border-color: #888888;
+    --bquote-background-color: #111111;
+    --bquote-border-color: #222222;
 	}
 }
