@@ -7,7 +7,6 @@ tags:
   - "game"
   - "solitaire"
   - "solver"
-coverImage: "tripeaks-preview.png"
 ---
 
 {% image "./tripeaks-preview.png", "A preview of a tripeaks card game layout." %}

@@ -10,50 +10,29 @@ tags:
 
 Adapted from a few recipes around the internet, with adjustments to make it taste like something. It's quite good!
 
-![](images/Screenshot-2022-12-04-100205.png)
-
-_After looking up a bunch of recipes for white chicken chili, I tried to figure out why most of them seemed to employ_  
-_only the merest dusting of seasoning... or ranch dressing... to no avail._
+{% image "./Screenshot-2022-12-04-100205.png", "A preview of a tripeaks card game layout." %}
+_After looking up a bunch of recipes for white chicken chili, I tried to figure out why most of them seemed to employ only the merest dusting of seasoning... or ranch dressing... to no avail._
 
 #### Ingredients
 
 - 1/2 lb dried small white beans (Rancho Gordo's Alubia Blanca bean is very nice), soaked
-    
-
 - 2 T olive oil
-
 - 2 lbs boneless, skinless chicken thighs
-
 - 1 medium onion, small dice (save a little wedge for cooking the beans)
-
 - 2 fresh jalapeños, minced (keeping the seeds will increase the heat, but you do you)
-
 - 4 cloves garlic, minced (plus a clove for cooking the beans)
-
 - 2 t oregano
-
 - 2 t cumin
-
 - 2 cans green chiles
-
 - 5 c chicken broth (I use Better than Bouillon low-sodium chicken base + 5 c water)
-
 - Kosher salt
-
 - Freshly ground black pepper
-
 - Crushed red pepper flakes (optional)
-
 - 1 1/2 c frozen sweet corn
-
 - 1 lime
-
 - 1/2 c sour cream
-
 - 1 bunch cilantro, chopped
-
 - sharp Cheddar cheese, coarsely grated
-
 - Tortilla chips
 
 #### Preparation
