@@ -2,13 +2,17 @@
 layout: layouts/base.njk
 ---
 {# Only include the syntax highlighter CSS on blog posts #}
-{%- css %}{% include "node_modules/prism-themes/themes/prism-coldark-cold.css" %}{% endcss %}
-{# {%- css %}{% include "node_modules/prismjs/themes/prism-solarizedlight.css" %}{% endcss %} #}
-{%- css %}{% include "_includes/css/__part-dark-open.css" %}{%- endcss %}
-{%- css %}{% include "node_modules/prism-themes/themes/prism-night-owl.css" %}{% endcss %}
-{%- css %}{% include "_includes/css/__part-dark-close.css" %}{%- endcss %}
-{%- css %}{% include "_includes/css/prism-diff.css" %}{%- endcss %}
-{%- css %}{% include "_includes/css/prism-font-enforce.css" %}{%- endcss %}
+{%- css %}
+  @media (prefers-color-scheme: light) {
+  {% include "node_modules/prism-themes/themes/prism-coldark-cold.css" %}
+  }
+  @media (prefers-color-scheme: dark) {
+  {% include "node_modules/prism-themes/themes/prism-coldark-dark.css" %}
+  }
+  {% include "_includes/css/prism-diff.css" %}
+  {% include "_includes/css/prism-font-enforce.css" %}
+{% endcss %}
+{# {%- css %}{% include "node_modules/prism-themes/themes/prism-night-owl.css" %}{% endcss %} #}
 
 <h1>{{ title }}</h1>
 

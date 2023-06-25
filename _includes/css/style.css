@@ -8,15 +8,11 @@ body {
 html {
   overflow-y: scroll;
   background-color: var(--background-color);
-  background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="10000" height="10000"%3E%3Cpath shape-rendering="auto" stroke="transparent" stroke-width="20" fill="none" d="M -16878.548,10032 L 4516.143,55.492 A 144 144 0 0 1 4577 42 H 5423 A 16 16 0 0 0 5429.762 40.501 L 5585.241,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%2300769e" stroke-width="20" fill="none" d="M -16840.689,10032 L 4522.905,69.993 A 128 128 0 0 1 4577 58 H 5423 A 32 32 0 0 0 5436.524 55.002 L 5623.1,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%230295a7" stroke-width="20" fill="none" d="M -16802.83,10032 L 4529.667,84.494 A 112 112 0 0 1 4577 74 H 5423 A 48 48 0 0 0 5443.286 69.503 L 5660.959,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%2378baae" stroke-width="20" fill="none" d="M -16764.97,10032 L 4536.429,98.994 A 96 96 0 0 1 4577 90 H 5423 A 64 64 0 0 0 5450.048 84.004 L 5698.818,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%23ffedbf" stroke-width="20" fill="none" d="M -16727.111,10032 L 4543.191,113.495 A 80 80 0 0 1 4577 106 H 5423 A 80 80 0 0 0 5456.809 98.505 L 5736.678,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%23fdb36a" stroke-width="20" fill="none" d="M -16689.252,10032 L 4549.952,127.996 A 64 64 0 0 1 4577 122 H 5423 A 96 96 0 0 0 5463.571 113.006 L 5774.537,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%23ff751c" stroke-width="20" fill="none" d="M -16651.393,10032 L 4556.714,142.497 A 48 48 0 0 1 4577 138 H 5423 A 112 112 0 0 0 5470.333 127.506 L 5812.396,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="%23fe3e00" stroke-width="16" fill="none" d="M -16617.823,10032 L 4563.476,154.998 A 32 32 0 0 1 4577 152 H 5423 A 128 128 0 0 0 5477.095 140.007 L 5845.966,-32"%3E%3C/path%3E%3Cpath shape-rendering="auto" stroke="transparent" stroke-width="16" fill="none" d="M -16579.963,10032 L 4570.238,169.499 A 16 16 0 0 1 4577 168 H 5423 A 144 144 0 0 0 5483.857 154.508 L 5883.825,-32"%3E%3C/path%3E%3C/svg%3E');
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: 10000px 10000px;
 }
 body {
   display: grid;
   justify-content: center;
-  grid-template-columns: [body-l] 1fr [content-l] minmax(30ch, var(--layout-content-width)) [content-r] 1fr [body-r];
+  grid-template-columns: [body-l] 1fr [content-l] minmax(var(--content-minw), var(--content-maxw)) [content-r] 1fr [body-r];
   grid-template-rows:
     [body-t head-t] calc(var(--splash-buffer-size) + calc(var(--splash-line-count) * var(--splash-line-size)))
     [head-b main-t] auto

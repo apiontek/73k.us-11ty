@@ -239,7 +239,7 @@ window.onload = function () {
   let cssVarNames = [
     "--splash-buffer-size",
     "--splash-line-size",
-    "--splash-line-width",
+    "--splash-stroke-width",
     "--splash-line-start",
     "--splash-line-count",
     "--splash-tilt-degrees-start",
@@ -279,5 +279,5 @@ window.onload = function () {
     .replaceAll(`>`, `%3E`)}')`
   console.log(`CSS URL string for background-image: ${newHtmlBackgroundImage}`)
   // update the background image
-  html.style.backgroundImage = newHtmlBackgroundImage
+  // html.style.backgroundImage = newHtmlBackgroundImage
 }

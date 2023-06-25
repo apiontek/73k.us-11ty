@@ -1,35 +1,14 @@
 /* Defaults */
 :root {
-  --layout-content-width: 80ch;
   --layout-spacing: max(4vh, 2rem);
 
   --font-family: 'IBM Plex Sans', 'Open Sans', Roboto, 'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana, 'Verdana Ref', -apple-system, system-ui, sans-serif;
   --font-family-splash: 'Supercomputer', 'Cooper Black', 'Lazenby Computer', Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   --font-family-headers: 'Friz Quadrata Std', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-	--font-family-monospace: 'JetBrains Mono', Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+	--font-family-monospace: 'JetBrains Mono', 'Cascadia Code', Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 
   --syntax-tab-size: 2;
   --standard-border-radius: 5px;
-
-  --splash-buffer-size: 48px;
-  --splash-line-size: 16px;
-  --splash-line-width: 16px;
-  --splash-line-start: 1;
-  --splash-line-count: 7;
-  --splash-tilt-degrees-start: 25;
-  --splash-tilt-degrees-end: 25;
-  --splash-shape-rendering: auto;
-
-  --splash-c0: rgba(0,30,90,1);
-  --splash-c1: rgba(0,118,158,1);
-  --splash-c2: rgba(2,149,167,1);
-  --splash-c3: rgba(120,186,174,1);
-  --splash-c4: rgba(255,237,191,1);
-  --splash-c5: rgba(253,179,106,1);
-  --splash-c6: rgba(255,117,28,1);
-  --splash-c7: rgba(254,62,0,1);
-  --splash-c8: rgb(136, 68, 36);
-  --splash-c9: transparent;
 }
 
 
