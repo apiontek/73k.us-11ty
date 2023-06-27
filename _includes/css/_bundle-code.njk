@@ -1,4 +1,4 @@
-{%- css %}
+{%- css "defer" %}
   @media (prefers-color-scheme: light) {
   {% include "node_modules/prism-theme-night-owl/build/light-no-italics.css" %}
   }
@@ -6,5 +6,5 @@
   {% include "node_modules/prism-theme-night-owl/build/no-italics.css" %}
   }
   {% include "_includes/css/prism-diff.css" %}
-  {% include "_includes/css/prism-font-enforce.css" %}
+  {# {% include "_includes/css/prism-font-enforce.css" %} #}
 {% endcss %}

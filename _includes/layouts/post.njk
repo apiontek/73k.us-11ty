@@ -1,8 +1,10 @@
 ---
 layout: layouts/base.njk
 ---
-{# Only include the syntax highlighter CSS on blog posts #}
+{# Only include certain (code, other) CSS on blog posts #}
 {% include "_includes/css/_bundle-code.njk" %}
+{%- css "defer" %}{% include "_includes/css/style-post.css" %}{% endcss %}
+
 
 <h1>{{ title }}</h1>
 
