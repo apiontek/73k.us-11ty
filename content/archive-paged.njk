@@ -1,0 +1,33 @@
+---
+layout: layouts/home.njk
+title: Blog Archive
+pagination:
+  data: collections.posts
+  size: 10
+  reverse: true
+  alias: posts
+permalink: /blog/page/{{ (pagination.pageNumber + 1) | slugify }}/
+---
+
+{% set postsCount = collections.posts | length %}
+{% set postslistCounter = postsCount - (pagination.pageNumber * pagination.size) %}
+
+<h1>Archive</h1>
+
+{% set postslist = posts %}
+{% include "postslist.njk" %}
+
+<nav class="pagination">
+  <ol>
+    {% if pagination.href.previous %}
+      {% if pagination.pageNumber === 1 %}
+        <li style="float: left;"><a href="/blog">&larr; Newer Posts</a></li>
+      {% else %}
+        <li style="float: left;"><a href="{{pagination.href.previous}}">&larr; Newer Posts</a></li>
+      {% endif %}
+    {% endif %}
+    {% if pagination.href.next %}
+      <li style="float: right;"><a href="{{pagination.href.next}}">Older Posts &rarr;</a></li>
+    {% endif %}
+  </ol>
+</nav>

@@ -115,13 +115,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("getAllTags", (collection) => {
     let tagSet = new Set()
     for (let item of collection) {
-      ;(item.data.tags || []).forEach((tag) => tagSet.add(tag))
+      (item.data.tags || []).forEach((tag) => tagSet.add(tag))
     }
-    return Array.from(tagSet)
+    let tagArr = Array.from(tagSet).map(t => {
+      let subGroup = collection.filter(item => item.data.tags.includes(t))
+      return {name: t, count: subGroup.length}
+    })
+    tagArr.sort((a, b) => { return b.count - a.count })
+    return tagArr
   })
 
   eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-    return (tags || []).filter((tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1)
+    return (tags || []).filter((tag) => ["all", "nav", "post", "posts"].indexOf(tag.name) === -1)
   })
 
   // Customize Markdown library settings:

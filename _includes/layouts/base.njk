@@ -27,8 +27,6 @@
 
 		{#- Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
 		<style>{% getBundle "css" %}</style>
-		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
-		<link rel="stylesheet" href="{% getBundleFileUrl "css", "defer" %}">
 
 	</head>
 	<body>
@@ -54,7 +52,7 @@
 			{{ content | safe }}
 		</main>
 
-		<footer><p>&copy; {% year %} Adam Piontek ... how about {{ splash73k.opts.headMaxW }}</p></footer>
+		<footer><p>&copy; {% year %} Adam Piontek</p></footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 	</body>
