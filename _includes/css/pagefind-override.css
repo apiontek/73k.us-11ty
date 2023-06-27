@@ -1,0 +1,32 @@
+:root {
+  --pagefind-ui-primary: var(--text-color) !important;
+  --pagefind-ui-text: var(--text-color) !important;
+  --pagefind-ui-background: var(--bquote-background-color) !important;
+  --pagefind-ui-border: var(--bquote-border-color) !important;
+  --pagefind-ui-tag: #152028;
+}
+.pagefind-ui--reset :where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  color: var(--text-color) !important;
+  font-family: var(--font-family) !important;
+}
+html#html73k body main#skip div#search.search div.pagefind-ui.pagefind-ui--reset form.pagefind-ui__form div.pagefind-ui__drawer div.pagefind-ui__results-area ol.pagefind-ui__results li.pagefind-ui__result div.pagefind-ui__result-inner p.pagefind-ui__result-title a.pagefind-ui__result-link {
+  font-family: var(--font-family-headers) !important;
+  font-size: larger !important;
+  font-weight: 400 !important;
+  color: var(--text-color-link) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--text-color-link-decoration) !important;
+  &:visited {
+    color: var(--text-color-link-visited) !important;
+    text-decoration-color: var(--text-color-link-visited-decoration) !important;
+    header#head73k > nav & {
+      color: var(--text-color-link) !important;
+      text-decoration-color: var(--text-color-link-decoration) !important;
+    }
+  }
+  &:hover,
+  &:active {
+    color: var(--text-color-link-active) !important;
+    text-decoration-color: var(--text-color-link-active-decoration) !important;
+  }
+}

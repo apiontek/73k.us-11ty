@@ -1,6 +1,8 @@
 const { DateTime } = require("luxon")
 const markdownItAnchor = require("markdown-it-anchor")
 
+const { execSync } = require('child_process')
+
 const pluginRss = require("@11ty/eleventy-plugin-rss")
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const pluginBundle = require("@11ty/eleventy-plugin-bundle")
@@ -18,7 +20,7 @@ const pluginDrafts = require("./eleventy.config.drafts.js")
 const pluginImages = require("./eleventy.config.images.js")
 
 // extra environment data for eleventy
-const env = require("./_data/env");
+const env = require("./_data/env")
 
 module.exports = function (eleventyConfig) {
   // 2023-06-18 apiontek - also using this in winstats html
@@ -115,13 +117,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("getAllTags", (collection) => {
     let tagSet = new Set()
     for (let item of collection) {
-      (item.data.tags || []).forEach((tag) => tagSet.add(tag))
+      ;(item.data.tags || []).forEach((tag) => tagSet.add(tag))
     }
-    let tagArr = Array.from(tagSet).map(t => {
-      let subGroup = collection.filter(item => item.data.tags.includes(t))
-      return {name: t, count: subGroup.length}
+    let tagArr = Array.from(tagSet).map((t) => {
+      let subGroup = collection.filter((item) => item.data.tags.includes(t))
+      return { name: t, count: subGroup.length }
     })
-    tagArr.sort((a, b) => { return b.count - a.count })
+    tagArr.sort((a, b) => {
+      return b.count - a.count
+    })
     return tagArr
   })
 
@@ -152,6 +156,10 @@ module.exports = function (eleventyConfig) {
   // eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
   eleventyConfig.setServerOptions({ showAllHosts: true })
+
+  eleventyConfig.on('eleventy.after', () => {
+    execSync(`npx pagefind --source _site --glob \"**/*.html\"`, { encoding: 'utf-8' })
+  })
 
   return {
     // Control which files Eleventy will process

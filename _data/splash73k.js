@@ -18,8 +18,8 @@ const opts = {
     "rgba(253,179,106,1)",
     "rgba(255,117,28,1)",
     "rgba(254,62,0,1)",
-    "rgba(136, 68, 36,1)"
-  ]
+    "rgba(136, 68, 36,1)",
+  ],
 }
 
 // calculate tangent value from degrees
@@ -147,7 +147,9 @@ function getSvg() {
     pathString += `L ${roundTo3(arcLeftStartX)},${roundTo3(arcLeftStartY)} `
     pathString += `A ${arcLeftRad} ${arcLeftRad} 0 0 1 ${mainStartX} ${mainY} `
     pathString += `H ${mainEndX} `
-    pathString += `A ${arcRightRad} ${arcRightRad} 0 0 0 ${roundTo3(arcRightEndX)} ${roundTo3(arcRightEndY)} `
+    pathString += `A ${arcRightRad} ${arcRightRad} 0 0 0 ${roundTo3(arcRightEndX)} ${roundTo3(
+      arcRightEndY
+    )} `
     pathString += `L ${roundTo3(endX)},${endY}`
     // console.log(pathString)
     let svgPart = `<path`
@@ -174,9 +176,9 @@ function getSvg() {
   }
 
   // return complete SVG string
-  return svgParts += `</svg>`
+  return (svgParts += `</svg>`)
 }
 
 let svg = getSvg()
 
-module.exports = { opts, svg };
+module.exports = { opts, svg }

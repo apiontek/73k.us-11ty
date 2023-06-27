@@ -175,7 +175,9 @@ function getSvg({
     pathString += `L ${roundTo3(arcLeftStartX)},${roundTo3(arcLeftStartY)} `
     pathString += `A ${arcLeftRad} ${arcLeftRad} 0 0 1 ${mainStartX} ${mainY} `
     pathString += `H ${mainEndX} `
-    pathString += `A ${arcRightRad} ${arcRightRad} 0 0 0 ${roundTo3(arcRightEndX)} ${roundTo3(arcRightEndY)} `
+    pathString += `A ${arcRightRad} ${arcRightRad} 0 0 0 ${roundTo3(arcRightEndX)} ${roundTo3(
+      arcRightEndY
+    )} `
     pathString += `L ${roundTo3(endX)},${endY}`
     // console.log(pathString)
     let svgPath = document.createElementNS(xmlns, "path")

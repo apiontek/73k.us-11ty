@@ -2,8 +2,9 @@
 layout: layouts/home.njk
 eleventyNavigation:
   key: Archive
-  order: 2
+  order: 3
 numberOfLatestPostsToShow: 10
+title: Archive
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}

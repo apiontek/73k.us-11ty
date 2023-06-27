@@ -346,7 +346,7 @@ blockquote {
 }
 
 /* hr in a blog post */
-main > p + hr {
+article > p + hr {
   border-top: 1px solid var(--border-color);
   border-bottom: none;
   border-left: none;
