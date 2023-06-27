@@ -27,7 +27,7 @@
 
   --text-head-link: rgba(56, 46, 34, 1);
 
-  --text-color-code: rgb(0, 90, 142);
+  --text-color-code: rgb(64, 126, 231);
 
   --border-color: #777777;
   --bquote-background-color: #BEBEBE;
@@ -47,7 +47,7 @@
 		--text-color-link-visited: #FF55FF;
 		--text-color-link-visited-decoration: #00AAAA;
 
-    --text-color-code: rgb(130, 170, 255);
+    --text-color-code: rgb(64, 126, 231);
 
     --border-color: #888888;
     --bquote-background-color: #111111;

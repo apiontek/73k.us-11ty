@@ -10,7 +10,7 @@ tags:
 
 Adapted from a few recipes around the internet, with adjustments to make it taste like something. It's quite good!
 
-{% image "./Screenshot-2022-12-04-100205.png", "A preview of a tripeaks card game layout." %}
+{% image "./Screenshot-2022-12-04-100205.png", "A screenshot of a google search for 'white chicken chili' 'white people' with very few results." %}
 _After looking up a bunch of recipes for white chicken chili, I tried to figure out why most of them seemed to employ only the merest dusting of seasoning... or ranch dressing... to no avail._
 
 #### Ingredients
