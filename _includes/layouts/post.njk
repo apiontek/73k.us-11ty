@@ -2,16 +2,7 @@
 layout: layouts/base.njk
 ---
 {# Only include the syntax highlighter CSS on blog posts #}
-{%- css %}
-  @media (prefers-color-scheme: light) {
-  {% include "node_modules/prism-theme-night-owl/build/light-no-italics.css" %}
-  }
-  @media (prefers-color-scheme: dark) {
-  {% include "node_modules/prism-theme-night-owl/build/no-italics.css" %}
-  }
-  {% include "_includes/css/prism-diff.css" %}
-  {% include "_includes/css/prism-font-enforce.css" %}
-{% endcss %}
+{% include "_includes/css/_bundle-code.njk" %}
 
 <h1>{{ title }}</h1>
 

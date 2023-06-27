@@ -15,42 +15,15 @@
 
     {# Fonts, with preconnect for criticality #}
     <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/supercomputer" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/ibm-plex-sans" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/friz-quadrata-std" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/supercomputer" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet">
-
+    {# OK to load code font later #}
+    <link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet"></noscript>
 
 		{#- Bundling CSS, default bundle #}
-		{%- css %}
-      {% include "_includes/css/_css-reset.css" %}
-      {# Variables related to splash73k background #}
-      :root {
-        --content-minw: 303px;
-        --content-maxw: {{ splash73k.opts.headMaxW }}px;
-        --splash-buffer-size: {{ splash73k.opts.bufferSize }}px;
-        --splash-line-size: {{ splash73k.opts.lineSize }}px;
-        --splash-stroke-width: {{ splash73k.opts.strokeWidth }}px;
-        --splash-line-start: {{ splash73k.opts.lineStart }};
-        --splash-line-count: {{ splash73k.opts.lineCount }};
-        --splash-tilt-degrees-start: {{ splash73k.opts.tiltDegreesStart }};
-        --splash-tilt-degrees-end: {{ splash73k.opts.tiltDegreesEnd }};
-        --splash-shape-rendering: {{ splash73k.opts.shapeRendering }};
-        {% for color in splash73k.opts.colors %}
-        --splash-c{{ loop.index0 }}: {{ color }};
-        {% endfor %}
-      }
-      html {
-        background-image: url('data:image/svg+xml;utf8,{{ splash73k.svg | safe }}');
-        background-position: top center;
-        background-repeat: no-repeat;
-        background-size: {{ splash73k.opts.svgSize }}px {{ splash73k.opts.svgSize }}px;
-      }
-      {# Remainder of 73k CSS variables #}
-      {% include "_includes/css/_variables.css" %}
-      {# {% include "_includes/css/index.css" %} #}
-      {% include "_includes/css/style.css" %}
-    {% endcss %}
+    {% include "_includes/css/_bundle-base.njk" %}
 
 		{#- Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
 		<style>{% getBundle "css" %}</style>
