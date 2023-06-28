@@ -7,7 +7,7 @@ numberOfLatestPostsToShow: 3
 ---
 
 <h1>Welcome</h1>
-<p>I’m Adam Piontek, and this is my website. I live and work in New York. Sometimes I post here. You can read a little more <a href="/about">about</a> me.</p>
+<p>I’m Adam Piontek, and this is my website. Sometimes I post here. You can read a little more <a href="/about">about</a> me, and find me on <a href="https://kolektiva.social/@adampiontek">Mastodon</a>, <a href="https://twitter.com/adampiontek">Twitter</a>, <a href="https://github.com/apiontek/">Github</a> and <a href="/about">more&hellip;</a></p>
 
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
@@ -19,5 +19,5 @@ numberOfLatestPostsToShow: 3
 
 {% set morePosts = postsCount - numberOfLatestPostsToShow %}
 {% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
+<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the blog</a>.</p>
 {% endif %}

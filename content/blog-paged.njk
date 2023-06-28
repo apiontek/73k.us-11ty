@@ -1,6 +1,6 @@
 ---
 layout: layouts/home.njk
-title: Archive
+title: Blog
 pagination:
   data: collections.posts
   size: 10
@@ -12,13 +12,13 @@ permalink: /blog/page/{{ (pagination.pageNumber + 1) | slugify }}/
 {% set postsCount = collections.posts | length %}
 {% set postslistCounter = postsCount - (pagination.pageNumber * pagination.size) %}
 
-<h1>Archive</h1>
+<h1>Blog</h1>
 
 {% set postslist = posts %}
 {% include "postslist.njk" %}
 
 <nav class="pagination">
-  <ol>
+  <ul>
     {% if pagination.href.previous %}
       {% if pagination.pageNumber === 1 %}
         <li style="float: left;"><a href="/blog">&larr; Newer Posts</a></li>
@@ -29,5 +29,5 @@ permalink: /blog/page/{{ (pagination.pageNumber + 1) | slugify }}/
     {% if pagination.href.next %}
       <li style="float: right;"><a href="{{pagination.href.next}}">Older Posts &rarr;</a></li>
     {% endif %}
-  </ol>
+  </ul>
 </nav>

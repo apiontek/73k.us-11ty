@@ -1,7 +1,7 @@
 const { DateTime } = require("luxon")
 const markdownItAnchor = require("markdown-it-anchor")
 
-const { execSync } = require('child_process')
+const { execSync } = require("child_process")
 
 const pluginRss = require("@11ty/eleventy-plugin-rss")
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
@@ -130,7 +130,16 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-    return (tags || []).filter((tag) => ["all", "nav", "post", "posts"].indexOf(tag.name) === -1)
+    if (tags.length > 0) {
+      if (tags[0])
+      if (typeof tags[0] === 'string' || tags[0] instanceof String) {
+        return (tags || []).filter((tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1)
+      } else {
+        return (tags || []).filter((tag) => ["all", "nav", "post", "posts"].indexOf(tag.name) === -1)
+      }
+    } else {
+      return []
+    }
   })
 
   // Customize Markdown library settings:
@@ -157,8 +166,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setServerOptions({ showAllHosts: true })
 
-  eleventyConfig.on('eleventy.after', () => {
-    execSync(`npx pagefind --source _site --glob \"**/*.html\"`, { encoding: 'utf-8' })
+  eleventyConfig.on("eleventy.after", () => {
+    execSync(`npx pagefind --source _site --glob "**/*.html"`, { encoding: "utf-8" })
   })
 
   return {

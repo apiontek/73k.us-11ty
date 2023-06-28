@@ -7,28 +7,31 @@ body {
 }
 html {
   overflow-y: scroll;
+  overflow-x: hidden;
   background-color: var(--background-color);
 }
 body {
   display: grid;
+  gap: 0;
   justify-content: center;
   grid-template-columns: [body-l] 1fr [content-l] minmax(var(--content-minw), var(--content-maxw)) [content-r] 1fr [body-r];
   grid-template-rows:
     [body-t head-t] calc(var(--splash-buffer-size) + calc(var(--splash-line-count) * var(--splash-line-size)))
     [head-b main-t] auto
-    [main-b foot-t] max-content
+    [main-b foot-t] min-content
     [foot-b body-b];
   width: 100vw;
-  padding-bottom: 1rem;
+  height: 100vh;
 
   & > header,
   & > main,
   & > footer {
-    padding: 0 1em;
+    padding: 0 1rem;
   }
   & > header {
     grid-area: head-t / content-l / head-b / content-r;
     display: grid;
+    gap: 0;
     grid-template-columns: [content-l] auto [content-r];
     grid-template-rows:
       [head-t nav-t] var(--splash-buffer-size)
@@ -59,8 +62,24 @@ body {
 
   & > footer {
     grid-area: foot-t / content-l / foot-b / content-r;
-    margin-top: auto;
-    padding-top: var(--layout-spacing);
+    margin-top: var(--layout-spacing);
+    padding-bottom: 1rem;
+    & > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      color: var(--text-muted);
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9rem;
+      & p {
+        margin: 0;
+        &:last-child {
+          font-size: 1.1rem;
+        }
+      }
+    }
   }
 
 }
@@ -79,15 +98,13 @@ h1, h2, h3, h4, h5, h6 {
 :is(h2, h3):not(:first-child) {
   margin-top: 2em;
 }
+:is(h1, h2, h3):first-child {
+  margin-bottom: 0.25em;
+}
 p {
   margin: 1em 0;
   &:last-child {
     margin-bottom: 0;
-  }
-  footer & {
-    border-top: 1px solid var(--border-color);
-    font-size: 0.9rem;
-    color: var(--text-muted);
   }
 }
 ul {
@@ -216,7 +233,7 @@ a[href] {
   gap: .5em;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0.5em 0;
   color: var(--text-muted);
 }
 .post-metadata time {
@@ -316,14 +333,22 @@ picture + em {
   font-size: smaller;
   align-self: center;
 }
+picture + picture, video + video, canvas + canvas {
+  margin-top: 1em;
+}
 
 
 /* Blockquotes */
 blockquote {
 	padding: 1rem 1.25rem;
-  color: var(--border-color);
+  color: var(--bquote-color);
 	background: var(--bquote-background-color);
 	border-left: 5px solid var(--bquote-border-color);
+  h1 + &,
+  h2 + &,
+  h3 + & {
+    margin: 0.5em 0 0 0;
+  }
   & *:first-child {
     padding-top: 0;
     margin-top: 0;
@@ -362,29 +387,16 @@ article > p + hr {
 /* Blog post archive pagination */
 .pagination {
   border-top: 1px dashed var(--border-color);
-  padding: 0.5em 0 0;
+  padding: 0;
   background-color: transparent;
   margin-top: 2em;
-  & ol {
-    /* display: flex; */
+  & ul {
+    margin-top: 0.5em;
     list-style: none;
     padding: 0;
-     /* to match "a" padding below */
     color: var(--text-muted);
-    /* & :nth-child(1) {
-      margin-left: 1em;
-      margin-right: auto;
-    }
-    & :nth-child(2) {
-      margin-left: auto;
-      margin-right: 1em;
-    } */
   }
-  & a {
-    /* border: 1px solid var(--border-color); */
-    /* border-radius: 0.5rem; */
-    /* padding: 0.5rem; */
-    /* text-decoration: none; */
+  & a[href] {
     color: var(--text-muted);
     &:visited {
       color: var(--text-muted);
@@ -404,4 +416,35 @@ ul.taglist {
   columns: 2;
   -webkit-columns: 2;
   -moz-columns: 2;
+}
+
+
+
+/* SVG icon system per https://mcraiganthony.github.io/svg-icons/ */
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1.2em;
+  line-height: 1.2em;
+  position: relative;
+  top: -1px;
+  vertical-align: middle;
+  width: 1.2em;
+  & path {
+    fill: currentColor;
+    stroke: currentColor;
+  }
+}
+footer a[href] {
+  color: var(--text-muted);
+  text-decoration-color: var(--text-muted);
+  &:visited {
+    color: var(--text-muted);
+    text-decoration-color: var(--text-muted);
+  }
+  &:hover,
+  &:active {
+    color: var(--text-color);
+    text-decoration-color: var(--text-color-link-active-decoration);
+  }  
 }

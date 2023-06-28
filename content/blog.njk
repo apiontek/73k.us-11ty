@@ -1,20 +1,21 @@
 ---
 layout: layouts/home.njk
 eleventyNavigation:
-  key: Archive
+  key: Blog
   order: 3
 numberOfLatestPostsToShow: 10
-title: Archive
+title: Blog
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Archive</h1>
+
+<h1>Blog</h1>
 
 {% set postslist = collections.posts | reverse | head(numberOfLatestPostsToShow) %}
 {% include "postslist.njk" %}
 
 <nav class="pagination">
-  <ol>
+  <ul>
     <li style="float: right;"><a href="/blog/page/2">Older Posts &rarr;</a></li>
-  </ol>
+  </ul>
 </nav>

@@ -30,6 +30,7 @@
   --text-color-code: rgb(64, 126, 231);
 
   --border-color: #777777;
+  --bquote-color: #555555;
   --bquote-background-color: #BEBEBE;
   --bquote-border-color: #AAAAAA;
 }
@@ -50,6 +51,7 @@
     --text-color-code: rgb(64, 126, 231);
 
     --border-color: #888888;
+    --bquote-color: #999999;
     --bquote-background-color: #111111;
     --bquote-border-color: #222222;
 	}

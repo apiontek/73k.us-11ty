@@ -6,11 +6,14 @@
 		<title>{{ metadata.title }}{% if title %} · {{ title }}{% endif %}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
 
-    {# favicons generated at favicon.io #}
+    {# favicons generated at https://realfavicongenerator.net/ #}
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff751c">
+    <meta name="msapplication-TileColor" content="#ff751c">
+    <meta name="theme-color" content="#382e22">
 
 		{#- Atom and JSON feeds included by default #}
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
@@ -41,6 +44,9 @@
 	</head>
 	<body>
 
+    {# SVG asset bucket as sprite list #}
+    {% include "_includes/layouts/svg-sprites.njk" %}
+
 		<a href="#skip" class="visually-hidden skip-to-main">Skip to main content</a>
 
 		<header id="head73k">
@@ -62,7 +68,17 @@
 			{{ content | safe }}
 		</main>
 
-		<footer><p>&copy; {% year %} Adam Piontek</p></footer>
+		<footer>
+      <div>
+        <p>&copy; {% year %} <a href="/">Adam Piontek</a></p>
+        <p>
+          <a href="/DF185CEE29A3D443_public_key.asc"><svg class="icon"><use xlink:href="#key-variant"></use></svg></a>
+          <a href="https://kolektiva.social/@adampiontek"><svg class="icon"><use xlink:href="#mastodon"></use></svg></a>
+          <a href="https://twitter.com/adampiontek"><svg class="icon"><use xlink:href="#twitter"></use></svg></a>
+          <a href="/feed/feed.xml"><svg class="icon"><use xlink:href="#feed-rss"></use></svg></a>
+        </p>
+      </div>
+    </footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 	</body>
