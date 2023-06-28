@@ -132,11 +132,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
     if (tags.length > 0) {
       if (tags[0])
-      if (typeof tags[0] === 'string' || tags[0] instanceof String) {
-        return (tags || []).filter((tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1)
-      } else {
-        return (tags || []).filter((tag) => ["all", "nav", "post", "posts"].indexOf(tag.name) === -1)
-      }
+        if (typeof tags[0] === "string" || tags[0] instanceof String) {
+          return (tags || []).filter((tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1)
+        } else {
+          return (tags || []).filter(
+            (tag) => ["all", "nav", "post", "posts"].indexOf(tag.name) === -1
+          )
+        }
     } else {
       return []
     }
