@@ -1,0 +1,18 @@
+[
+  {
+    "href": "/feed/feed.xml",
+    "icon": "feed-rss"
+  },
+  {
+    "href": "https://twitter.com/adampiontek",
+    "icon": "twitter"
+  },
+  {
+    "href": "https://kolektiva.social/@adampiontek",
+    "icon": "mastodon"
+  },
+  {
+    "href": "/DF185CEE29A3D443_public_key.asc",
+    "icon": "key-variant"
+  }
+]
