@@ -1,7 +1,7 @@
 {
-  "name": "eleventy-base-blog",
-  "version": "8.0.0",
-  "description": "A starter repository for a blog web site using the Eleventy site generator.",
+  "name": "73k.us-11ty",
+  "version": "1.0.0",
+  "description": "73k.us, personal website of Adam Piontek, made with 11ty",
   "scripts": {
     "clean": "npx del-cli -f _site",
     "serve": "cross-env ELEVENTY_ENV=dev npx @11ty/eleventy --serve --quiet",
@@ -29,22 +29,18 @@
     "url": "git://github.com/11ty/eleventy-base-blog.git"
   },
   "author": {
-    "name": "Zach Leatherman",
-    "email": "zachleatherman@gmail.com",
-    "url": "https://zachleat.com/"
+    "name": "Adam Piontek",
+    "email": "adam@73k.us",
+    "url": "https://73k.us/"
   },
-  "license": "MIT",
+  "license": "CC BY-NC-SA 4.0",
   "engines": {
-    "node": ">=14"
-  },
-  "funding": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/11ty"
+    "node": ">=20"
   },
   "bugs": {
-    "url": "https://github.com/11ty/eleventy-base-blog/issues"
+    "url": "https://git.73k.us/adam/73k.us-11ty/issues"
   },
-  "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+  "homepage": "https://git.73k.us/adam/73k.us-11ty#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^3.1.0",
