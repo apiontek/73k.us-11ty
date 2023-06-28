@@ -16,20 +16,15 @@
   - [X] ~~*style next/prev*~~ [2023-06-23]
   - [X] ~~*code style*~~ [2023-06-23]
   - [X] ~~*images: make them work right*~~ [2023-06-24]
-- [ ] Shadow post
+- [X] ~~*generate SVG from js into CSS at build-time*~~ [2023-06-28]
+- [X] ~~*Shadow post*~~ [2023-06-28]
+- [X] ~~*bundler svg icons...*~~ [2023-06-28]
 - [ ] Kat video
   - [ ] Kat pictures & retrospective
-- [ ] move to hartnell for further dev
-  - [ ] REAL mobile preview .... everything OK?
-  - [ ] background svg on mobile?
-    - [ ] css background-size to scale down the SVG & header? mobile media query?
+- [X] ~~*move to hartnell for further dev*~~ [2023-06-28]
+  - [X] ~~*REAL mobile preview .... everything OK?*~~ [2023-06-28]
 - [ ] Casio post!
 - [ ] CSS change:
-  - [ ] move from bundler to renderer?
-    - so I can use variables / templating
-    - so the SVG can be generated automatically by eleventy js function
-    - lightning css? ensure nesting works ... importing? one file?
-    - also do separate js and a page for modifying the width & background on the fly?
-- [ ] critical css / non-critical css?
-- [ ] bundler can do html / svg ... for svg icons, do i want to use any?
+  - lightning css? ensure nesting works ... importing? one file?
+  - also do separate js and a page for modifying the width & background on the fly?
 - [ ] start bringing in old content from wayback machine?
