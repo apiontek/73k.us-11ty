@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/11ty/eleventy-base-blog.git"
+    "url": "git@github.com:apiontek/73k.us-11ty.git"
   },
   "author": {
     "name": "Adam Piontek",
@@ -38,9 +38,9 @@
     "node": ">=20"
   },
   "bugs": {
-    "url": "https://git.73k.us/adam/73k.us-11ty/issues"
+    "url": "https://github.com/apiontek/73k.us-11ty/issues"
   },
-  "homepage": "https://git.73k.us/adam/73k.us-11ty#readme",
+  "homepage": "https://github.com/apiontek/73k.us-11ty#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^3.1.0",
