@@ -1,18 +1,22 @@
 [
   {
     "href": "/feed/feed.xml",
-    "icon": "feed-rss"
+    "icon": "mi-rss",
+    "alt": "Atom RSS feed for this site"
   },
   {
     "href": "https://twitter.com/adampiontek",
-    "icon": "twitter"
+    "icon": "mi-twitter",
+    "alt": "Adam Piontek's Twitter profile'"
   },
   {
     "href": "https://kolektiva.social/@adampiontek",
-    "icon": "mastodon"
+    "icon": "mi-mastodon",
+    "alt": "Adam Piontek on Mastodon"
   },
   {
     "href": "/DF185CEE29A3D443_public_key.asc",
-    "icon": "key-variant"
+    "icon": "mi-key-variant",
+    "alt": "Adam Piontek's GPG pulbic key"
   }
 ]

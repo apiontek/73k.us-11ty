@@ -58,6 +58,9 @@
     <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
     {% endif %}
 
+    {# Google's dark mode toggle module, TODO: REMOVE #}
+    {# <script type="module" src="https://googlechromelabs.github.io/dark-mode-toggle/src/dark-mode-toggle.mjs"></script> #}
+
 	</head>
 	<body>
 
@@ -82,6 +85,10 @@
 		</header>
 
 		<main id="skip">
+
+      {# Google's dark mode toggle module, TODO: REMOVE #}
+      {# <dark-mode-toggle id="dark-mode-toggle-1" appearance="toggle" permanent="false"></dark-mode-toggle> #}
+
 			{{ content | safe }}
 		</main>
 
@@ -90,7 +97,7 @@
         <p>&copy; {% year %} <a href="/">Adam Piontek</a></p>
         <p>
           {%- for social in socials %}
-          <a href="{{ social.href }}"><svg class="icon"><use xlink:href="#{{ social.icon }}"></use></svg></a>
+          <a href="{{ social.href }}" aria-label="{{ social.alt }}" title="{{ social.alt }}"><svg class="icon"><use xlink:href="#{{ social.icon }}"></use></svg></a>
           {%- endfor %}
         </p>
       </div>
