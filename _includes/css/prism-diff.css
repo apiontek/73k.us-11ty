@@ -17,10 +17,10 @@ pre[class*="language-diff-"] {
 }
 @media (prefers-color-scheme: dark) {
   .token.deleted {
-    background-color: hsl(0, 51%, 37%);
+    background-color: #8e2e2e;
   }
   .token.inserted {
-    background-color: hsl(126, 31%, 39%);
+    background-color: #45824b;
   }
 }
 

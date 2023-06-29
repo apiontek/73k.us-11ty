@@ -10,15 +10,15 @@ const opts = {
   tiltDegreesEnd: 25,
   shapeRendering: "geometricPrecision", // use 'crispEdges' to disable anti-aliasing
   colors: [
-    "rgba(0,30,90,1)",
-    "rgba(0,118,158,1)",
-    "rgba(2,149,167,1)",
-    "rgba(120,186,174,1)",
-    "rgba(255,237,191,1)",
-    "rgba(253,179,106,1)",
-    "rgba(255,117,28,1)",
-    "rgba(254,62,0,1)",
-    "rgba(136, 68, 36,1)",
+    "#001E5A",
+    "#00769E",
+    "#0295A7",
+    "#78BAAE",
+    "#FFEDBF",
+    "#FDB36A",
+    "#FF751C",
+    "#FE3E00",
+    "#884424",
   ],
 }
 
@@ -176,7 +176,7 @@ function getSvg() {
   }
 
   // return complete SVG string
-  return (svgParts += `</svg>`)
+  return (svgParts += `</svg>`).replaceAll(`#`,`%23`)
 }
 
 let svg = getSvg()

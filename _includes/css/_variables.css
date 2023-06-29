@@ -7,6 +7,9 @@
   --font-family-headers: 'Friz Quadrata Std', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 	--font-family-monospace: 'JetBrains Mono', 'Cascadia Code', Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 
+  --text-head-link: #382E22;
+  --text-color-code: #407EE7;
+
   --syntax-tab-size: 2;
   --standard-border-radius: 5px;
 }
@@ -24,10 +27,6 @@
   --text-color-link-active-decoration: #AA00AA;
   --text-color-link-visited: #AA00AA;
   --text-color-link-visited-decoration: #00AA00;
-
-  --text-head-link: rgba(56, 46, 34, 1);
-
-  --text-color-code: rgb(64, 126, 231);
 
   --border-color: #777777;
   --bquote-color: #555555;
@@ -47,8 +46,6 @@
 		--text-color-link-active-decoration: #FF55FF;
 		--text-color-link-visited: #FF55FF;
 		--text-color-link-visited-decoration: #00AAAA;
-
-    --text-color-code: rgb(64, 126, 231);
 
     --border-color: #888888;
     --bquote-color: #999999;
