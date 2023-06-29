@@ -6,8 +6,8 @@ const { execSync } = require("child_process")
 const pluginRss = require("@11ty/eleventy-plugin-rss")
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const pluginBundle = require("@11ty/eleventy-plugin-bundle")
-const browserslist = require("browserslist");
-const { browserslistToTargets, transform } = require("lightningcss");
+const browserslist = require("browserslist")
+const { browserslistToTargets, transform } = require("lightningcss")
 const esbuild = require("esbuild")
 
 const pluginNavigation = require("@11ty/eleventy-navigation")
@@ -20,7 +20,7 @@ const pluginImages = require("./eleventy.config.images.js")
 const env = require("./_data/env")
 
 // browser targets for lightningcss
-const targets = browserslistToTargets(browserslist("> 0.2% and not dead"));
+const targets = browserslistToTargets(browserslist("> 0.2% and not dead"))
 
 module.exports = function (eleventyConfig) {
   // 2023-06-18 apiontek - also using this in winstats html

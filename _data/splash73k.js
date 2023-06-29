@@ -176,7 +176,7 @@ function getSvg() {
   }
 
   // return complete SVG string
-  return (svgParts += `</svg>`).replaceAll(`#`,`%23`)
+  return (svgParts += `</svg>`).replaceAll(`#`, `%23`)
 }
 
 let svg = getSvg()

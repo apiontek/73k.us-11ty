@@ -1,43 +1,48 @@
 /* Defaults */
 :root {
   --cg-bk: #000000;
-  --cg-wh: #FFFFFF;
-  --cg-br: #AA5500;
+  --cg-wh: #ffffff;
+  --cg-br: #aa5500;
 
   --cg-gy: #555555;
-  --cg-gy-l: #AAAAAA;
-  --cg-bl: #0000AA;
-  --cg-bl-l: #5555FF;
-  --cg-gn: #00AA00;
-  --cg-gn-l: #55FF55;
-  --cg-cy: #00AAAA;
-  --cg-cy-l: #55FFFF;
-  --cg-re: #AA0000;
-  --cg-re-l: #FF5555;
-  --cg-ma: #AA00AA;
-  --cg-ma-l: #FF55FF;
-  --cg-yl: #AAAA00;
-  --cg-yl-l: #FFFF55;
+  --cg-gy-l: #aaaaaa;
+  --cg-bl: #0000aa;
+  --cg-bl-l: #5555ff;
+  --cg-gn: #00aa00;
+  --cg-gn-l: #55ff55;
+  --cg-cy: #00aaaa;
+  --cg-cy-l: #55ffff;
+  --cg-re: #aa0000;
+  --cg-re-l: #ff5555;
+  --cg-ma: #aa00aa;
+  --cg-ma-l: #ff55ff;
+  --cg-yl: #aaaa00;
+  --cg-yl-l: #ffff55;
 
   --lo-sp: max(4vh, 2rem);
 
-  --f-fm: 'IBM Plex Sans', 'Open Sans', Roboto, 'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana, 'Verdana Ref', -apple-system, system-ui, sans-serif;
-  --f-fm-sp: 'Supercomputer', 'Cooper Black', 'Lazenby Computer', Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
-  --f-fm-hd: 'Friz Quadrata Std', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-	--f-fm-mn: 'JetBrains Mono', 'Cascadia Code', Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+  --f-fm: "IBM Plex Sans", "Open Sans", Roboto, "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS",
+    Verdana, "Verdana Ref", -apple-system, system-ui, sans-serif;
+  --f-fm-sp: "Supercomputer", "Cooper Black", "Lazenby Computer", Impact, Haettenschweiler,
+    "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black",
+    sans-serif;
+  --f-fm-hd: "Friz Quadrata Std", Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+    "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+  --f-fm-mn: "JetBrains Mono", "Cascadia Code", Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+    Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono,
+    Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 
-  --tx-c-ln-hd: #382E22;
-  --tx-c-cd: #407EE7;
+  --tx-c-ln-hd: #382e22;
+  --tx-c-cd: #407ee7;
 
   --sy-tb-sz: 2;
   --bd-rd: 5px;
 }
 
-
 /* Theme colors */
 :root {
-  --bg-c: #CECECE;
-  --tx-c: #22262A;
+  --bg-c: #cecece;
+  --tx-c: #22262a;
   --tx-c-mu: var(--cg-gy);
 
   --tx-c-ln: var(--cg-bl);
@@ -55,22 +60,22 @@
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
+  :root {
     --bg-c: var(--cg-bk);
-    --tx-c: #D3D7CF;
+    --tx-c: #d3d7cf;
     --tx-c-mu: #999999;
 
     --tx-c-ln: var(--cg-gn-l);
     --tx-c-ln-de: var(--cg-cy);
-		--tx-c-ln-ac: var(--cg-gn-l);
-		--tx-c-ln-ac-de: var(--cg-ma-l);
-		--tx-c-ln-vs: var(--cg-ma-l);
-		--tx-c-ln-vs-de: var(--cg-cy);
+    --tx-c-ln-ac: var(--cg-gn-l);
+    --tx-c-ln-ac-de: var(--cg-ma-l);
+    --tx-c-ln-vs: var(--cg-ma-l);
+    --tx-c-ln-vs-de: var(--cg-cy);
 
     --bd-c: #888888;
 
     --bq-c: var(--tx-c-mu);
     --bq-bg-c: transparent;
     --bq-bd-c: var(--cg-cy);
-	}
+  }
 }
