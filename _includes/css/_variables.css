@@ -1,55 +1,55 @@
 /* Defaults */
 :root {
-  --layout-spacing: max(4vh, 2rem);
+  --lo-sp: max(4vh, 2rem);
 
-  --font-family: 'IBM Plex Sans', 'Open Sans', Roboto, 'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana, 'Verdana Ref', -apple-system, system-ui, sans-serif;
-  --font-family-splash: 'Supercomputer', 'Cooper Black', 'Lazenby Computer', Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
-  --font-family-headers: 'Friz Quadrata Std', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-	--font-family-monospace: 'JetBrains Mono', 'Cascadia Code', Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+  --f-fm: 'IBM Plex Sans', 'Open Sans', Roboto, 'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana, 'Verdana Ref', -apple-system, system-ui, sans-serif;
+  --f-fm-sp: 'Supercomputer', 'Cooper Black', 'Lazenby Computer', Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  --f-fm-hd: 'Friz Quadrata Std', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+	--f-fm-mn: 'JetBrains Mono', 'Cascadia Code', Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 
-  --text-head-link: #382E22;
-  --text-color-code: #407EE7;
+  --tx-c-ln-hd: #382E22;
+  --tx-c-cd: #407EE7;
 
-  --syntax-tab-size: 2;
-  --standard-border-radius: 5px;
+  --sy-tb-sz: 2;
+  --bd-rd: 5px;
 }
 
 
 /* Theme colors */
 :root {
-  --background-color: #CECECE;
-  --text-color: #22262A;
-  --text-muted: #555555;
+  --bg-c: #CECECE;
+  --tx-c: #22262A;
+  --tx-c-mu: #555555;
 
-  --text-color-link: #0000AA;
-  --text-color-link-decoration: #00AA00;
-  --text-color-link-active: #0000AA;
-  --text-color-link-active-decoration: #AA00AA;
-  --text-color-link-visited: #AA00AA;
-  --text-color-link-visited-decoration: #00AA00;
+  --tx-c-ln: #0000AA;
+  --tx-c-ln-de: #00AA00;
+  --tx-c-ln-ac: #0000AA;
+  --tx-c-ln-ac-de: #AA00AA;
+  --tx-c-ln-vs: #AA00AA;
+  --tx-c-ln-vs-de: #00AA00;
 
-  --border-color: #777777;
-  --bquote-color: #555555;
-  --bquote-background-color: #BEBEBE;
-  --bquote-border-color: #AAAAAA;
+  --bd-c: #777777;
+  --bq-c: #555555;
+  --bq-bg-c: #BEBEBE;
+  --bq-bd-c: #AAAAAA;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-    --background-color: #000000;
-    --text-color: #D3D7CF;
-    --text-muted: #767676;
+    --bg-c: #000000;
+    --tx-c: #D3D7CF;
+    --tx-c-mu: #767676;
 
-    --text-color-link: #55FF55;
-    --text-color-link-decoration: #00AAAA;
-		--text-color-link-active: #55FF55;
-		--text-color-link-active-decoration: #FF55FF;
-		--text-color-link-visited: #FF55FF;
-		--text-color-link-visited-decoration: #00AAAA;
+    --tx-c-ln: #55FF55;
+    --tx-c-ln-de: #00AAAA;
+		--tx-c-ln-ac: #55FF55;
+		--tx-c-ln-ac-de: #FF55FF;
+		--tx-c-ln-vs: #FF55FF;
+		--tx-c-ln-vs-de: #00AAAA;
 
-    --border-color: #888888;
-    --bquote-color: #999999;
-    --bquote-background-color: #111111;
-    --bquote-border-color: #222222;
+    --bd-c: #888888;
+    --bq-c: #999999;
+    --bq-bg-c: #111111;
+    --bq-bd-c: #222222;
 	}
 }

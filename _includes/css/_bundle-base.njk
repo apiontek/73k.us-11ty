@@ -2,18 +2,18 @@
 {% include "_includes/css/_css-reset.css" %}
 {# Variables related to splash73k background #}
 :root {
-  --content-minw: 64px;
-  --content-maxw: {{ splash73k.opts.headMaxW }}px;
-  --splash-buffer-size: {{ splash73k.opts.bufferSize }}px;
-  --splash-line-size: {{ splash73k.opts.lineSize }}px;
-  --splash-stroke-width: {{ splash73k.opts.strokeWidth }}px;
-  --splash-line-start: {{ splash73k.opts.lineStart }};
-  --splash-line-count: {{ splash73k.opts.lineCount }};
-  --splash-tilt-degrees-start: {{ splash73k.opts.tiltDegreesStart }};
-  --splash-tilt-degrees-end: {{ splash73k.opts.tiltDegreesEnd }};
-  --splash-shape-rendering: {{ splash73k.opts.shapeRendering }};
+  --ct-minw: 64px;
+  --ct-maxw: {{ splash73k.opts.headMaxW }}px;
+  --sp-bf-sz: {{ splash73k.opts.bufferSize }}px;
+  --sp-ln-sz: {{ splash73k.opts.lineSize }}px;
+  --sp-st-wd: {{ splash73k.opts.strokeWidth }}px;
+  --sp-ln-st: {{ splash73k.opts.lineStart }};
+  --sp-ln-ct: {{ splash73k.opts.lineCount }};
+  --sp-dg-st: {{ splash73k.opts.tiltDegreesStart }};
+  --sp-dg-en: {{ splash73k.opts.tiltDegreesEnd }};
+  --sp-sh-rn: {{ splash73k.opts.shapeRendering }};
   {% for color in splash73k.opts.colors %}
-  --splash-c{{ loop.index0 }}: {{ color }};
+  --sp-c{{ loop.index0 }}: {{ color }};
   {% endfor %}
 }
 html {
