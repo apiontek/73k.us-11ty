@@ -1,0 +1,80 @@
+==================================================================
+https://keybase.io/adampiontek
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://73k.us
+  * I am adampiontek (https://keybase.io/adampiontek) on keybase.
+  * I have a public key with fingerprint 50B5 F169 B6A6 C728 5F42  530E A162 24A6 69AD 331F
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01202813155ef2aa55c8d0b721bec0c3f708be8b2bec6e0ab0cdfee4a5439da5b4710a",
+      "fingerprint": "50b5f169b6a6c7285f42530ea16224a669ad331f",
+      "host": "keybase.io",
+      "key_id": "a16224a669ad331f",
+      "kid": "010191fd4464c3d006332fed9d8adeefb3872e3ab30c07ca1229012fb78d6366cd2f0a",
+      "uid": "7137a9f7aab18f6d03d84e88e0815919",
+      "username": "adampiontek"
+    },
+    "merkle_root": {
+      "ctime": 1638201336,
+      "hash_meta": "1d75215440fe55ded5b54973c3582399f3fb2edab5b52ad30ee8039c4411f20a",
+      "seqno": 21323295
+    },
+    "revoke": {
+      "sig_ids": [
+        "fd667b6915894bc6a6ef50daa98ab5abbd0fe84574a9c2836cf13829c525a6890f"
+      ]
+    },
+    "service": {
+      "hostname": "73k.us",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1638201337,
+  "expire_in": 157680000,
+  "prev": "3b478d5be30285f2c6abefbdd3b045bf18871ec16f523ca69aeadb8c10f718a2",
+  "seqno": 68,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owFtU1toXFUUnWnS1A4+ImgFpQm5acVHqOdxz+MO+NFqQLQJrQ39UOJ4nsllMnMn
+994ZjSVqRaVaoX6ktirVhpr2o6YIQcUHtYqlaPNVUwRt66OK2PoTHzWUQj13aBDE
+83M4m7XXXnvtfV6+piVXyE/KVfvDadyZP/6rzIm3/r64xZORHvOKW7yyaV5mRJsk
+LZVD7RU9ABFAHGJIiLFICEIU10AyBKVRQGHLAJeGS+Se1AAhgdLWGF8QHwdaEOkz
+CITX49mwOmTiWhxWU0dLgCQW0kBSQRVDnFgfEQyMgBQhX1AaCI0xtC5xOEqyDCdO
+isSsCSMXc49SU97/4Bd1AxhAq32f+gprACjGyBodaC60MVZizpDBQmKgAFMCIhS4
+Xq1kXFNMqdLINnXXm3QMYiYCy4SQkFuqAdbcN5wbwCEJYJABExNXRcVkqrSo1MKo
+mpqyN97jVUxcHjGlOIrSzF+VhhkKUswRgBhT16NIhksVkwqXDDUjCBLfB9YQoo0m
+kvgBwwoTjnAQWGwlMlpIF0eua2AMBzhQvg+hRU3NiRmtRl4RQYwwCoiTEJtGVDZZ
+9SQcctYlXvFh70jdakqZpAEkPPClcsMwlgAtRMAdv5BSOxHcJ8wXgUIcU2WhUx0o
+goigPADWGxzP6sWNUDXps2ldcYHh8pp64uTU4iiNVDTiYsNpWkuKmSnpWC0DPWZk
+6Up6SYZV7bbEZTRMnDj/nEkO+V+/WI9nHq+FsSmFGYIwyoE7WR3TcJTY7Rx3rhkM
+ssVCri3pBq41lsAn0kLOGTQKUksQVsKtjhFacgWBZZAL9K+BlDudYshxOteqIq3H
+xhsvvJDHrbl8IbdyRVfrhnfnw/f2H7uttG7TtYs/a+mS7FvlCsvbFyMtE8su932/
+LXfT11NfrL50uu3NQu/ZY23fDv2wauHPuSV3LER9R65qKa9tWdh7cKB3ZvvS98PO
+P/pP9a6/s3Wkg4Ht46t31Bpbf5ocnN9w89xnjxzY3Jj98tXZtv7KvU/98lB4gnW+
+89el3Gtr9xzelJzubpcTh7fubtgzZ6bPLf/0mY3nn7z75O2bB47/PvNz2xvdowfL
+9zw38M2z7R33sQn4VX7HhYt9XQPn6+jp/u7CgUO16x49N/Xgtl17xdnnT7zIBu8/
+9fGHe8bH+oo/dpH5C1MPxJPf7VvX/srOgUrjg9+u1nMrZ3ceSuHuJ26df/vo5U+u
+l+ZoY7Z8cv2NpWUrZpJdN9zy0ejGlwZfv+vz6aTjHw==
+=Uuw8
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/adampiontek
+
+==================================================================
