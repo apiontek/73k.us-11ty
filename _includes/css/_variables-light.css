@@ -1,0 +1,19 @@
+/* Light Theme colors */
+:root {
+  --bg-c: #cecece;
+  --tx-c: #22262a;
+  --tx-c-mu: var(--cg-gy);
+
+  --tx-c-ln: var(--cg-bl);
+  --tx-c-ln-de: var(--cg-gn);
+  --tx-c-ln-ac: var(--cg-bl);
+  --tx-c-ln-ac-de: var(--cg-ma);
+  --tx-c-ln-vs: var(--cg-ma);
+  --tx-c-ln-vs-de: var(--cg-gn);
+
+  --bd-c: #777777;
+
+  --bq-c: var(--tx-c-mu);
+  --bq-bg-c: transparent;
+  --bq-bd-c: var(--cg-cy);
+}

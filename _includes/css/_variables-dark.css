@@ -1,0 +1,19 @@
+/* Dark Theme colors */
+:root {
+  --bg-c: var(--cg-bk);
+  --tx-c: #d3d7cf;
+  --tx-c-mu: #999999;
+
+  --tx-c-ln: var(--cg-gn-l);
+  --tx-c-ln-de: var(--cg-cy);
+  --tx-c-ln-ac: var(--cg-gn-l);
+  --tx-c-ln-ac-de: var(--cg-ma-l);
+  --tx-c-ln-vs: var(--cg-ma-l);
+  --tx-c-ln-vs-de: var(--cg-cy);
+
+  --bd-c: #888888;
+
+  --bq-c: var(--tx-c-mu);
+  --bq-bg-c: transparent;
+  --bq-bd-c: var(--cg-cy);
+}

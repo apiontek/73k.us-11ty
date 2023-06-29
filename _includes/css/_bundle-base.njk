@@ -1,5 +1,5 @@
-{%- css %}
 {% include "_includes/css/_css-reset.css" %}
+
 {# Variables related to splash73k background #}
 :root {
   --ct-minw: 64px;
@@ -16,14 +16,14 @@
   --sp-c{{ loop.index0 }}: {{ color }};
   {% endfor %}
 }
+
+{# Style related to splash73k background #}
 html {
   background-image: url('data:image/svg+xml;utf8,{{ splash73k.svg | safe }}');
   background-position: top center;
   background-repeat: no-repeat;
   background-size: {{ splash73k.opts.svgSize }}px {{ splash73k.opts.svgSize }}px;
 }
-{# Remainder of 73k CSS variables #}
-{% include "_includes/css/_variables.css" %}
-{# {% include "_includes/css/index.css" %} #}
-{% include "_includes/css/style.css" %}
-{% endcss %}
+
+{# Other common variables #}
+{% include "_includes/css/_variables-common.css" %}
