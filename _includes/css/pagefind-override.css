@@ -1,8 +1,8 @@
 :root {
   --pagefind-ui-primary: var(--tx-c) !important;
   --pagefind-ui-text: var(--tx-c) !important;
-  --pagefind-ui-background: var(--bq-bg-c) !important;
-  --pagefind-ui-border: var(--bq-bd-c) !important;
+  --pagefind-ui-background: transparent !important;
+  --pagefind-ui-border: var(--bd-c) !important;
   --pagefind-ui-tag: #152028;
   --pagefind-ui-border-radius: var(--bd-rd) !important;
   --pagefind-ui-scale: 1.0 !important;
@@ -32,16 +32,16 @@ html#html73k body main#skip div#search.search div.pagefind-ui.pagefind-ui--reset
     /* font-size: larger !important; */
     font-weight: 400 !important;
     color: var(--tx-c-ln) !important;
-    text-de: underline !important;
-    text-decoration-color: var(--tx-c-ln-decoration) !important;
+    text-decoration: underline !important;
+    text-decoration-color: var(--tx-c-ln-de) !important;
     &:visited {
       color: var(--tx-c-ln-vs) !important;
-      text-decoration-color: var(--tx-c-ln-vs-decoration) !important;
+      text-decoration-color: var(--tx-c-ln-vs-de) !important;
     }
     &:hover,
     &:active {
       color: var(--tx-c-ln-ac) !important;
-      text-decoration-color: var(--tx-c-ln-ac-decoration) !important;
+      text-decoration-color: var(--tx-c-ln-vs-de) !important;
     }
   }
 }

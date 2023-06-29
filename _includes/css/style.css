@@ -45,7 +45,7 @@ body {
       font-weight: 700;
       font-size: 5rem;
       color: var(--tx-c-ln-hd);
-      text-de: none;
+      text-decoration: none;
     }
     & > nav {
       grid-area: nav-t / content-l / nav-b / content-r;
@@ -137,30 +137,30 @@ ul {
   margin-right: 1em;
 }
 .nav-item a[href]:not(:hover) {
-  text-de: none;
+  text-decoration: none;
 }
 .nav a[href][aria-current="page"] {
-  text-de: underline;
+  text-decoration: underline;
 }
 
 
 /* Links */
 a[href] {
   color: var(--tx-c-ln);
-  text-decoration-color: var(--tx-c-ln-decoration);
+  text-decoration-color: var(--tx-c-ln-de);
   &:visited {
     color: var(--tx-c-ln-vs);
-    text-decoration-color: var(--tx-c-ln-vs-decoration);
+    text-decoration-color: var(--tx-c-ln-vs-de);
   }
   &:hover,
   &:active {
     color: var(--tx-c-ln-ac);
-    text-decoration-color: var(--tx-c-ln-ac-decoration);
+    text-decoration-color: var(--tx-c-ln-vs-de);
   }
 }
 #head73k > nav a[href]:visited {
   color: var(--tx-c-ln);
-  text-decoration-color: var(--tx-c-ln-decoration);
+  text-decoration-color: var(--tx-c-ln-de);
 }
 
 /*
@@ -247,7 +247,7 @@ a[href] {
 
 /* Direct Links / Markdown Headers */
 .header-anchor {
-  text-de: none;
+  text-decoration: none;
   font-style: normal;
   font-size: 1em;
   margin-left: .1em;
@@ -258,7 +258,7 @@ a[href].header-anchor:visited {
 }
 a[href].header-anchor:focus,
 a[href].header-anchor:hover {
-  text-de: underline;
+  text-decoration: underline;
 }
 a[href].header-anchor:focus,
 :hover > a[href].header-anchor {
@@ -406,7 +406,7 @@ article > p + hr {
     &:hover,
     &:active {
       color: var(--tx-c);
-      text-decoration-color: var(--tx-c-ln-ac-decoration);
+      text-decoration-color: var(--tx-c-ln-vs-de);
     }
   }
 }
@@ -447,6 +447,6 @@ footer a[href] {
   &:hover,
   &:active {
     color: var(--tx-c);
-    text-decoration-color: var(--tx-c-ln-ac-decoration);
+    text-decoration-color: var(--tx-c-ln-vs-de);
   }
 }

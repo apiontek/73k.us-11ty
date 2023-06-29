@@ -1,5 +1,24 @@
 /* Defaults */
 :root {
+  --cg-bk: #000000;
+  --cg-wh: #FFFFFF;
+  --cg-br: #AA5500;
+
+  --cg-gy: #555555;
+  --cg-gy-l: #AAAAAA;
+  --cg-bl: #0000AA;
+  --cg-bl-l: #5555FF;
+  --cg-gn: #00AA00;
+  --cg-gn-l: #55FF55;
+  --cg-cy: #00AAAA;
+  --cg-cy-l: #55FFFF;
+  --cg-re: #AA0000;
+  --cg-re-l: #FF5555;
+  --cg-ma: #AA00AA;
+  --cg-ma-l: #FF55FF;
+  --cg-yl: #AAAA00;
+  --cg-yl-l: #FFFF55;
+
   --lo-sp: max(4vh, 2rem);
 
   --f-fm: 'IBM Plex Sans', 'Open Sans', Roboto, 'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana, 'Verdana Ref', -apple-system, system-ui, sans-serif;
@@ -19,37 +38,39 @@
 :root {
   --bg-c: #CECECE;
   --tx-c: #22262A;
-  --tx-c-mu: #555555;
+  --tx-c-mu: var(--cg-gy);
 
-  --tx-c-ln: #0000AA;
-  --tx-c-ln-de: #00AA00;
-  --tx-c-ln-ac: #0000AA;
-  --tx-c-ln-ac-de: #AA00AA;
-  --tx-c-ln-vs: #AA00AA;
-  --tx-c-ln-vs-de: #00AA00;
+  --tx-c-ln: var(--cg-bl);
+  --tx-c-ln-de: var(--cg-gr);
+  --tx-c-ln-ac: var(--cg-bl);
+  --tx-c-ln-ac-de: var(--cg-ma);
+  --tx-c-ln-vs: var(--cg-ma);
+  --tx-c-ln-vs-de: var(--cg-gr);
 
   --bd-c: #777777;
-  --bq-c: #555555;
-  --bq-bg-c: #BEBEBE;
-  --bq-bd-c: #AAAAAA;
+
+  --bq-c: var(--tx-c-mu);
+  --bq-bg-c: transparent;
+  --bq-bd-c: var(--cg-cy);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-    --bg-c: #000000;
+    --bg-c: var(--cg-bk);
     --tx-c: #D3D7CF;
-    --tx-c-mu: #767676;
+    --tx-c-mu: #999999;
 
-    --tx-c-ln: #55FF55;
-    --tx-c-ln-de: #00AAAA;
-		--tx-c-ln-ac: #55FF55;
-		--tx-c-ln-ac-de: #FF55FF;
-		--tx-c-ln-vs: #FF55FF;
-		--tx-c-ln-vs-de: #00AAAA;
+    --tx-c-ln: var(--cg-gn-l);
+    --tx-c-ln-de: var(--cg-cy);
+		--tx-c-ln-ac: var(--cg-gn-l);
+		--tx-c-ln-ac-de: var(--cg-ma-l);
+		--tx-c-ln-vs: var(--cg-ma-l);
+		--tx-c-ln-vs-de: var(--cg-cy);
 
     --bd-c: #888888;
-    --bq-c: #999999;
-    --bq-bg-c: #111111;
-    --bq-bd-c: #222222;
+
+    --bq-c: var(--tx-c-mu);
+    --bq-bg-c: transparent;
+    --bq-bd-c: var(--cg-cy);
 	}
 }
