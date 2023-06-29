@@ -62,6 +62,7 @@ body {
 
   & > footer {
     grid-area: foot-t / content-l / foot-b / content-r;
+    clear: all;
     margin-top: var(--layout-spacing);
     padding-bottom: 1rem;
     & > div {
@@ -243,7 +244,7 @@ a[href] {
 .post-metadata li:nth-of-type(2)::before {
   margin-right: 0.5em;
   content: "\2022";
-} 
+}
 
 /* Direct Links / Markdown Headers */
 .header-anchor {
@@ -390,9 +391,9 @@ article > p + hr {
   border-top: 1px dashed var(--border-color);
   padding: 0;
   background-color: transparent;
-  margin-top: 2em;
+  margin: 2em 0;
   & ul {
-    margin-top: 0.5em;
+    margin-top: 0.25em;
     list-style: none;
     padding: 0;
     color: var(--text-muted);
@@ -406,7 +407,7 @@ article > p + hr {
     &:active {
       color: var(--text-color);
       text-decoration-color: var(--text-color-link-active-decoration);
-    }  
+    }
   }
 }
 
@@ -447,5 +448,5 @@ footer a[href] {
   &:active {
     color: var(--text-color);
     text-decoration-color: var(--text-color-link-active-decoration);
-  }  
+  }
 }
