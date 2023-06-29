@@ -10,7 +10,6 @@
     "start:prod": "npm run serve:prod",
     "dev": "npm run serve",
     "dev:prod": "npm run serve:prod",
-    "prebuild": "npm run clean",
     "build": "cross-env ELEVENTY_ENV=dev npx @11ty/eleventy",
     "prebuild:prod": "npm run clean",
     "build:prod": "cross-env ELEVENTY_ENV=prod npx @11ty/eleventy",
