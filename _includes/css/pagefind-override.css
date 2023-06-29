@@ -37,10 +37,6 @@ html#html73k body main#skip div#search.search div.pagefind-ui.pagefind-ui--reset
     &:visited {
       color: var(--text-color-link-visited) !important;
       text-decoration-color: var(--text-color-link-visited-decoration) !important;
-      header#head73k > nav & {
-        color: var(--text-color-link) !important;
-        text-decoration-color: var(--text-color-link-decoration) !important;
-      }
     }
     &:hover,
     &:active {

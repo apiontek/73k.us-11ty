@@ -151,10 +151,6 @@ a[href] {
   &:visited {
     color: var(--text-color-link-visited);
     text-decoration-color: var(--text-color-link-visited-decoration);
-    header#head73k > nav & {
-      color: var(--text-color-link);
-      text-decoration-color: var(--text-color-link-decoration);
-    }
   }
   &:hover,
   &:active {
@@ -162,7 +158,10 @@ a[href] {
     text-decoration-color: var(--text-color-link-active-decoration);
   }
 }
-
+#head73k > nav a[href]:visited {
+  color: var(--text-color-link);
+  text-decoration-color: var(--text-color-link-decoration);
+}
 
 /*
   Additional styling
@@ -346,11 +345,6 @@ blockquote {
   color: var(--bquote-color);
 	background: var(--bquote-background-color);
 	border-left: 5px solid var(--bquote-border-color);
-  h1 + &,
-  h2 + &,
-  h3 + & {
-    margin: 0.5em 0 0 0;
-  }
   & *:first-child {
     padding-top: 0;
     margin-top: 0;
@@ -371,6 +365,12 @@ blockquote {
     }
   }
 }
+h1 + blockquote,
+h2 + blockquote,
+h3 + blockquote {
+  margin: 0.5em 0 0 0;
+}
+
 
 /* hr in a blog post */
 article > p + hr {

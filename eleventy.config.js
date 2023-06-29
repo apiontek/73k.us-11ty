@@ -6,11 +6,8 @@ const { execSync } = require("child_process")
 const pluginRss = require("@11ty/eleventy-plugin-rss")
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const pluginBundle = require("@11ty/eleventy-plugin-bundle")
-const postcss = require("postcss")
-const postcssImport = require("postcss-import")
-const postcssNesting = require("postcss-nesting")
-const autoprefixer = require("autoprefixer")
-const cssNano = require("cssnano")
+const browserslist = require("browserslist");
+const { browserslistToTargets, transform } = require("lightningcss");
 const esbuild = require("esbuild")
 
 const pluginNavigation = require("@11ty/eleventy-navigation")
@@ -21,6 +18,9 @@ const pluginImages = require("./eleventy.config.images.js")
 
 // extra environment data for eleventy
 const env = require("./_data/env")
+
+// browser targets for lightningcss
+const targets = browserslistToTargets(browserslist("> 0.2% and not dead"));
 
 module.exports = function (eleventyConfig) {
   // 2023-06-18 apiontek - also using this in winstats html
@@ -63,13 +63,16 @@ module.exports = function (eleventyConfig) {
         // this.type returns the bundle name.
         if (this.type === "css") {
           // Same as Eleventy transforms, this.page is available here.
-          let result = await postcss([
-            postcssImport,
-            postcssNesting,
-            autoprefixer,
-            cssNano,
-          ]).process(content, { from: this.page.inputPath, to: null })
-          return result.css
+          let result = await transform({
+            code: Buffer.from(content),
+            minify: true,
+            sourceMap: false,
+            targets,
+            drafts: {
+              nesting: true,
+            },
+          })
+          return result.code
         } else if (this.type === "js" && env.isProd) {
           let result = await esbuild.transform(content, {
             minify: true,
