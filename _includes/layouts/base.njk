@@ -51,15 +51,16 @@
 		{# <style>{% getBundle "css" %}</style> #}
 
     {# <link rel="stylesheet" href="common.css"> #}
-    <link rel="stylesheet" href="{% getBundleFileUrl 'css', 'light' %}" media="(prefers-color-scheme: light)">
-    <link rel="stylesheet" href="{% getBundleFileUrl 'css', 'dark' %}" media="(prefers-color-scheme: dark)">
+    <link id="theme-link-light" rel="stylesheet" href="{% getBundleFileUrl 'css', 'light' %}" media="(prefers-color-scheme: light)">
+    <link id="theme-link-dark" rel="stylesheet" href="{% getBundleFileUrl 'css', 'dark' %}" media="(prefers-color-scheme: dark)">
 
     {% if title == "Search" %}
     <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
     {% endif %}
 
-    {# Google's dark mode toggle module, TODO: REMOVE #}
-    {# <script type="module" src="https://googlechromelabs.github.io/dark-mode-toggle/src/dark-mode-toggle.mjs"></script> #}
+    {%- js %}
+    {% include "_includes/js/theme-toggler.js" %}
+    {% endjs %}
 
 	</head>
 	<body>
@@ -81,14 +82,11 @@
 					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
 				{%- endfor %}
 				</ul>
+        <svg id="theme-toggler" class="icon"><use xlink:href="#bi-moon-fill"></use></svg>
 			</nav>
 		</header>
 
 		<main id="skip">
-
-      {# Google's dark mode toggle module, TODO: REMOVE #}
-      {# <dark-mode-toggle id="dark-mode-toggle-1" appearance="toggle" permanent="false"></dark-mode-toggle> #}
-
 			{{ content | safe }}
 		</main>
 
@@ -103,6 +101,7 @@
       </div>
     </footer>
 
+    <script type="text/javascript">{% getBundle "js" %}</script>
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 	</body>
 </html>

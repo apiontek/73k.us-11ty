@@ -49,6 +49,17 @@ body {
     }
     & > nav {
       grid-area: nav-t / content-l / nav-b / content-r;
+      display: flex;
+      justify-content: space-between;
+      & svg.icon {
+        color: var(--tx-c-mu);
+        &:hover,
+        &:active {
+          color: var(--tx-c);
+          cursor: pointer;
+        }
+      }
+
     }
   }
 

@@ -1,22 +1,22 @@
 [
   {
-    "href": "/feed/feed.xml",
-    "icon": "mi-rss",
-    "alt": "Atom RSS feed for this site"
+    "href": "/DF185CEE29A3D443_public_key.asc",
+    "icon": "bi-key-fill",
+    "alt": "Adam Piontek's GPG pulbic key"
   },
   {
     "href": "https://twitter.com/adampiontek",
-    "icon": "mi-twitter",
+    "icon": "bi-twitter",
     "alt": "Adam Piontek's Twitter profile'"
   },
   {
     "href": "https://kolektiva.social/@adampiontek",
-    "icon": "mi-mastodon",
+    "icon": "bi-mastodon",
     "alt": "Adam Piontek on Mastodon"
   },
   {
-    "href": "/DF185CEE29A3D443_public_key.asc",
-    "icon": "mi-key-variant",
-    "alt": "Adam Piontek's GPG pulbic key"
+    "href": "/feed/feed.xml",
+    "icon": "bi-rss-fill",
+    "alt": "Atom RSS feed for this site"
   }
 ]
