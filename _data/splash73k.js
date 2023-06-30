@@ -61,8 +61,8 @@ function getSvg() {
   let svgParts = `<svg xmlns="${xmlns}" width="${opts.svgSize}" height="${opts.svgSize}">`
 
   // main line values
-  let mainStartX = halfSize - halfHead
-  let mainEndX = halfSize + halfHead
+  let mainStartX = halfSize - halfHead + 12
+  let mainEndX = halfSize + halfHead - 12
 
   // slope for all tilted lines
   let slopeStart = getTanFromDegrees(opts.tiltDegreesStart)

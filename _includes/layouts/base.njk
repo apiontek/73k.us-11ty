@@ -31,7 +31,7 @@
     <link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet"></noscript>
 
-		{#- Bundling CSS, theme bundle, light #}
+		{#- Bundling CSS, scheme bundle, light #}
     {%- css "light" %}
     {% include "_includes/css/_bundle-base.njk" %}
     {% include "_includes/css/_variables-light.css" %}
@@ -39,7 +39,7 @@
     {% include "_includes/css/_bundle-post.njk" %}
     {% endcss %}
 
-		{#- Bundling CSS, theme bundle, dark #}
+		{#- Bundling CSS, scheme bundle, dark #}
     {%- css "dark" %}
     {% include "_includes/css/_bundle-base.njk" %}
     {% include "_includes/css/_variables-dark.css" %}
@@ -51,15 +51,15 @@
 		{# <style>{% getBundle "css" %}</style> #}
 
     {# <link rel="stylesheet" href="common.css"> #}
-    <link id="theme-link-light" rel="stylesheet" href="{% getBundleFileUrl 'css', 'light' %}" media="(prefers-color-scheme: light)">
-    <link id="theme-link-dark" rel="stylesheet" href="{% getBundleFileUrl 'css', 'dark' %}" media="(prefers-color-scheme: dark)">
+    <link id="scheme-link-light" rel="stylesheet" href="{% getBundleFileUrl 'css', 'light' %}" media="(prefers-color-scheme: light)">
+    <link id="scheme-link-dark" rel="stylesheet" href="{% getBundleFileUrl 'css', 'dark' %}" media="(prefers-color-scheme: dark)">
 
     {% if title == "Search" %}
     <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
     {% endif %}
 
     {%- js %}
-    {% include "_includes/js/theme-toggler.js" %}
+    {% include "_includes/js/scheme-toggler.js" %}
     {% endjs %}
 
 	</head>
@@ -82,7 +82,7 @@
 					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
 				{%- endfor %}
 				</ul>
-        <svg id="theme-toggler" class="icon"><use xlink:href="#bi-moon-fill"></use></svg>
+        <svg id="scheme-toggler" class="icon"><use xlink:href="#bi-moon-fill"></use></svg>
 			</nav>
 		</header>
 
