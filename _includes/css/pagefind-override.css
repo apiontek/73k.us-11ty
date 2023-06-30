@@ -45,7 +45,6 @@ html#html73k
     p.pagefind-ui__result-title
     a.pagefind-ui__result-link {
     font-family: var(--f-fm-hd) !important;
-    /* font-size: larger !important; */
     font-weight: 400 !important;
     color: var(--tx-c-ln) !important;
     text-decoration: underline !important;
@@ -57,7 +56,7 @@ html#html73k
     &:hover,
     &:active {
       color: var(--tx-c-ln-ac) !important;
-      text-decoration-color: var(--tx-c-ln-vs-de) !important;
+      text-decoration-color: var(--tx-c-ln-ac-de) !important;
     }
   }
 }

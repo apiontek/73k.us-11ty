@@ -50,6 +50,7 @@ body {
     & > nav {
       grid-area: nav-t / content-l / nav-b / content-r;
       display: flex;
+      align-items: center;
       justify-content: space-between;
       & svg.icon {
         color: var(--tx-c-mu);
@@ -168,7 +169,7 @@ a[href] {
   &:hover,
   &:active {
     color: var(--tx-c-ln-ac);
-    text-decoration-color: var(--tx-c-ln-vs-de);
+    text-decoration-color: var(--tx-c-ln-ac-de);
   }
 }
 #head73k > nav a[href]:visited {
