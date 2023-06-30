@@ -1,11 +1,11 @@
-const DARK = 'dark';
-const LIGHT = 'light';
-const ALL = 'all';
-const NOT_ALL = 'not all';
+const DARK = "dark"
+const LIGHT = "light"
+const ALL = "all"
+const NOT_ALL = "not all"
 const sessionStorageSchemeName = "73k.color-scheme"
 
-const sleep = ms => {
-  return new Promise(resolve => setTimeout(resolve, ms));
+const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
 const setToggleIcon = (toggleEl, mode) => {
@@ -36,20 +36,20 @@ const initToggleHandler = async () => {
   await sleep(5)
 
   // Check for system dark mode
-  const isSystemDarkMode = matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
+  const isSystemDarkMode = matchMedia && matchMedia("(prefers-color-scheme: dark)").matches
 
   // Check for user-set value
-  let mode = sessionStorage.getItem(sessionStorageSchemeName);
+  let mode = sessionStorage.getItem(sessionStorageSchemeName)
 
   // Determine mode based on values so far
   if (!mode && isSystemDarkMode) {
     // if no mode was loaded from session storage
     // but dark mode is active, mode is dark
-    mode = DARK;
+    mode = DARK
   } else {
     // if mode was loaded, or system mode is not dark
     // then mode should be what user chose, or light
-    mode = mode || LIGHT;
+    mode = mode || LIGHT
   }
 
   // Access the toggler element and set its icon accordingly
@@ -66,7 +66,7 @@ const initToggleHandler = async () => {
     mode = mode === DARK ? LIGHT : DARK
     setToggleIcon(toggleEl, mode)
     setActiveScheme(linkLight, linkDark, mode)
-    sessionStorage.setItem(sessionStorageSchemeName, mode);
+    sessionStorage.setItem(sessionStorageSchemeName, mode)
   })
 }
 
