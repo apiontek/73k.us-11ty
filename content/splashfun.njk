@@ -1,0 +1,27 @@
+---
+layout: layouts/home.njk
+title: Splash Fun
+---
+
+<h1>Splash Fun</h1>
+<p>Have fun changing the splash background!</p>
+
+<div id="splash-fun">
+
+  <form id="splash-fun-form">
+
+    <label for="headMaxW">Max Width (between 256 and 2000)</label>
+    <input type="number" id="headMaxW" name="headMaxW" min="256" max="2000" value="808">
+
+    <label for="bufferSize">Buffer Size (between 0 and 512):</label>
+    <input type="number" id="bufferSize" name="bufferSize" min="0" max="512" value="32">
+
+    <input type="reset" id="resetBtn">Reset</button>
+  </form>
+
+</div>
+
+{# build and render the JS #}
+<script>
+  {{ "_includes/js/splash-fun.js" | esbuild | safe }}
+</script>

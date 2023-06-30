@@ -4,7 +4,9 @@
 :root {
   --ct-minw: 64px;
   --ct-maxw: {{ splash73k.opts.headMaxW }}px;
-  --sp-bf-sz: {{ splash73k.opts.bufferSize }}px;
+  --bg-img: url('data:image/svg+xml;utf8,{{ splash73k.svg | safe }}');
+  --bg-sz: {{ splash73k.opts.svgSize }}px;
+  --sp-bf-sz: {{ splash73k.opts.bufferSize + splash73k.opts.lineSize }}px;
   --sp-ln-sz: {{ splash73k.opts.lineSize }}px;
   --sp-st-wd: {{ splash73k.opts.strokeWidth }}px;
   --sp-ln-st: {{ splash73k.opts.lineStart }};
@@ -15,14 +17,6 @@
   {% for color in splash73k.opts.colors %}
   --sp-c{{ loop.index0 }}: {{ color }};
   {% endfor %}
-}
-
-{# Style related to splash73k background #}
-html {
-  background-image: url('data:image/svg+xml;utf8,{{ splash73k.svg | safe }}');
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: {{ splash73k.opts.svgSize }}px {{ splash73k.opts.svgSize }}px;
 }
 
 {# Other common variables #}

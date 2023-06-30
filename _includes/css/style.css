@@ -9,6 +9,10 @@ html {
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: var(--bg-c);
+  background-image: var(--bg-img);
+  background-size: var(--bg-sz) var(--bg-sz);
+  background-position: top center;
+  background-repeat: no-repeat;
   transition: background-color 200ms ease-in-out 0s;
 }
 body {
@@ -458,4 +462,62 @@ footer a[href] {
     color: var(--tx-c);
     text-decoration-color: var(--tx-c-ln-vs-de);
   }
+}
+
+
+
+
+
+textarea,
+select,
+input {
+  padding: 6px 12px;
+  margin-bottom: .5rem;
+  background: transparent;
+  color: var(--tx-c);
+  border: 1px solid var(--bd-c);
+  border-radius: var(--bd-rd);
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+#splash-fun {
+  display: flex;
+  margin-top: var(--lo-sp);
+  justify-content: center;
+}
+#splash-fun-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  & label {
+    margin-top: 1em;
+  }
+}
+
+
+a button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	font-size: 1rem;
+	display: inline-block;
+	padding: 6px 12px;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	background: var(--cg-gy);
+	color: var(--cg-bk);
+	border: 0;
+	border-radius: 4px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+button:enabled:hover,
+input[type="submit"]:enabled:hover,
+input[type="reset"]:enabled:hover,
+input[type="button"]:enabled:hover {
+	background: var(--cg-gn);
 }

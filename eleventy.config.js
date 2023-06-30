@@ -8,6 +8,7 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const pluginBundle = require("@11ty/eleventy-plugin-bundle")
 const browserslist = require("browserslist")
 const { browserslistToTargets, transform } = require("lightningcss")
+const fs = require("fs")
 const esbuild = require("esbuild")
 
 const pluginNavigation = require("@11ty/eleventy-navigation")
@@ -73,20 +74,33 @@ module.exports = function (eleventyConfig) {
             },
           })
           return result.code
-        } else if (this.type === "js" && env.isProd) {
-          let result = await esbuild.transform(content, {
-            minify: true,
-            sourcemap: false,
-            legalComments: "none",
-            treeShaking: true,
-          })
-          return result.code
         }
 
         return content
       },
     ],
   })
+
+  // esbuild js bundler filter
+  eleventyConfig.addAsyncFilter("esbuild", function (jsInFile) {
+    // process with esbuild
+    esbuild.buildSync({
+      entryPoints: [jsInFile],
+      outfile: "out.js",
+      bundle: true,
+      minify: env.isProd,
+      sourcemap: false,
+      legalComments: "none",
+      treeShaking: true,
+    })
+    // read the output bundle from disk
+    const bundle = fs.readFileSync("out.js", "utf8")
+    // tidy after processing by removing files from disk
+    fs.unlinkSync("out.js")
+    // return output
+    return bundle.trim()
+  })
+
 
   // Filters
   eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {

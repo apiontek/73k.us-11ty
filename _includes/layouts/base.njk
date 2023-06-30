@@ -58,10 +58,6 @@
     <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
     {% endif %}
 
-    {%- js %}
-    {% include "_includes/js/scheme-toggler.js" %}
-    {% endjs %}
-
 	</head>
 	<body>
 
@@ -101,7 +97,11 @@
       </div>
     </footer>
 
-    <script type="text/javascript">{% getBundle "js" %}</script>
+    {# build and render the JS #}
+    <script>
+      {{ "_includes/js/scheme-toggler.js" | esbuild | safe }}
+    </script>
+
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 	</body>
 </html>

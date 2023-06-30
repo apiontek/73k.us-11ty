@@ -1,7 +1,7 @@
-const opts = {
+const defaultOpts = {
   svgSize: 10000,
   headMaxW: 808,
-  bufferSize: 48,
+  bufferSize: 32,
   lineSize: 16,
   strokeWidth: 16,
   lineStart: 1,
@@ -40,10 +40,11 @@ function roundTo3(num) {
 }
 
 // getSvg param values are in px
-function getSvg() {
+function getSvg(opts = defaultOpts) {
   // always an extra first transparent line and extra last transparent line
   let totalLineCount = opts.lineCount + 2
-  let svgBufferSize = opts.bufferSize - opts.lineSize
+  let svgBufferSize = opts.bufferSize
+  console.log(opts);
 
   // validate shape-rendering value
   let validShapeRenderingValues = ["auto", "optimizeSpeed", "crispEdges", "geometricPrecision"]
@@ -181,4 +182,4 @@ function getSvg() {
 
 let svg = getSvg()
 
-module.exports = { opts, svg }
+module.exports = { opts: defaultOpts, svg, getSvg }
