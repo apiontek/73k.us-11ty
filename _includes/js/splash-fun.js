@@ -3,7 +3,6 @@ import { opts, getSvg } from "../../_data/splash73k"
 window.onload = () => {
   // We will get default opts from the same file that generates the default background
   let modOpts = window.structuredClone(opts)
-  console.log(modOpts)
 
   // Next we will need to listen to form controls
   // access form elements...
@@ -18,7 +17,7 @@ window.onload = () => {
     modOpts = window.structuredClone(opts)
     r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
     r.style.setProperty("--ct-maxw", `${modOpts.headMaxW}px`)
-    r.style.setProperty("--sp-bf-sz", `${modOpts.headMaxW + modOpts.lineSize}px`)
+    r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineSize}px`)
   })
 
   // // Each on-change will need to:
@@ -65,11 +64,7 @@ window.onload = () => {
         newValue = max
         bufferSizeEl.value = max
       }
-      console.log(`current bufferSize: ${modOpts.bufferSize}`)
-      console.log(`new bufferSize: ${newValue}`)
-      console.log(`new --sp-bf-sz: ${modOpts.bufferSize + modOpts.lineSize}`)
       modOpts.bufferSize = newValue
-      console.log(modOpts)
       r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
       r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineSize}px`)
     })

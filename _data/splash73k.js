@@ -44,7 +44,6 @@ function getSvg(opts = defaultOpts) {
   // always an extra first transparent line and extra last transparent line
   let totalLineCount = opts.lineCount + 2
   let svgBufferSize = opts.bufferSize
-  console.log(opts);
 
   // validate shape-rendering value
   let validShapeRenderingValues = ["auto", "optimizeSpeed", "crispEdges", "geometricPrecision"]
