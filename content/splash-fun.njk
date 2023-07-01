@@ -14,6 +14,18 @@ title: Splash Fun
   <form id="splash-fun-form">
 
     <div>
+      <label for="lineStart"><strong>Line Start</strong>
+        <br />(min <span id="lineStartMin">1</span>, max <span id="lineStartMax">8</span>, now <span id="lineStartNow">2</span>)</label>
+      <input type="range" id="lineStart" name="lineStart" min="1" max="8" value="2">
+    </div>
+
+    <div>
+      <label for="lineCount"><strong>Line Count</strong>
+        <br />(min <span id="lineCountMin">0</span>, max <span id="lineCountMax">9</span>, now <span id="lineCountNow">7</span>)</label>
+      <input type="range" id="lineCount" name="lineCount" min="0" max="9" value="7">
+    </div>
+
+    <div>
       <label for="headMaxW"><strong>Max Width</strong>
         <br />(min <span id="headMaxWMin">320</span>, max <span id="headMaxWMax">2048</span>, now <span id="headMaxWNow">320</span>)</label>
       <input type="range" id="headMaxW" name="headMaxW" min="320" max="2048" value="808">
@@ -21,14 +33,14 @@ title: Splash Fun
 
     <div>
       <label for="bufferSize"><strong>Buffer Size</strong>
-        <br />(min <span id="bufferSizeMin">16</span>, max <span id="bufferSizeMax">640</span>, now <span id="bufferSizeNow">32</span>)</label>
-      <input type="range" id="bufferSize" name="bufferSize" min="16" max="640" value="32">
+        <br />(min <span id="bufferSizeMin">16</span>, max <span id="bufferSizeMax">480</span>, now <span id="bufferSizeNow">32</span>)</label>
+      <input type="range" id="bufferSize" name="bufferSize" min="16" max="480" value="32">
     </div>
 
     <div>
       <label for="lineHeight"><strong>Line Height</strong>
-        <br />(min <span id="lineHeightMin">1</span>, max <span id="lineHeightMax">64</span>, now <span id="lineHeightNow">16</span>)</label>
-      <input type="range" id="lineHeight" name="lineHeight" min="1" max="64" value="16">
+        <br />(min <span id="lineHeightMin">1</span>, max <span id="lineHeightMax">128</span>, now <span id="lineHeightNow">16</span>)</label>
+      <input type="range" id="lineHeight" name="lineHeight" min="1" max="128" value="16">
     </div>
 
     <input type="reset" id="resetBtn" />

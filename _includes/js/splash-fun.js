@@ -20,6 +20,82 @@ window.onload = () => {
   // let testSvg = getSvg(opts)
   // console.log(testSvg)
 
+
+  // line start & line count are interrelated, so we load them all up at once
+  const lineStartEl = document.getElementById("lineStart")
+  const lineStartElMin = document.getElementById("lineStartMin")
+  const lineStartElMax = document.getElementById("lineStartMax")
+  const lineStartElNow = document.getElementById("lineStartNow")
+
+  const lineCountEl = document.getElementById("lineCount")
+  const lineCountElMin = document.getElementById("lineCountMin")
+  const lineCountElMax = document.getElementById("lineCountMax")
+  const lineCountElNow = document.getElementById("lineCountNow")
+
+  lineStartEl.value = modOpts.lineStart + 1
+  lineStartElNow.innerText = modOpts.lineStart + 1
+
+  lineCountEl.value = modOpts.lineCount
+  lineCountElNow.innerText = modOpts.lineCount
+
+  console.log(modOpts.colors.length)
+
+  let lineStartElMinVal = 0 + 1
+  let lineStartElMaxVal = modOpts.colors.length - modOpts.lineCount + 1
+
+  let lineCountElMinVal = 0
+  let lineCountElMaxVal = modOpts.colors.length - modOpts.lineStart
+
+  lineStartEl.min = lineStartElMinVal
+  lineStartEl.max = lineStartElMaxVal
+  lineStartElMin.innerText = lineStartElMinVal
+  lineStartElMax.innerText = lineStartElMaxVal
+
+  lineCountEl.min = lineCountElMinVal
+  lineCountEl.max = lineCountElMaxVal
+  lineCountElMin.innerText = lineCountElMinVal
+  lineCountElMax.innerText = lineCountElMaxVal
+
+
+  // line start input element
+  lineStartEl.addEventListener("input", (event) => {
+    lineStartElNow.innerText = event.target.value
+  })
+  lineStartEl.addEventListener("change", (event) => {
+    let newVal = parseInt(event.target.value)
+    modOpts.lineStart = newVal - 1
+    lineCountElMaxVal = modOpts.colors.length - modOpts.lineStart
+    lineCountEl.max = lineCountElMaxVal
+    lineCountElMax.innerText = lineCountElMaxVal
+    r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
+    r.style.setProperty("--sp-ln-st", `${modOpts.lineStart}`)
+  })
+
+
+  // line count input element
+  lineCountEl.addEventListener("input", (event) => {
+    lineCountElNow.innerText = event.target.value
+  })
+  lineCountEl.addEventListener("change", (event) => {
+    let newVal = parseInt(event.target.value)
+    modOpts.lineCount = newVal
+    if (modOpts.lineCount === 0) {
+      lineStartElNow.innerText = lineStartEl.value = modOpts.lineStart = lineStartElMaxVal = lineStartElMinVal = 0
+    } else {
+      lineStartElMaxVal = modOpts.colors.length - modOpts.lineCount + 1
+      lineStartElMinVal = 0 + 1
+      lineStartEl.value = modOpts.lineStart + 1
+      lineStartElNow.innerText = modOpts.lineStart + 1
+    }
+    lineStartEl.min = lineStartElMinVal
+    lineStartEl.max = lineStartElMaxVal
+    lineStartElMin.innerText = lineStartElMinVal
+    lineStartElMax.innerText = lineStartElMaxVal
+    r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
+    r.style.setProperty("--sp-ln-ct", `${modOpts.lineCount}`)
+  })
+
+
   // head max width input element
   const headMaxWEl = document.getElementById("headMaxW")
   const headMaxWElMin = document.getElementById("headMaxWMin")
@@ -50,7 +126,7 @@ window.onload = () => {
   const bufferSizeElMax = document.getElementById("bufferSizeMax")
   const bufferSizeElNow = document.getElementById("bufferSizeNow")
   const bufferSizeElMinVal = 16
-  const bufferSizeElMaxVal = 640
+  const bufferSizeElMaxVal = 480
   bufferSizeEl.min = bufferSizeElMinVal
   bufferSizeEl.max = bufferSizeElMaxVal
   bufferSizeEl.value = modOpts.bufferSize
@@ -74,7 +150,7 @@ window.onload = () => {
   const lineHeightElMax = document.getElementById("lineHeightMax")
   const lineHeightElNow = document.getElementById("lineHeightNow")
   const lineHeightElMinVal = 1
-  const lineHeightElMaxVal = 64
+  const lineHeightElMaxVal = 128
   lineHeightEl.min = lineHeightElMinVal
   lineHeightEl.max = lineHeightElMaxVal
   lineHeightEl.value = modOpts.lineHeight
@@ -100,6 +176,8 @@ window.onload = () => {
     headMaxWElNow.innerText = modOpts.headMaxW
     bufferSizeElNow.innerText = modOpts.bufferSize
     r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
+    r.style.setProperty("--sp-ln-st", `${modOpts.lineStart}`)
+    r.style.setProperty("--sp-ln-ct", `${modOpts.lineCount}`)
     r.style.setProperty("--ct-maxw", `${modOpts.headMaxW}px`)
     r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineHeight}px`)
     r.style.setProperty("--sp-ln-ht", `${modOpts.lineHeight}px`)

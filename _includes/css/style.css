@@ -19,7 +19,7 @@ body {
   display: grid;
   gap: 0;
   justify-content: center;
-  grid-template-columns: [body-l] 1fr [content-l] minmax(var(--ct-minw), var(--ct-maxw)) [content-r] 1fr [body-r];
+  grid-template-columns: [body-l] 1fr [main-l] minmax(var(--ct-minw), var(--ct-maxw)) [main-r] 1fr [body-r];
   grid-template-rows:
     [body-t head-t] calc(var(--sp-bf-sz) + calc(var(--sp-ln-ct) * var(--sp-ln-ht)))
     [head-b main-t] auto
@@ -34,10 +34,10 @@ body {
     padding: 0 1rem;
   }
   & > header {
-    grid-area: head-t / content-l / head-b / content-r;
+    grid-area: 1 / 2 / 2 / 3;
     display: grid;
     gap: 0;
-    grid-template-columns: [content-l] auto [content-r];
+    grid-template-columns: [head-l] auto [head-r];
     grid-template-rows:
       [head-t nav-t] var(--sp-bf-sz)
       [nav-b splash-t] calc(var(--sp-ln-ct) * var(--sp-ln-ht))
@@ -45,7 +45,7 @@ body {
     align-items: center;
     & > div > a[href].home-link {
       display: inline !important;
-      grid-area: splash-t / content-l / splash-b / content-r;
+      grid-area: 2 / 1 / 3 / 2;
       font-family: var(--f-fm-sp);
       font-weight: 700;
       font-size: calc(0.8 * calc(var(--sp-ln-ct) * var(--sp-ln-ht)));
@@ -53,10 +53,11 @@ body {
       text-decoration: none;
     }
     & > nav {
-      grid-area: nav-t / content-l / nav-b / content-r;
+      grid-area: 1 / 1 / 2 / 2;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      font-size: 0.909em; /* 1em = 17.64px | smaller = 14.7px | 0.9em = 15.876px */
       & svg.icon {
         color: var(--tx-c-mu);
         &:hover,
@@ -70,7 +71,7 @@ body {
   }
 
   & > main {
-    grid-area: main-t / content-l / main-b / content-r;
+    grid-area: main-t / main-l / main-b / main-r;
     margin-top: var(--lo-sp);
     & > h1:first-child {
       margin-bottom: 0;
@@ -78,7 +79,7 @@ body {
   }
 
   & > footer {
-    grid-area: foot-t / content-l / foot-b / content-r;
+    grid-area: foot-t / main-l / foot-b / main-r;
     clear: all;
     margin-top: var(--lo-sp);
     padding-bottom: 1rem;
@@ -515,7 +516,7 @@ input[type="button"] {
 	text-align: center;
 	text-decoration: none;
 	white-space: nowrap;
-	background: var(--cg-gy);
+	background: var(--cg-gn);
 	color: var(--cg-bk);
 	border: 0;
 	border-radius: 4px;
@@ -524,8 +525,12 @@ input[type="button"] {
 }
 
 button:enabled:hover,
+button:enabled:active,
 input[type="submit"]:enabled:hover,
+input[type="submit"]:enabled:active,
 input[type="reset"]:enabled:hover,
-input[type="button"]:enabled:hover {
-	background: var(--cg-gn);
+input[type="reset"]:enabled:active,
+input[type="button"]:enabled:hover,
+input[type="button"]:enabled:active {
+    background: var(--cg-gn-l);
 }

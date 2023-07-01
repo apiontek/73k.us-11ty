@@ -3,8 +3,8 @@ const defaultOpts = {
   headMaxW: 808,
   bufferSize: 32,
   lineHeight: 16,
-  lineStart: 1,
   lineCount: 7,
+  lineStart: 1,
   tiltDegreesStart: 25,
   tiltDegreesEnd: 25,
   shapeRendering: "geometricPrecision", // use 'crispEdges' to disable anti-aliasing
