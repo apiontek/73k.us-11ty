@@ -1,5 +1,7 @@
 import { opts, getSvg } from "../../_data/splash73k"
 
+
+
 window.onload = () => {
   // We will get default opts from the same file that generates the default background
   let modOpts = window.structuredClone(opts)
@@ -11,15 +13,6 @@ window.onload = () => {
   // :root element for setting new css variable values
   const r = document.querySelector(':root');
 
-  // reset button for resetting values
-  const resetBtn = document.getElementById("resetBtn")
-  resetBtn.addEventListener("click", () => {
-    modOpts = window.structuredClone(opts)
-    r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
-    r.style.setProperty("--ct-maxw", `${modOpts.headMaxW}px`)
-    r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineSize}px`)
-  })
-
   // // Each on-change will need to:
   // // - use getSvg to get a new SVG
   // // - update the CSS background
@@ -29,45 +22,65 @@ window.onload = () => {
 
   // head max width input element
   const headMaxWEl = document.getElementById("headMaxW")
+  const headMaxWElMin = document.getElementById("headMaxWMin")
+  const headMaxWElMax = document.getElementById("headMaxWMax")
+  const headMaxWElNow = document.getElementById("headMaxWNow")
+  const headMaxWElMinVal = 320
+  const headMaxWElMaxVal = 2048
+  headMaxWEl.min = headMaxWElMinVal
+  headMaxWEl.max = headMaxWElMaxVal
+  headMaxWEl.value = modOpts.headMaxW
+  headMaxWElMin.innerText = headMaxWElMinVal
+  headMaxWElMax.innerText = headMaxWElMaxVal
+  headMaxWElNow.innerText = modOpts.headMaxW
+  headMaxWEl.addEventListener("input", (event) => {
+    headMaxWElNow.innerText = event.target.value
+  })
   headMaxWEl.addEventListener("change", (event) => {
-    let min = 256
-    let max = 2000
-    let newValue = parseInt(event.target.value)
-    if (isNaN(newValue)) {
-      newValue = modOpts.headMaxW
-      headMaxWEl.value = newValue
-    } else if (newValue < min) {
-    newValue = min
-      headMaxWEl.value = min
-    } else if (newValue > max) {
-      newValue = max
-      headMaxWEl.value = max
-    }
-    modOpts.headMaxW = newValue
+    let newVal = parseInt(event.target.value)
+    modOpts.headMaxW = newVal
     r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
     r.style.setProperty("--ct-maxw", `${modOpts.headMaxW}px`)
   })
 
-    // buffer size input element
-    const bufferSizeEl = document.getElementById("bufferSize")
-    bufferSizeEl.addEventListener("change", (event) => {
-      let min = 0
-      let max = 512
-      let newValue = parseInt(event.target.value)
-      if (isNaN(newValue)) {
-        newValue = modOpts.bufferSize
-        bufferSizeEl.value = newValue
-      } else if (newValue < min) {
-        newValue = min
-        bufferSizeEl.value = min
-      } else if (newValue > max) {
-        newValue = max
-        bufferSizeEl.value = max
-      }
-      modOpts.bufferSize = newValue
-      r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
-      r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineSize}px`)
-    })
+
+  // buffer size input element
+  const bufferSizeEl = document.getElementById("bufferSize")
+  const bufferSizeElMin = document.getElementById("bufferSizeMin")
+  const bufferSizeElMax = document.getElementById("bufferSizeMax")
+  const bufferSizeElNow = document.getElementById("bufferSizeNow")
+  const bufferSizeElMinVal = 16
+  const bufferSizeElMaxVal = 640
+  bufferSizeEl.min = bufferSizeElMinVal
+  bufferSizeEl.max = bufferSizeElMaxVal
+  bufferSizeEl.value = modOpts.bufferSize
+  bufferSizeElMin.innerText = bufferSizeElMinVal
+  bufferSizeElMax.innerText = bufferSizeElMaxVal
+  bufferSizeElNow.innerText = modOpts.bufferSize
+  bufferSizeEl.addEventListener("input", (event) => {
+    bufferSizeElNow.innerText = event.target.value
+  })
+  bufferSizeEl.addEventListener("change", (event) => {
+    let newVal = parseInt(event.target.value)
+    modOpts.bufferSize = newVal
+    r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
+    r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineSize}px`)
+  })
+
+
+
+
+
+  // reset button for resetting values
+  const resetBtn = document.getElementById("resetBtn")
+  resetBtn.addEventListener("click", () => {
+    modOpts = window.structuredClone(opts)
+    headMaxWElNow.innerText = modOpts.headMaxW
+    bufferSizeElNow.innerText = modOpts.bufferSize
+    r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
+    r.style.setProperty("--ct-maxw", `${modOpts.headMaxW}px`)
+    r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineSize}px`)
+  })
 
 
 }

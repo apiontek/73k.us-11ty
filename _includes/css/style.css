@@ -482,16 +482,24 @@ input {
 }
 
 #splash-fun {
-  display: flex;
+  /* display: flex; */
   margin-top: var(--lo-sp);
-  justify-content: center;
 }
 #splash-fun-form {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* flex-direction: column; */
   & label {
     margin-top: 1em;
+  }
+  & > div:nth-child(odd) {
+    grid-column: 1 / span 2;
+  }
+  & > div:nth-child(even) {
+    grid-column: 3 / span 2;
+  }
+  & > input[type="reset"] {
+    grid-column: 1 / 2;
   }
 }
 

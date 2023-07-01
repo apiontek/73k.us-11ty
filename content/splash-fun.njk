@@ -4,19 +4,28 @@ title: Splash Fun
 ---
 
 <h1>Splash Fun</h1>
-<p>Have fun changing the splash background!</p>
+<p>Have fun changing the splash background! There's some extra text here to simulate how a content page might feel...</p>
+
+<p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.</p>
+
 
 <div id="splash-fun">
 
   <form id="splash-fun-form">
 
-    <label for="headMaxW">Max Width (between 256 and 2000)</label>
-    <input type="number" id="headMaxW" name="headMaxW" min="256" max="2000" value="808">
+    <div>
+      <label for="headMaxW"><strong>Max Width</strong>
+        <br />(min <span id="headMaxWMin">320</span>, max <span id="headMaxWMax">2048</span>, now <span id="headMaxWNow">320</span>)</label>
+      <input type="range" id="headMaxW" name="headMaxW" min="320" max="2048" value="808">
+    </div>
 
-    <label for="bufferSize">Buffer Size (between 0 and 512):</label>
-    <input type="number" id="bufferSize" name="bufferSize" min="0" max="512" value="32">
+    <div>
+      <label for="bufferSize"><strong>Buffer Size</strong>
+        <br />(min <span id="bufferSizeMin">16</span>, max <span id="bufferSizeMax">640</span>, now <span id="bufferSizeNow">32</span>)</label>
+      <input type="range" id="bufferSize" name="bufferSize" min="16" max="640" value="32">
+    </div>
 
-    <input type="reset" id="resetBtn">Reset</button>
+    <input type="reset" id="resetBtn" />
   </form>
 
 </div>
