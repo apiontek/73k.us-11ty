@@ -6,7 +6,7 @@
 
   --tx-c-ln: var(--cg-bl);
   --tx-c-ln-de: var(--cg-gn);
-  --tx-c-ln-ac: var(--cg-bl);
+  --tx-c-ln-ac: var(--cg-bl-l);
   --tx-c-ln-ac-de: var(--cg-ma);
   --tx-c-ln-vs: var(--cg-ma);
   --tx-c-ln-vs-de: var(--cg-gn);

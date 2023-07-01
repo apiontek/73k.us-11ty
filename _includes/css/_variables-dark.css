@@ -1,10 +1,10 @@
 /* Dark Theme colors */
 :root {
-  --bg-c: var(--drk-nvy-blu);
+  --bg-c: #040418;
   --tx-c: #d3d7cf;
   --tx-c-mu: #999999;
 
-  --tx-c-ln: var(--cg-gn-l);
+  --tx-c-ln: var(--cg-gn);
   --tx-c-ln-de: var(--cg-cy);
   --tx-c-ln-ac: var(--cg-gn-l);
   --tx-c-ln-ac-de: var(--cg-ma-l);

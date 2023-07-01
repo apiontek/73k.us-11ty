@@ -155,12 +155,29 @@ ul {
 .nav-item {
   display: inline-block;
   margin-right: 1em;
-}
-.nav-item a[href]:not(:hover) {
-  text-decoration: none;
+  & a[href] {
+    &:not(:hover) {
+      text-decoration: none;
+    }
+    &:visited {
+      color: var(--tx-c-ln);
+      text-decoration-color: var(--tx-c-ln-de);
+    }
+    &:hover,
+    &:active {
+      color: var(--tx-c-ln-ac);
+      text-decoration-color: var(--tx-c-ln-ac-de);
+    }
+  }
 }
 .nav a[href][aria-current="page"] {
   text-decoration: underline;
+  text-decoration-color: var(--tx-c-ln-de);
+  &:hover,
+  &:active {
+    color: var(--tx-c-ln-ac);
+    text-decoration-color: var(--tx-c-ln-ac-de);
+  }
 }
 
 /* Links */
@@ -177,10 +194,7 @@ a[href] {
     text-decoration-color: var(--tx-c-ln-ac-de);
   }
 }
-#head73k > nav a[href]:visited {
-  color: var(--tx-c-ln);
-  text-decoration-color: var(--tx-c-ln-de);
-}
+
 
 /*
   Additional styling
