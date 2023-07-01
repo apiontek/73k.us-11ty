@@ -64,11 +64,33 @@ window.onload = () => {
     let newVal = parseInt(event.target.value)
     modOpts.bufferSize = newVal
     r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
-    r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineSize}px`)
+    r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineHeight}px`)
   })
 
 
-
+  // line size input element
+  const lineHeightEl = document.getElementById("lineHeight")
+  const lineHeightElMin = document.getElementById("lineHeightMin")
+  const lineHeightElMax = document.getElementById("lineHeightMax")
+  const lineHeightElNow = document.getElementById("lineHeightNow")
+  const lineHeightElMinVal = 1
+  const lineHeightElMaxVal = 64
+  lineHeightEl.min = lineHeightElMinVal
+  lineHeightEl.max = lineHeightElMaxVal
+  lineHeightEl.value = modOpts.lineHeight
+  lineHeightElMin.innerText = lineHeightElMinVal
+  lineHeightElMax.innerText = lineHeightElMaxVal
+  lineHeightElNow.innerText = modOpts.lineHeight
+  lineHeightEl.addEventListener("input", (event) => {
+    lineHeightElNow.innerText = event.target.value
+  })
+  lineHeightEl.addEventListener("change", (event) => {
+    let newVal = parseInt(event.target.value)
+    modOpts.lineHeight = newVal
+    r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
+    r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineHeight}px`)
+    r.style.setProperty("--sp-ln-ht", `${modOpts.lineHeight}px`)
+  })
 
 
   // reset button for resetting values
@@ -79,7 +101,8 @@ window.onload = () => {
     bufferSizeElNow.innerText = modOpts.bufferSize
     r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
     r.style.setProperty("--ct-maxw", `${modOpts.headMaxW}px`)
-    r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineSize}px`)
+    r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineHeight}px`)
+    r.style.setProperty("--sp-ln-ht", `${modOpts.lineHeight}px`)
   })
 
 

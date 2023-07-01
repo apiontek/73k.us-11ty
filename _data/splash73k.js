@@ -2,8 +2,7 @@ const defaultOpts = {
   svgSize: 10000,
   headMaxW: 808,
   bufferSize: 32,
-  lineSize: 16,
-  strokeWidth: 16,
+  lineHeight: 16,
   lineStart: 1,
   lineCount: 7,
   tiltDegreesStart: 25,
@@ -55,7 +54,7 @@ function getSvg(opts = defaultOpts) {
   let xmlns = "http://www.w3.org/2000/svg"
   let halfSize = opts.svgSize / 2
   let halfHead = opts.headMaxW / 2
-  let linePlacement = opts.lineSize / 2
+  let linePlacement = opts.lineHeight / 2
 
   // create container svg
   let svgParts = `<svg xmlns="${xmlns}" width="${opts.svgSize}" height="${opts.svgSize}">`
@@ -70,17 +69,17 @@ function getSvg(opts = defaultOpts) {
 
   // left-hand arc center values
   let arcLeftCX = mainStartX
-  let arcLeftCY = svgBufferSize + linePlacement + totalLineCount * opts.lineSize
+  let arcLeftCY = svgBufferSize + linePlacement + totalLineCount * opts.lineHeight
 
   // right-hand arc center values
   let arcRightCX = mainEndX
-  let arcRightCY = svgBufferSize + linePlacement - 1 * opts.lineSize
+  let arcRightCY = svgBufferSize + linePlacement - 1 * opts.lineHeight
 
   // left-hand tilted line startY
-  let startY = opts.svgSize + 2 * opts.lineSize
+  let startY = opts.svgSize + 2 * opts.lineHeight
 
   // right-hand tilted line endY
-  let endY = -1 * 2 * opts.lineSize
+  let endY = -1 * 2 * opts.lineHeight
 
   // loop to create the colored splash lines
   for (let i = 0; i < totalLineCount; i++) {
@@ -92,8 +91,8 @@ function getSvg(opts = defaultOpts) {
     // console.log(`line ${i} color: ${color}`)
 
     // main (center) line Y & other values that may change if aliased renderer is used
-    let mainY = svgBufferSize + linePlacement + i * opts.lineSize
-    let thisStrokeWidth = opts.strokeWidth
+    let mainY = svgBufferSize + linePlacement + i * opts.lineHeight
+    let thislineHeight = opts.lineHeight
     let thisArcLeftCY = arcLeftCY
     let thisArcRightCY = arcRightCY
     // if this is not the last line, adjust these values if aliased renderer is used
@@ -103,19 +102,19 @@ function getSvg(opts = defaultOpts) {
       aliasedShapeRenderers.includes(opts.shapeRendering)
     ) {
       mainY += 2
-      thisStrokeWidth += 4
+      thislineHeight += 4
       thisArcLeftCY += 2
       thisArcRightCY += 2
     }
 
     // arc left radius and end point
-    let arcLeftRad = (totalLineCount - i) * opts.lineSize
+    let arcLeftRad = (totalLineCount - i) * opts.lineHeight
     let arcLeftStartX = arcLeftCX + arcLeftRad * getCosFromDegrees(90 + opts.tiltDegreesStart)
     let arcLeftStartY =
       -1 * (-1 * thisArcLeftCY + arcLeftRad * getSinFromDegrees(90 + opts.tiltDegreesStart))
 
     // arc right radius and end point
-    let arcRightRad = (i + 1) * opts.lineSize
+    let arcRightRad = (i + 1) * opts.lineHeight
     let arcRightEndX = arcRightCX + arcRightRad * getCosFromDegrees(3 * 90 + opts.tiltDegreesEnd)
     let arcRightEndY =
       -1 * (-1 * thisArcRightCY + arcRightRad * getSinFromDegrees(3 * 90 + opts.tiltDegreesEnd))
@@ -156,7 +155,7 @@ function getSvg(opts = defaultOpts) {
     if (validShapeRendering) {
       svgPart += ` shape-rendering="${opts.shapeRendering}"`
     }
-    svgPart += ` stroke="${color}" stroke-width="${thisStrokeWidth}" fill="none" d="${pathString}" />`
+    svgPart += ` stroke="${color}" stroke-width="${thislineHeight}" fill="none" d="${pathString}" />`
     // add part to the parts whole
     svgParts += svgPart
 

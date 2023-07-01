@@ -21,7 +21,7 @@ body {
   justify-content: center;
   grid-template-columns: [body-l] 1fr [content-l] minmax(var(--ct-minw), var(--ct-maxw)) [content-r] 1fr [body-r];
   grid-template-rows:
-    [body-t head-t] calc(var(--sp-bf-sz) + calc(var(--sp-ln-ct) * var(--sp-ln-sz)))
+    [body-t head-t] calc(var(--sp-bf-sz) + calc(var(--sp-ln-ct) * var(--sp-ln-ht)))
     [head-b main-t] auto
     [main-b foot-t] min-content
     [foot-b body-b];
@@ -40,7 +40,7 @@ body {
     grid-template-columns: [content-l] auto [content-r];
     grid-template-rows:
       [head-t nav-t] var(--sp-bf-sz)
-      [nav-b splash-t] calc(var(--sp-ln-ct) * var(--sp-ln-sz))
+      [nav-b splash-t] calc(var(--sp-ln-ct) * var(--sp-ln-ht))
       [splash-b head-b];
     align-items: center;
     & > div > a[href].home-link {
@@ -48,7 +48,7 @@ body {
       grid-area: splash-t / content-l / splash-b / content-r;
       font-family: var(--f-fm-sp);
       font-weight: 700;
-      font-size: 5rem;
+      font-size: calc(0.8 * calc(var(--sp-ln-ct) * var(--sp-ln-ht)));
       color: var(--tx-c-ln-hd);
       text-decoration: none;
     }

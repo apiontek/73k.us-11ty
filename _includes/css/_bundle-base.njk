@@ -6,9 +6,8 @@
   --ct-maxw: {{ splash73k.opts.headMaxW }}px;
   --bg-img: url('data:image/svg+xml;utf8,{{ splash73k.svg | safe }}');
   --bg-sz: {{ splash73k.opts.svgSize }}px;
-  --sp-bf-sz: {{ splash73k.opts.bufferSize + splash73k.opts.lineSize }}px;
-  --sp-ln-sz: {{ splash73k.opts.lineSize }}px;
-  --sp-st-wd: {{ splash73k.opts.strokeWidth }}px;
+  --sp-bf-sz: {{ splash73k.opts.bufferSize + splash73k.opts.lineHeight }}px;
+  --sp-ln-ht: {{ splash73k.opts.lineHeight }}px;
   --sp-ln-st: {{ splash73k.opts.lineStart }};
   --sp-ln-ct: {{ splash73k.opts.lineCount }};
   --sp-dg-st: {{ splash73k.opts.tiltDegreesStart }};
