@@ -1,8 +1,9 @@
 /* Dark Theme colors */
 :root {
-  --bg-c: #040418;
+  --bg-c: #04081e;
   --tx-c: #d3d7cf;
   --tx-c-mu: #999999;
+  --tx-c-cd: #6cb8e6;
 
   --tx-c-ln: var(--cg-gn);
   --tx-c-ln-de: var(--cg-cy);

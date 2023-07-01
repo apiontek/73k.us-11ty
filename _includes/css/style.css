@@ -323,6 +323,9 @@ pre[class*="language-"] {
   font-size: 0.9em !important;
   line-height: 1.375 !important; /* 22px /16 */
   border-radius: var(--bd-rd);
+  border: none;
+  box-shadow: none;
+
 }
 pre:not([class*="language-"]) {
   margin: 0.5em 0;
