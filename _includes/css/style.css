@@ -61,7 +61,7 @@ body {
       & svg.icon,
       & .n-r a[href] {
         color: var(--tx-c-mu);
-        margin-right: 5px;
+        margin-right: 8px;
         &:hover,
         &:active {
           color: var(--tx-c);
