@@ -3,8 +3,11 @@ layout: layouts/home.njk
 title: Splash Fun
 ---
 
+<article data-pagefind-body>
 <h1>Splash Fun</h1>
 <p>Have fun changing the splash background! There's some extra text here to simulate how a content page might feel...</p>
+
+<hr />
 
 <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.</p>
 
@@ -14,49 +17,49 @@ title: Splash Fun
   <form id="splash-fun-form">
 
     <div>
-      <label for="tiltDegStart"><strong>Left Tilt Degrees</strong>
+      <label for="tiltDegStart"><strong>Left angle degrees</strong>
         <br />(min <span id="tiltDegStartMin">0</span>, max <span id="tiltDegStartMax">180</span>, now <span id="tiltDegStartNow">25</span>)</label>
       <input type="range" id="tiltDegStart" name="tiltDegStart" min="0" max="180" value="25">
     </div>
 
     <div>
-      <label for="tiltDegEnd"><strong>Right Tilt Degrees</strong>
+      <label for="tiltDegEnd"><strong>Right angle degrees</strong>
         <br />(min <span id="tiltDegEndMin">0</span>, max <span id="tiltDegEndMax">175</span>, now <span id="tiltDegEndNow">25</span>)</label>
       <input type="range" id="tiltDegEnd" name="tiltDegEnd" min="0" max="175" value="25">
     </div>
 
     <div>
-      <label for="lineStart"><strong>Line Start</strong>
+      <label for="lineStart"><strong>Begin with color (# of <span id="colorCount">9</span> available)</strong>
         <br />(min <span id="lineStartMin">1</span>, max <span id="lineStartMax">8</span>, now <span id="lineStartNow">2</span>)</label>
       <input type="range" id="lineStart" name="lineStart" min="1" max="8" value="2">
     </div>
 
     <div>
-      <label for="lineCount"><strong>Line Count</strong>
+      <label for="lineCount"><strong>Number of lines</strong>
         <br />(min <span id="lineCountMin">0</span>, max <span id="lineCountMax">9</span>, now <span id="lineCountNow">7</span>)</label>
       <input type="range" id="lineCount" name="lineCount" min="0" max="9" value="7">
     </div>
 
     <div>
-      <label for="lineHeight"><strong>Line Height</strong>
+      <label for="lineHeight"><strong>Line height (pixels)</strong>
         <br />(min <span id="lineHeightMin">1</span>, max <span id="lineHeightMax">128</span>, now <span id="lineHeightNow">16</span>)</label>
       <input type="range" id="lineHeight" name="lineHeight" min="1" max="128" value="16">
     </div>
 
     <div>
-      <label for="bufferSize"><strong>Buffer Size</strong>
+      <label for="bufferSize"><strong>Navbar height (pixels)</strong>
         <br />(min <span id="bufferSizeMin">16</span>, max <span id="bufferSizeMax">256</span>, now <span id="bufferSizeNow">32</span>)</label>
       <input type="range" id="bufferSize" name="bufferSize" min="16" max="256" value="32">
     </div>
 
     <div>
-      <label for="headMaxW"><strong>Max Width</strong>
+      <label for="headMaxW"><strong>Max content width (pixels)</strong>
         <br />(min <span id="headMaxWMin">320</span>, max <span id="headMaxWMax">2048</span>, now <span id="headMaxWNow">320</span>)</label>
       <input type="range" id="headMaxW" name="headMaxW" min="320" max="2048" value="808">
     </div>
 
     <div>
-      <p style="margin:0 0 2px 0;"><strong>Shape Rendering</strong> <br />Toggle SVG anti-aliasing.</p>
+      <p style="margin:0 0 2px 0;"><strong>Rendering</strong> <br />Toggle SVG anti-aliasing.</p>
       <label for="shapeRendering" style="word-wrap:break-word">
         <input type="checkbox" id="shapeRendering" name="shapeRendering" value="geometricPrecision" checked> <span id="shapeRenderingNow">anti-aliased</span>
       </label>
@@ -66,6 +69,7 @@ title: Splash Fun
   </form>
 
 </div>
+</article>
 
 {# build and render the JS #}
 <script>

@@ -18,6 +18,7 @@ window.onload = () => {
   // // - update the CSS background
   // // - update the corresponding CSS variable, if applicable
 
+  // set available colors count
 
   // line start & line count are interrelated, so we load them all up at once
   const lineStartEl = document.getElementById("lineStart")
@@ -29,6 +30,9 @@ window.onload = () => {
   const lineCountElMin = document.getElementById("lineCountMin")
   const lineCountElMax = document.getElementById("lineCountMax")
   const lineCountElNow = document.getElementById("lineCountNow")
+
+  const colorCountEl = document.getElementById("colorCount")
+  colorCountEl.innerText = modOpts.colors.length
 
   lineStartEl.value = modOpts.lineStart + 1
   lineStartElNow.innerText = modOpts.lineStart + 1
