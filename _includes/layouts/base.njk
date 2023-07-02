@@ -49,10 +49,6 @@
     {% include "_includes/css/_bundle-post.njk" %}
     {% endcss %}
 
-		{#- Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
-		{# <style>{% getBundle "css" %}</style> #}
-
-    {# <link rel="stylesheet" href="common.css"> #}
     <link id="scheme-link-light" rel="stylesheet" href="{% getBundleFileUrl 'css', 'light' %}" media="(prefers-color-scheme: light)">
     <link id="scheme-link-dark" rel="stylesheet" href="{% getBundleFileUrl 'css', 'dark' %}" media="(prefers-color-scheme: dark)">
 
@@ -84,7 +80,7 @@
           {% set ariaAlt = "Play with the rainbow background" %}
           <a href="/splash-fun" aria-label="{{ ariaAlt }}" title="{{ ariaAlt }}"><svg class="icon"><use xlink:href="#bi-rainbow"></use></svg></a>
           {% set ariaAlt = "Toggle the color scheme between light & dark" %}
-          <svg id="scheme-toggler" class="icon" aria-label="{{ ariaAlt }}" title="{{ ariaAlt }}"><title>{{ ariaAlt }}</title><use xlink:href="#bi-moon-fill"></use></svg>
+          <svg id="scheme-toggler" class="icon" aria-label="{{ ariaAlt }}"><use xlink:href="#bi-moon-fill"></use></svg>
         </div>
 			</nav>
 		</header>
@@ -98,7 +94,7 @@
         <p>&copy; {% year %} <a href="/">Adam Piontek</a></p>
         <p>
           {%- for social in socials %}
-          <a href="{{ social.href }}" aria-label="{{ social.alt }}" title="{{ social.alt }}"><svg class="icon"><use xlink:href="#{{ social.icon }}"></use></svg></a>
+          <a href="{{ social.href }}" aria-label="{{ social.alt }}"><svg class="icon"><use xlink:href="#{{ social.icon }}"></use></svg></a>
           {%- endfor %}
         </p>
       </div>

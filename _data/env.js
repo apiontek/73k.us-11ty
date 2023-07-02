@@ -1,5 +1,2 @@
-const environment = process.env.ELEVENTY_ENV
-const PROD_ENV = "prod"
-const isProd = environment === PROD_ENV
-
+const isProd = process.env.ELEVENTY_ENV === "prod"
 module.exports = { isProd }
