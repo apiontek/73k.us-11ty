@@ -5,8 +5,8 @@ const defaultOpts = {
   lineHeight: 16,
   lineCount: 7,
   lineStart: 1,
-  tiltDegreesStart: 25,
-  tiltDegreesEnd: 25,
+  tiltDegStart: 25,
+  tiltDegEnd: 25,
   shapeRendering: "geometricPrecision", // use 'crispEdges' to disable anti-aliasing
   colors: [
     "#001E5A",
@@ -64,8 +64,8 @@ function getSvg(opts = defaultOpts) {
   let mainEndX = halfSize + halfHead - 12
 
   // slope for all tilted lines
-  let slopeStart = getTanFromDegrees(opts.tiltDegreesStart)
-  let slopeEnd = getTanFromDegrees(opts.tiltDegreesEnd)
+  let slopeStart = getTanFromDegrees(opts.tiltDegStart)
+  let slopeEnd = getTanFromDegrees(opts.tiltDegEnd)
 
   // left-hand arc center values
   let arcLeftCX = mainStartX
@@ -109,20 +109,20 @@ function getSvg(opts = defaultOpts) {
 
     // arc left radius and end point
     let arcLeftRad = (totalLineCount - i) * opts.lineHeight
-    let arcLeftStartX = arcLeftCX + arcLeftRad * getCosFromDegrees(90 + opts.tiltDegreesStart)
+    let arcLeftStartX = arcLeftCX + arcLeftRad * getCosFromDegrees(90 + opts.tiltDegStart)
     let arcLeftStartY =
-      -1 * (-1 * thisArcLeftCY + arcLeftRad * getSinFromDegrees(90 + opts.tiltDegreesStart))
+      -1 * (-1 * thisArcLeftCY + arcLeftRad * getSinFromDegrees(90 + opts.tiltDegStart))
 
     // arc right radius and end point
     let arcRightRad = (i + 1) * opts.lineHeight
-    let arcRightEndX = arcRightCX + arcRightRad * getCosFromDegrees(3 * 90 + opts.tiltDegreesEnd)
+    let arcRightEndX = arcRightCX + arcRightRad * getCosFromDegrees(3 * 90 + opts.tiltDegEnd)
     let arcRightEndY =
-      -1 * (-1 * thisArcRightCY + arcRightRad * getSinFromDegrees(3 * 90 + opts.tiltDegreesEnd))
+      -1 * (-1 * thisArcRightCY + arcRightRad * getSinFromDegrees(3 * 90 + opts.tiltDegEnd))
 
     // startY
     // start tilted line B and X (in Y = mX + B); m is slope calculated above
     let startB, startX
-    if (opts.tiltDegreesStart > 0) {
+    if (opts.tiltDegStart > 0) {
       startB = -1 * arcLeftStartY - slopeStart * arcLeftStartX
       startX = (-1 * startY - startB) / slopeStart
     } else {
@@ -132,7 +132,7 @@ function getSvg(opts = defaultOpts) {
 
     // end tilted line B and X (in Y = mX + B); m is slope calculated above
     let endB, endX
-    if (opts.tiltDegreesEnd > 0) {
+    if (opts.tiltDegEnd > 0) {
       endB = -1 * arcRightEndY - slopeEnd * arcRightEndX
       endX = (-1 * endY - endB) / slopeEnd
     } else {

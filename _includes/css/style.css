@@ -58,12 +58,17 @@ body {
       align-items: center;
       justify-content: space-between;
       font-size: 0.909em; /* 1em = 17.64px | smaller = 14.7px | 0.9em = 15.876px */
-      & svg.icon {
+      & svg.icon,
+      & .n-r a[href] {
         color: var(--tx-c-mu);
+        margin-right: 5px;
         &:hover,
         &:active {
           color: var(--tx-c);
           cursor: pointer;
+        }
+        &:last-child {
+          margin-right: 0px;
         }
       }
 
@@ -500,13 +505,11 @@ input {
 }
 
 #splash-fun {
-  /* display: flex; */
   margin-top: var(--lo-sp);
 }
 #splash-fun-form {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* flex-direction: column; */
   & label {
     margin-top: 1em;
   }
@@ -516,8 +519,31 @@ input {
   & > div:nth-child(even) {
     grid-column: 3 / span 2;
   }
+  & input[type="checkbox"] {
+    display: inline-block;
+    vertical-align:middle;
+    margin: 0 5px 0 0;
+  }
   & > input[type="reset"] {
     grid-column: 1 / 2;
+    margin-top: 1em;
+  }
+}
+@media only screen and (max-width: 536px) {
+  #splash-fun-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    & label {
+      margin-top: 1em;
+    }
+    & > div {
+      display: flex;
+      flex-direction: column;
+    }
+    & > div:nth-child(odd),
+    & > div:nth-child(even) {
+      grid-column: 1 / 2;
+    }
   }
 }
 

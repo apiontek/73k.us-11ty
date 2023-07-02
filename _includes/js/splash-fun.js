@@ -17,8 +17,6 @@ window.onload = () => {
   // // - use getSvg to get a new SVG
   // // - update the CSS background
   // // - update the corresponding CSS variable, if applicable
-  // let testSvg = getSvg(opts)
-  // console.log(testSvg)
 
 
   // line start & line count are interrelated, so we load them all up at once
@@ -37,8 +35,6 @@ window.onload = () => {
 
   lineCountEl.value = modOpts.lineCount
   lineCountElNow.innerText = modOpts.lineCount
-
-  console.log(modOpts.colors.length)
 
   let lineStartElMinVal = 0 + 1
   let lineStartElMaxVal = modOpts.colors.length - modOpts.lineCount + 1
@@ -126,7 +122,7 @@ window.onload = () => {
   const bufferSizeElMax = document.getElementById("bufferSizeMax")
   const bufferSizeElNow = document.getElementById("bufferSizeNow")
   const bufferSizeElMinVal = 16
-  const bufferSizeElMaxVal = 480
+  const bufferSizeElMaxVal = 256
   bufferSizeEl.min = bufferSizeElMinVal
   bufferSizeEl.max = bufferSizeElMaxVal
   bufferSizeEl.value = modOpts.bufferSize
@@ -169,6 +165,88 @@ window.onload = () => {
   })
 
 
+  // tilt degrees start input element
+  const tiltDegStartEl = document.getElementById("tiltDegStart")
+  const tiltDegStartElMin = document.getElementById("tiltDegStartMin")
+  const tiltDegStartElMax = document.getElementById("tiltDegStartMax")
+  const tiltDegStartElNow = document.getElementById("tiltDegStartNow")
+  const tiltDegStartElMinVal = 0
+  const tiltDegStartElMaxVal = 180
+  tiltDegStartEl.min = tiltDegStartElMinVal
+  tiltDegStartEl.max = tiltDegStartElMaxVal
+  tiltDegStartEl.value = modOpts.tiltDegStart
+  tiltDegStartElMin.innerText = tiltDegStartElMinVal
+  tiltDegStartElMax.innerText = tiltDegStartElMaxVal
+  tiltDegStartElNow.innerText = modOpts.tiltDegStart
+  tiltDegStartEl.addEventListener("input", (event) => {
+    tiltDegStartElNow.innerText = event.target.value
+  })
+  tiltDegStartEl.addEventListener("change", (event) => {
+    let newVal = parseInt(event.target.value)
+    modOpts.tiltDegStart = newVal
+    r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
+    r.style.setProperty("--sp-dg-st", `${modOpts.tiltDegStart}px`)
+  })
+
+
+  // tilt degrees start input element
+  const tiltDegEndEl = document.getElementById("tiltDegEnd")
+  const tiltDegEndElMin = document.getElementById("tiltDegEndMin")
+  const tiltDegEndElMax = document.getElementById("tiltDegEndMax")
+  const tiltDegEndElNow = document.getElementById("tiltDegEndNow")
+  const tiltDegEndElMinVal = 0
+  const tiltDegEndElMaxVal = 175
+  tiltDegEndEl.min = tiltDegEndElMinVal
+  tiltDegEndEl.max = tiltDegEndElMaxVal
+  tiltDegEndEl.value = modOpts.tiltDegEnd
+  tiltDegEndElMin.innerText = tiltDegEndElMinVal
+  tiltDegEndElMax.innerText = tiltDegEndElMaxVal
+  tiltDegEndElNow.innerText = modOpts.tiltDegEnd
+  tiltDegEndEl.addEventListener("input", (event) => {
+    tiltDegEndElNow.innerText = event.target.value
+  })
+  tiltDegEndEl.addEventListener("change", (event) => {
+    let newVal = parseInt(event.target.value)
+    modOpts.tiltDegEnd = newVal
+    r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
+    r.style.setProperty("--sp-dg-en", `${modOpts.tiltDegEnd}px`)
+  })
+
+
+  // shape rendering input element
+  const CRISP = "crispEdges"
+  const CRISP_LABEL = "crisp edges"
+  const ALIASED = "geometricPrecision"
+  const ALIASED_LABEL = "anti-aliased"
+  const shapeRenderingEl = document.getElementById("shapeRendering")
+  const shapeRenderingElNow = document.getElementById("shapeRenderingNow")
+  console.log(shapeRenderingEl.value)
+  console.log(shapeRenderingEl.checked)
+  if (modOpts.shapeRendering === ALIASED) {
+    shapeRenderingEl.value = ALIASED
+    shapeRenderingEl.checked = true
+    shapeRenderingElNow.innerText = ALIASED_LABEL
+  } else {
+    shapeRenderingEl.value = CRISP
+    shapeRenderingEl.checked = false
+    shapeRenderingElNow.innerText = CRISP_LABEL
+  }
+  shapeRenderingEl.addEventListener("change", (event) => {
+    if (event.target.checked) {
+      modOpts.shapeRendering = ALIASED
+      shapeRenderingEl.value = ALIASED
+      shapeRenderingElNow.innerText = ALIASED_LABEL
+    } else {
+      modOpts.shapeRendering = CRISP
+      shapeRenderingEl.value = CRISP
+      shapeRenderingElNow.innerText = CRISP_LABEL
+    }
+    r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
+  })
+
+
+
+
   // reset button for resetting values
   const resetBtn = document.getElementById("resetBtn")
   resetBtn.addEventListener("click", () => {
@@ -181,7 +259,8 @@ window.onload = () => {
     r.style.setProperty("--ct-maxw", `${modOpts.headMaxW}px`)
     r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineHeight}px`)
     r.style.setProperty("--sp-ln-ht", `${modOpts.lineHeight}px`)
+    r.style.setProperty("--sp-dg-st", `${modOpts.tiltDegStart}px`)
+    r.style.setProperty("--sp-dg-en", `${modOpts.tiltDegEnd}px`)
   })
-
 
 }

@@ -10,9 +10,8 @@
   --sp-ln-ht: {{ splash73k.opts.lineHeight }}px;
   --sp-ln-ct: {{ splash73k.opts.lineCount }};
   --sp-ln-st: {{ splash73k.opts.lineStart }};
-  --sp-dg-st: {{ splash73k.opts.tiltDegreesStart }};
-  --sp-dg-en: {{ splash73k.opts.tiltDegreesEnd }};
-  --sp-sh-rn: {{ splash73k.opts.shapeRendering }};
+  --sp-dg-st: {{ splash73k.opts.tiltDegStart }};
+  --sp-dg-en: {{ splash73k.opts.tiltDegEnd }};
   {% for color in splash73k.opts.colors %}
   --sp-c{{ loop.index0 }}: {{ color }};
   {% endfor %}

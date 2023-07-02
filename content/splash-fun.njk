@@ -14,6 +14,18 @@ title: Splash Fun
   <form id="splash-fun-form">
 
     <div>
+      <label for="tiltDegStart"><strong>Left Tilt Degrees</strong>
+        <br />(min <span id="tiltDegStartMin">0</span>, max <span id="tiltDegStartMax">180</span>, now <span id="tiltDegStartNow">25</span>)</label>
+      <input type="range" id="tiltDegStart" name="tiltDegStart" min="0" max="180" value="25">
+    </div>
+
+    <div>
+      <label for="tiltDegEnd"><strong>Right Tilt Degrees</strong>
+        <br />(min <span id="tiltDegEndMin">0</span>, max <span id="tiltDegEndMax">175</span>, now <span id="tiltDegEndNow">25</span>)</label>
+      <input type="range" id="tiltDegEnd" name="tiltDegEnd" min="0" max="175" value="25">
+    </div>
+
+    <div>
       <label for="lineStart"><strong>Line Start</strong>
         <br />(min <span id="lineStartMin">1</span>, max <span id="lineStartMax">8</span>, now <span id="lineStartNow">2</span>)</label>
       <input type="range" id="lineStart" name="lineStart" min="1" max="8" value="2">
@@ -26,21 +38,28 @@ title: Splash Fun
     </div>
 
     <div>
+      <label for="lineHeight"><strong>Line Height</strong>
+        <br />(min <span id="lineHeightMin">1</span>, max <span id="lineHeightMax">128</span>, now <span id="lineHeightNow">16</span>)</label>
+      <input type="range" id="lineHeight" name="lineHeight" min="1" max="128" value="16">
+    </div>
+
+    <div>
+      <label for="bufferSize"><strong>Buffer Size</strong>
+        <br />(min <span id="bufferSizeMin">16</span>, max <span id="bufferSizeMax">256</span>, now <span id="bufferSizeNow">32</span>)</label>
+      <input type="range" id="bufferSize" name="bufferSize" min="16" max="256" value="32">
+    </div>
+
+    <div>
       <label for="headMaxW"><strong>Max Width</strong>
         <br />(min <span id="headMaxWMin">320</span>, max <span id="headMaxWMax">2048</span>, now <span id="headMaxWNow">320</span>)</label>
       <input type="range" id="headMaxW" name="headMaxW" min="320" max="2048" value="808">
     </div>
 
     <div>
-      <label for="bufferSize"><strong>Buffer Size</strong>
-        <br />(min <span id="bufferSizeMin">16</span>, max <span id="bufferSizeMax">480</span>, now <span id="bufferSizeNow">32</span>)</label>
-      <input type="range" id="bufferSize" name="bufferSize" min="16" max="480" value="32">
-    </div>
-
-    <div>
-      <label for="lineHeight"><strong>Line Height</strong>
-        <br />(min <span id="lineHeightMin">1</span>, max <span id="lineHeightMax">128</span>, now <span id="lineHeightNow">16</span>)</label>
-      <input type="range" id="lineHeight" name="lineHeight" min="1" max="128" value="16">
+      <p style="margin:0 0 2px 0;"><strong>Shape Rendering</strong> <br />Toggle SVG anti-aliasing.</p>
+      <label for="shapeRendering" style="word-wrap:break-word">
+        <input type="checkbox" id="shapeRendering" name="shapeRendering" value="geometricPrecision" checked> <span id="shapeRenderingNow">anti-aliased</span>
+      </label>
     </div>
 
     <input type="reset" id="resetBtn" />

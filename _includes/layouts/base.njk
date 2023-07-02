@@ -80,7 +80,10 @@
 					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
 				{%- endfor %}
 				</ul>
-        <svg id="scheme-toggler" class="icon"><use xlink:href="#bi-moon-fill"></use></svg>
+        <div class='n-r'>
+          <a href="/splash-fun"><svg class="icon"><use xlink:href="#bi-rainbow"></use></svg></a>
+          <svg id="scheme-toggler" class="icon"><use xlink:href="#bi-moon-fill"></use></svg>
+        </div>
 			</nav>
 		</header>
 
