@@ -57,18 +57,21 @@ body {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 0.909em; /* 1em = 17.64px | smaller = 14.7px | 0.9em = 15.876px */
-      & svg.icon,
-      & .n-r a[href] {
-        color: var(--tx-c-mu);
-        margin-right: 8px;
-        &:hover,
-        &:active {
-          color: var(--tx-c);
-          cursor: pointer;
-        }
-        &:last-child {
-          margin-right: 0px;
+      font-size: 0.909em;
+      & .n-r {
+        font-size: 1.1rem;
+        & a[href],
+        & svg.icon {
+          color: var(--tx-c-mu);
+          margin-right: 8px;
+          &:hover,
+          &:active {
+            color: var(--tx-c);
+            cursor: pointer;
+          }
+          &:last-child {
+            margin-right: 0px;
+          }
         }
       }
 
@@ -101,7 +104,23 @@ body {
         margin: 0;
         &:last-child {
           font-size: 1.1rem;
+          & a[href] {
+            margin-left: 8px;
+          }
         }
+      }
+    }
+    & a[href] {
+      color: var(--tx-c-mu);
+      text-decoration-color: var(--tx-c-mu);
+      &:visited {
+        color: var(--tx-c-mu);
+        text-decoration-color: var(--tx-c-mu);
+      }
+      &:hover,
+      &:active {
+        color: var(--tx-c);
+        text-decoration-color: var(--tx-c-ln-vs-de);
       }
     }
   }
@@ -473,19 +492,7 @@ ul.taglist {
     stroke: currentColor;
   }
 }
-footer a[href] {
-  color: var(--tx-c-mu);
-  text-decoration-color: var(--tx-c-mu);
-  &:visited {
-    color: var(--tx-c-mu);
-    text-decoration-color: var(--tx-c-mu);
-  }
-  &:hover,
-  &:active {
-    color: var(--tx-c);
-    text-decoration-color: var(--tx-c-ln-vs-de);
-  }
-}
+
 
 
 

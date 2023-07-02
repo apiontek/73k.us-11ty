@@ -81,8 +81,10 @@
 				{%- endfor %}
 				</ul>
         <div class='n-r'>
-          <a href="/splash-fun"><svg class="icon"><use xlink:href="#bi-rainbow"></use></svg></a>
-          <svg id="scheme-toggler" class="icon"><use xlink:href="#bi-moon-fill"></use></svg>
+          {% set ariaAlt = "Play with the rainbow background" %}
+          <a href="/splash-fun" aria-label="{{ ariaAlt }}" title="{{ ariaAlt }}"><svg class="icon"><use xlink:href="#bi-rainbow"></use></svg></a>
+          {% set ariaAlt = "Toggle the color scheme between light & dark" %}
+          <svg id="scheme-toggler" class="icon" aria-label="{{ ariaAlt }}" title="{{ ariaAlt }}"><title>{{ ariaAlt }}</title><use xlink:href="#bi-moon-fill"></use></svg>
         </div>
 			</nav>
 		</header>
