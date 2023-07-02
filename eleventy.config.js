@@ -1,21 +1,27 @@
+// inclusions from original eleventy-base-blog
 const { DateTime } = require("luxon")
 const markdownItAnchor = require("markdown-it-anchor")
-
-const { execSync } = require("child_process")
-
 const pluginRss = require("@11ty/eleventy-plugin-rss")
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const pluginBundle = require("@11ty/eleventy-plugin-bundle")
+const pluginNavigation = require("@11ty/eleventy-navigation")
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy")
+const pluginDrafts = require("./eleventy.config.drafts.js")
+const pluginImages = require("./eleventy.config.images.js")
+
+// for lightningcss
 const browserslist = require("browserslist")
 const { browserslistToTargets, transform } = require("lightningcss")
+
+// for esbuild js processing
 const fs = require("fs")
 const esbuild = require("esbuild")
 
-const pluginNavigation = require("@11ty/eleventy-navigation")
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy")
+// for minifying html, xml, some others
+const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minifier");
 
-const pluginDrafts = require("./eleventy.config.drafts.js")
-const pluginImages = require("./eleventy.config.images.js")
+// used for executing pagefind after build
+const { execSync } = require("child_process")
 
 // extra environment data for eleventy
 const env = require("./_data/env")
@@ -66,7 +72,7 @@ module.exports = function (eleventyConfig) {
           // Same as Eleventy transforms, this.page is available here.
           let result = await transform({
             code: Buffer.from(content),
-            minify: true,
+            minify: env.isProd,
             sourceMap: false,
             targets,
             drafts: {
@@ -184,6 +190,11 @@ module.exports = function (eleventyConfig) {
   // eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
   eleventyConfig.setServerOptions({ showAllHosts: true })
+
+  // in production, minify the HTML, XML, etc
+  if (env.isProd) {
+    eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
+  }
 
   eleventyConfig.on("eleventy.after", () => {
     execSync(`npx pagefind --source _site --glob "**/*.html"`, { encoding: "utf-8" })
