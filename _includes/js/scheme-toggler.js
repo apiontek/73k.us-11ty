@@ -35,6 +35,13 @@ const initToggleHandler = async () => {
   // ...better to flash a transition?
   await sleep(5)
 
+  // Access the toggler element
+  const toggleEl = document.getElementById("scheme-toggler")
+
+  // Access the stylesheet link elements and set active scheme
+  const linkLight = document.getElementById("scheme-link-light")
+  const linkDark = document.getElementById("scheme-link-dark")
+
   // Check for system dark mode
   const isSystemDarkMode = matchMedia && matchMedia("(prefers-color-scheme: dark)").matches
 
@@ -46,19 +53,19 @@ const initToggleHandler = async () => {
     // if no mode was loaded from session storage
     // but dark mode is active, mode is dark
     mode = DARK
+    // We don't set active scheme here so that,
+    // if user hasn't changed the mode with the toggler,
+    // then system scheme changes will continue to work
   } else {
+    // if mode was loaded from session storage, set accordingly
+    setActiveScheme(linkLight, linkDark, mode)
     // if mode was loaded, or system mode is not dark
     // then mode should be what user chose, or light
     mode = mode || LIGHT
   }
 
-  // Access the toggler element and set its icon accordingly
-  const toggleEl = document.getElementById("scheme-toggler")
+  // Set the toggler icon value according to the active mode
   setToggleIcon(toggleEl, mode)
-
-  // Access the stylesheet link elements and set active scheme
-  const linkLight = document.getElementById("scheme-link-light")
-  const linkDark = document.getElementById("scheme-link-dark")
 
   // Add click handler to the toggler element
   toggleEl.addEventListener("click", () => {
