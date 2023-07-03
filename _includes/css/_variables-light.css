@@ -20,5 +20,5 @@
 }
 
 /* hide shiki dark code blocks when light scheme active */
-pre.shiki.poimandres { display: none; }
+pre.shiki.dark-plus { display: none; }
 pre.shiki[style] { background-color: #fafafa !important; }

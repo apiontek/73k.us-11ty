@@ -273,7 +273,7 @@ And then in `eleventy.config.js` I do:
 ```js
 const pluginShiki = require("./eleventy.config.shiki.js")
 // and in the eleventy config block:
-eleventyConfig.addPlugin(pluginShiki, { themes: ['light-plus', 'poimandres'] })
+eleventyConfig.addPlugin(pluginShiki, { themes: ['dark-plus', 'light-plus'] })
 ```
 
 ## Light/Dark color scheme toggle
@@ -307,7 +307,7 @@ And for the swapping of light/dark syntax highlighting themes, `_variables-light
 
 ```css
 /* hide shiki dark code blocks when light scheme active */
-pre.shiki.poimandres { display: none; }
+pre.shiki.dark-plus { display: none; }
 pre.shiki[style] { background-color: #fafafa !important; }
 ```
 
@@ -316,6 +316,7 @@ pre.shiki[style] { background-color: #fafafa !important; }
 ```css
 /* hide shiki light code blocks when dark scheme active */
 pre.shiki.light-plus { display: none; }
+pre.shiki[style] { background-color: #191e2c !important; }
 ```
 
 Hopefully any of this might be of help to someone, but it at least also serves as notes for myself.

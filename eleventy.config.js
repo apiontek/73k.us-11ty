@@ -60,7 +60,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginImages)
 
   // Shiki syntax highlighting
-  eleventyConfig.addPlugin(pluginShiki, { themes: ['light-plus', 'poimandres'] })
+  eleventyConfig.addPlugin(pluginShiki, { themes: ['dark-plus', 'light-plus'] })
 
   // Official plugins
   eleventyConfig.addPlugin(pluginRss)

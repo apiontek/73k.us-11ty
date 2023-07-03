@@ -3,7 +3,7 @@
   --bg-c: #04081e;
   --tx-c: #d3d7cf;
   --tx-c-mu: #999999;
-  --tx-c-cd: #5DE4C7;
+  --tx-c-cd: #9CDCFE;
 
   --tx-c-ln: var(--cg-gn);
   --tx-c-ln-de: var(--cg-cy);
@@ -21,3 +21,4 @@
 
 /* hide shiki light code blocks when dark scheme active */
 pre.shiki.light-plus { display: none; }
+pre.shiki[style] { background-color: #191e2c !important; }
