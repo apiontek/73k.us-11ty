@@ -1,7 +1,7 @@
 ---
 title: "Caddy on OpenWrt with access to LuCI"
 date: "2023-01-03"
-tags: 
+tags:
   - "caddy"
   - "luci"
   - "networking"
@@ -49,32 +49,32 @@ The Caddyfile contents that worked for me:
 
 ```caddy
 {
-	order cgi before respond
+  order cgi before respond
 }
 
 localhost, 192.168.1.1, router, router.home {
-	tls internal
-	root * /www
-	file_server
+  tls internal
+  root * /www
+  file_server
 
-	cgi /cgi-bin/cgi-backup* /www/cgi-bin/cgi-backup {
-		script_name /cgi-bin/cgi-backup
-	}
-	cgi /cgi-bin/cgi-download* /www/cgi-bin/cgi-download {
-		script_name /cgi-bin/cgi-download
-	}
-	cgi /cgi-bin/cgi-exec* /www/cgi-bin/cgi-exec {
-		script_name /cgi-bin/cgi-exec
-	}
-	cgi /cgi-bin/cgi-upload* /www/cgi-bin/cgi-upload {
-		script_name /cgi-bin/cgi-upload
-	}
-	cgi /cgi-bin/luci* /www/cgi-bin/luci {
-		script_name /cgi-bin/luci
-	}
-	cgi /ubus* /etc/caddy/ubus.sh {
-		script_name /ubus
-	}
+  cgi /cgi-bin/cgi-backup* /www/cgi-bin/cgi-backup {
+    script_name /cgi-bin/cgi-backup
+  }
+  cgi /cgi-bin/cgi-download* /www/cgi-bin/cgi-download {
+    script_name /cgi-bin/cgi-download
+  }
+  cgi /cgi-bin/cgi-exec* /www/cgi-bin/cgi-exec {
+    script_name /cgi-bin/cgi-exec
+  }
+  cgi /cgi-bin/cgi-upload* /www/cgi-bin/cgi-upload {
+    script_name /cgi-bin/cgi-upload
+  }
+  cgi /cgi-bin/luci* /www/cgi-bin/luci {
+    script_name /cgi-bin/luci
+  }
+  cgi /ubus* /etc/caddy/ubus.sh {
+    script_name /ubus
+  }
 }
 ```
 
@@ -118,33 +118,33 @@ One of the neat things about this is easy SSL and reverse proxying. Since I also
 
 ```caddy
 adguard.home {
-	tls internal
-	reverse_proxy localhost:8081
+  tls internal
+  reverse_proxy localhost:8081
 }
 ```
 
 And the DNS is working because the AdGuardHome is configured for upstream DNS:
 
-```conf
+```apache
 [/home/]127.0.0.1:54
 [//]127.0.0.1:54
 ```
 
 ...and the OpenWrt dnsmasq `/etc/config/dhcp` contains:
 
-```conf
+```apache
 config dnsmasq
-	option domainneeded '1'
-	option local '/home/'
-	option domain 'home'
-	option expandhosts '1'
-	# ...
+  option domainneeded '1'
+  option local '/home/'
+  option domain 'home'
+  option expandhosts '1'
+  # ...
 
 config domain
-	option name 'router.home'
-	option ip '192.168.1.1'
+  option name 'router.home'
+  option ip '192.168.1.1'
 
 config domain
-	option name 'adguard.home'
-	option ip '192.168.1.1'
+  option name 'adguard.home'
+  option ip '192.168.1.1'
 ```

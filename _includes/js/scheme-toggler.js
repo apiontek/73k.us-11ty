@@ -59,7 +59,6 @@ const initToggleHandler = async () => {
   // Access the stylesheet link elements and set active scheme
   const linkLight = document.getElementById("scheme-link-light")
   const linkDark = document.getElementById("scheme-link-dark")
-  setActiveScheme(linkLight, linkDark, mode)
 
   // Add click handler to the toggler element
   toggleEl.addEventListener("click", () => {

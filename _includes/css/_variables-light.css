@@ -1,9 +1,9 @@
-/* Light Theme colors */
+/* light scheme colors */
 :root {
   --bg-c: #cecece;
   --tx-c: #22262a;
   --tx-c-mu: var(--cg-gy);
-  --tx-c-cd: #005a8f;
+  --tx-c-cd: #2AA198;
 
   --tx-c-ln: var(--cg-bl);
   --tx-c-ln-de: var(--cg-gn);
@@ -17,4 +17,9 @@
   --bq-c: var(--tx-c-mu);
   --bq-bg-c: transparent;
   --bq-bd-c: var(--cg-cy);
+}
+
+/* hide shiki dark code blocks when light scheme active */
+pre.shiki.solarized-dark {
+  display: none;
 }

@@ -1,0 +1,6 @@
+[submodule "syntax-langs/vscode-caddyfile"]
+	path = syntax-langs/vscode-caddyfile
+	url = https://github.com/caddyserver/vscode-caddyfile.git
+[submodule "syntax-langs/vscode-nunjucks"]
+	path = syntax-langs/vscode-nunjucks
+	url = https://github.com/ronnidc/vscode-nunjucks.git

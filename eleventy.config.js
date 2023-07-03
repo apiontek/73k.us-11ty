@@ -2,12 +2,14 @@
 const { DateTime } = require("luxon")
 const markdownItAnchor = require("markdown-it-anchor")
 const pluginRss = require("@11ty/eleventy-plugin-rss")
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const pluginBundle = require("@11ty/eleventy-plugin-bundle")
 const pluginNavigation = require("@11ty/eleventy-navigation")
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy")
 const pluginDrafts = require("./eleventy.config.drafts.js")
 const pluginImages = require("./eleventy.config.images.js")
+
+// for syntax highlighting
+const pluginShiki = require("./eleventy.config.shiki.js")
 
 // for lightningcss
 const browserslist = require("browserslist")
@@ -57,11 +59,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginDrafts)
   eleventyConfig.addPlugin(pluginImages)
 
+  // Shiki syntax highlighting
+  eleventyConfig.addPlugin(pluginShiki, { themes: ['solarized-dark', 'solarized-light'] })
+
   // Official plugins
   eleventyConfig.addPlugin(pluginRss)
-  eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-    preAttributes: { tabindex: 0 },
-  })
   eleventyConfig.addPlugin(pluginNavigation)
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin)
   eleventyConfig.addPlugin(pluginBundle, {

@@ -132,7 +132,7 @@ eleventyConfig.addAsyncFilter("esbuild", function (jsInFile) {
 
 Use in a template like:
 
-```twig
+```njk
 <script>{% raw %}{{ "_includes/js/scheme-toggler.js" | esbuild | safe }}{% endraw %}</script>
 ```
 
@@ -152,16 +152,16 @@ I basically just followed along with that, made a search page, and adjusted the 
 
 Back to that bundler plugin, I noticed it could bundle svgs into a sprite, and when I've been able to use that in the past, I've preferred it, so I went with that.
 
-```twig
-{% raw %}
-{# SVG asset bucket as sprite list #}
-{% include "_includes/layouts/svg-sprites.njk" %}
-{% endraw %}
+In my base template `base.njk` as the first child of `<body>` I have:
+
+```njk
+{% raw %}{# SVG asset bucket as sprite list #}
+{% include "_includes/layouts/svg-sprites.njk" %}{% endraw %}
 ```
 
 With `_includes/layouts/svg-sprites.njk` looking like:
 
-```twig
+```njk
 {% raw %}{% html "svg" %}{% endraw %}
 <symbol id="bi-twitter" viewBox="0 0 16 16">
   <title>Adam Piontek's Twitter profile</title>
@@ -181,7 +181,7 @@ With `_includes/layouts/svg-sprites.njk` looking like:
 
 And then where I want to use an icon:
 
-```twig
+```njk
 <svg class="icon" aria-label="some label"><use xlink:href="#bi-twitter"></use></svg>
 ```
 
@@ -210,7 +210,7 @@ I had to mess around a while with the light/dark theme toggler. I wanted to be s
 
 The key is to use two linked stylesheets in the header, one for dark and one for light, and then use javascript to change the media attributes and disable/enable each accordingly.
 
-```twig
+```njk
 {% raw %}
 {#- Bundling CSS, scheme bundle, light #}
 {%- css "light" %}

@@ -1,7 +1,7 @@
 ---
 title: "Elixir Phoenix Automated Deployment with Gitea/systemd"
 date: "2021-04-08"
-tags: 
+tags:
   - "automated"
   - "coding"
   - "deployment"
@@ -58,7 +58,7 @@ sudo /bin/systemctl restart myapp73k.service
 
 To allow the user that’s running the script to invoke `sudo` we need to give it explicit permission, e.g. by placing the following in a file like `/etc/sudoers.d/deploy_hooks`:
 
-```conf
+```ssh-config
 git     ALL=(runuser) NOPASSWD: /home/runuser/deploy_hooks/deploy-myapp73k.sh
 runuser ALL=          NOPASSWD: /bin/systemctl restart myapp73k.service
 ```
