@@ -20,6 +20,4 @@
 }
 
 /* hide shiki dark code blocks when light scheme active */
-pre.shiki.solarized-dark {
-  display: none;
-}
+pre.shiki.solarized-dark { display: none; }

@@ -26,7 +26,7 @@ _73k.us desktop pagespeed score_
 
 I'd had my eye on [Eleventy](https://www.11ty.dev/) for half a year now, and after using it in a couple other projects and seeing it mature over some hurdles, I finally made the plunge, and I am so pleased!
 
-People say hugo is faster — and I'm sure it is — and its syntax highlighter, chroma, is pretty sweet — but the way Eleventy works just *makes sense* to me, and I'm familiar enough with javascript that modifications are pretty straightforward.
+People say hugo is faster (I'm sure it is — and its syntax highlighter, chroma, is pretty sweet), but the way Eleventy works just _makes sense_ to me, and I'm familiar enough with javascript that modifications are pretty straightforward.
 
 My site is just a personal site with a blog, so I started with the [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog) starter.
 
@@ -38,8 +38,8 @@ From there, I made these other changes:
 - [Minifying HTML etc.](#minifying-html-etc)
 - [Search](#search)
 - [SVG sprite](#svg-sprite)
+- [Syntax Highlighting with shiki](#syntax-highlighting-with-shiki)
 - [Light/Dark color scheme toggle](#lightdark-color-scheme-toggle)
-
 
 ## Environment
 
@@ -110,6 +110,7 @@ Eventually, a solution presented itself: create an eleventy async filter that ta
 const fs = require("fs")
 const esbuild = require("esbuild")
 
+// and in the eleventy config block:
 eleventyConfig.addAsyncFilter("esbuild", function (jsInFile) {
   // process with esbuild
   esbuild.buildSync({
@@ -204,6 +205,77 @@ My `.icon` CSS is cribbed from [this page](https://mcraiganthony.github.io/svg-i
 }
 ```
 
+## Syntax Highlighting with shiki
+
+The eleventy-base-blog starter includes [eleventy-plugin-syntaxhighlight](https://github.com/11ty/eleventy-plugin-syntaxhighlight) to automatically provide build-time syntax highlighting for markdown code blocks. It uses [Prism](https://prismjs.com/), which has been around a while, and it's fine, but I was keen to try something else.
+
+I briefly considered just using chroma [as I'd done before](/blog/blog-incorporated/) in my brief experiment at using Phoenix to run the site. But I thought, probably best to not slow things down calling out a separate command and messing with raw files for every little code block.
+
+There's a new kid on the block, [shiki](https://github.com/shikijs/shiki), that seemed like a good improvement to try, and luckily [someone else already figured out how to make it work](https://www.hoeser.dev/blog/2023-02-07-eleventy-shiki-simple/). So thanks to Raphael, I implemented shiki as well.
+
+However, I want to have one theme for light mode, and a different for dark, and I wanted support for nunucks & caddyfile languages, so I made my own modifications using [plist2](https://github.com/wareset/plist2) for the vscode nunjucks syntax extension which has its tmLanguage in plist format.
+
+So, I have a plugin file, `eleventy.config.shiki.js`:
+
+```js
+const shiki = require('shiki');
+const { readFileSync } = require("fs")
+const { plist2js } = require("plist2")
+
+// acquire caddyfile grammar from submodule
+const caddyfileLangGrammar = JSON.parse(readFileSync("./syntax-langs/vscode-caddyfile/syntaxes/caddyfile.tmLanguage.json", "utf8"))
+const caddyfileLang = {
+  id: "caddyfile",
+  scopeName: 'source.Caddyfile',
+  grammar: caddyfileLangGrammar,
+  aliases: ['caddy', 'caddyfile'],
+}
+
+// acquire nunjucks grammar from submodule
+const nunjucksLangGrammar = plist2js(readFileSync("./syntax-langs/vscode-nunjucks/syntaxes/nunjucks.tmLanguage", "utf8").toString())
+const nunjucksLang = {
+  id: "nunjucks",
+  scopeName: 'text.html.nunjucks',
+  grammar: nunjucksLangGrammar,
+  aliases: ['nj', 'njk', 'nunjucks'],
+}
+
+module.exports = (eleventyConfig, options) => {
+  // empty call to notify 11ty that we use this feature
+  // eslint-disable-next-line no-empty-function
+  eleventyConfig.amendLibrary('md', () => {});
+
+  eleventyConfig.on('eleventy.before', async () => {
+    const highlighter = await shiki.getHighlighter(options);
+    await highlighter.loadLanguage(caddyfileLang)
+    await highlighter.loadLanguage(nunjucksLang)
+    eleventyConfig.amendLibrary('md', (mdLib) =>
+      mdLib.set({
+        highlight: (code, lang) => {
+          if ('themes' in options && options.themes.length > 0) {
+            let output = ""
+            options.themes.forEach(theme => {
+              output += highlighter.codeToHtml(code, { lang, theme })
+            })
+            return output
+          } else {
+            return highlighter.codeToHtml(code, { lang })
+          }
+        },
+      })
+    );
+  });
+};
+```
+
+And then in `eleventy.config.js` I do:
+
+```js
+const pluginShiki = require("./eleventy.config.shiki.js")
+// and in the eleventy config block:
+eleventyConfig.addPlugin(pluginShiki, { themes: ['solarized-dark', 'solarized-light'] })
+```
+
 ## Light/Dark color scheme toggle
 
 I had to mess around a while with the light/dark theme toggler. I wanted to be sure that a user would get a system scheme if their system provided one, without neeing to do anything. But I still wanted to give the opportunity to switch from my site.
@@ -216,7 +288,6 @@ The key is to use two linked stylesheets in the header, one for dark and one for
 {%- css "light" %}
 {% include "_includes/css/_bundle-base.njk" %}
 {% include "_includes/css/_variables-light.css" %}
-{% include "node_modules/prism-themes/themes/prism-coldark-cold.css" %}
 {% include "_includes/css/_bundle-post.njk" %}
 {% endcss %}
 
@@ -224,13 +295,26 @@ The key is to use two linked stylesheets in the header, one for dark and one for
 {%- css "dark" %}
 {% include "_includes/css/_bundle-base.njk" %}
 {% include "_includes/css/_variables-dark.css" %}
-{% include "node_modules/prism-themes/themes/prism-coldark-dark.css" %}
 {% include "_includes/css/_bundle-post.njk" %}
 {% endcss %}
 {% endraw %}
 
 <link id="scheme-link-light" rel="stylesheet" href="{% raw %}{% getBundleFileUrl 'css', 'light' %}{% endraw %}" media="(prefers-color-scheme: light)">
 <link id="scheme-link-dark" rel="stylesheet" href="{% raw %}{% getBundleFileUrl 'css', 'dark' %}{% endraw %}" media="(prefers-color-scheme: dark)">
+```
+
+And for the swapping of light/dark syntax highlighting themes, `_variables-light.css` includes:
+
+```css
+/* hide shiki dark code blocks when light scheme active */
+pre.shiki.solarized-dark { display: none; }
+```
+
+...while `_variables-dark.css` has:
+
+```css
+/* hide shiki light code blocks when dark scheme active */
+pre.shiki.solarized-light { display: none; }
 ```
 
 Hopefully any of this might be of help to someone, but it at least also serves as notes for myself.
