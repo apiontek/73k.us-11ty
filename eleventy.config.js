@@ -20,7 +20,7 @@ const fs = require("fs")
 const esbuild = require("esbuild")
 
 // for minifying html, xml, some others
-const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minifier");
+const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minifier")
 
 // used for executing pagefind after build
 const { execSync } = require("child_process")
@@ -60,7 +60,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginImages)
 
   // Shiki syntax highlighting
-  eleventyConfig.addPlugin(pluginShiki, { themes: ['dark-plus', 'light-plus'] })
+  eleventyConfig.addPlugin(pluginShiki, { themes: ["dark-plus", "light-plus"] })
 
   // Official plugins
   eleventyConfig.addPlugin(pluginRss)
@@ -108,7 +108,6 @@ module.exports = function (eleventyConfig) {
     // return output
     return bundle.trim()
   })
-
 
   // Filters
   eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
@@ -195,7 +194,7 @@ module.exports = function (eleventyConfig) {
 
   // in production, minify the HTML, XML, etc
   if (env.isProd) {
-    eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
+    eleventyConfig.addPlugin(eleventyPluginFilesMinifier)
   }
 
   eleventyConfig.on("eleventy.after", () => {

@@ -1,7 +1,5 @@
 import { opts, getSvg } from "../../_data/splash73k"
 
-
-
 window.onload = () => {
   // We will get default opts from the same file that generates the default background
   let modOpts = window.structuredClone(opts)
@@ -11,7 +9,7 @@ window.onload = () => {
   // add event listeners...
 
   // :root element for setting new css variable values
-  const r = document.querySelector(':root');
+  const r = document.querySelector(":root")
 
   // // Each on-change will need to:
   // // - use getSvg to get a new SVG
@@ -56,7 +54,6 @@ window.onload = () => {
   lineCountElMin.innerText = lineCountElMinVal
   lineCountElMax.innerText = lineCountElMaxVal
 
-
   // line start input element
   lineStartEl.addEventListener("input", (event) => {
     lineStartElNow.innerText = event.target.value
@@ -71,7 +68,6 @@ window.onload = () => {
     r.style.setProperty("--sp-ln-st", `${modOpts.lineStart}`)
   })
 
-
   // line count input element
   lineCountEl.addEventListener("input", (event) => {
     lineCountElNow.innerText = event.target.value
@@ -80,7 +76,12 @@ window.onload = () => {
     let newVal = parseInt(event.target.value)
     modOpts.lineCount = newVal
     if (modOpts.lineCount === 0) {
-      lineStartElNow.innerText = lineStartEl.value = modOpts.lineStart = lineStartElMaxVal = lineStartElMinVal = 0
+      lineStartElNow.innerText =
+        lineStartEl.value =
+        modOpts.lineStart =
+        lineStartElMaxVal =
+        lineStartElMinVal =
+          0
     } else {
       lineStartElMaxVal = modOpts.colors.length - modOpts.lineCount + 1
       lineStartElMinVal = 0 + 1
@@ -94,7 +95,6 @@ window.onload = () => {
     r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
     r.style.setProperty("--sp-ln-ct", `${modOpts.lineCount}`)
   })
-
 
   // head max width input element
   const headMaxWEl = document.getElementById("headMaxW")
@@ -119,7 +119,6 @@ window.onload = () => {
     r.style.setProperty("--ct-maxw", `${modOpts.headMaxW}px`)
   })
 
-
   // buffer size input element
   const bufferSizeEl = document.getElementById("bufferSize")
   const bufferSizeElMin = document.getElementById("bufferSizeMin")
@@ -142,7 +141,6 @@ window.onload = () => {
     r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
     r.style.setProperty("--sp-bf-sz", `${modOpts.bufferSize + modOpts.lineHeight}px`)
   })
-
 
   // line size input element
   const lineHeightEl = document.getElementById("lineHeight")
@@ -168,7 +166,6 @@ window.onload = () => {
     r.style.setProperty("--sp-ln-ht", `${modOpts.lineHeight}px`)
   })
 
-
   // tilt degrees start input element
   const tiltDegStartEl = document.getElementById("tiltDegStart")
   const tiltDegStartElMin = document.getElementById("tiltDegStartMin")
@@ -192,7 +189,6 @@ window.onload = () => {
     r.style.setProperty("--sp-dg-st", `${modOpts.tiltDegStart}px`)
   })
 
-
   // tilt degrees start input element
   const tiltDegEndEl = document.getElementById("tiltDegEnd")
   const tiltDegEndElMin = document.getElementById("tiltDegEndMin")
@@ -215,7 +211,6 @@ window.onload = () => {
     r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
     r.style.setProperty("--sp-dg-en", `${modOpts.tiltDegEnd}px`)
   })
-
 
   // shape rendering input element
   const CRISP = "crispEdges"
@@ -248,9 +243,6 @@ window.onload = () => {
     r.style.setProperty("--bg-img", `url('data:image/svg+xml;utf8,${getSvg(modOpts)}')`)
   })
 
-
-
-
   // reset button for resetting values
   const resetBtn = document.getElementById("resetBtn")
   resetBtn.addEventListener("click", () => {
@@ -266,5 +258,4 @@ window.onload = () => {
     r.style.setProperty("--sp-dg-st", `${modOpts.tiltDegStart}px`)
     r.style.setProperty("--sp-dg-en", `${modOpts.tiltDegEnd}px`)
   })
-
 }
