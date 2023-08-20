@@ -4,6 +4,10 @@ const ALL = "all";
 const NOT_ALL = "not all";
 const LSSchemeName = "73k.color-scheme";
 
+const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
 const setToggleIcon = (toggleEl, mode) => {
   if (mode === DARK) {
     toggleEl.innerHTML = `<use xlink:href="#bi-sun"></use>`;
@@ -27,6 +31,10 @@ const setActiveScheme = (linkLight, linkDark, mode) => {
 };
 
 const initToggleHandler = async () => {
+  // waiting just a smidge to avoid flash of unstyled content
+  // ...better to flash a transition?
+  await sleep(5);
+
   // Access the toggler element
   const toggleEl = document.getElementById("scheme-toggler");
 
@@ -69,5 +77,5 @@ const initToggleHandler = async () => {
 };
 
 addEventListener("DOMContentLoaded", (event) => {
-  initToggleHandler();
+  initToggleHandler()
 });
