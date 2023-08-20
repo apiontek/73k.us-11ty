@@ -4,10 +4,6 @@ const ALL = "all";
 const NOT_ALL = "not all";
 const LSSchemeName = "73k.color-scheme";
 
-const sleep = (ms) => {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-};
-
 const setToggleIcon = (toggleEl, mode) => {
   if (mode === DARK) {
     toggleEl.innerHTML = `<use xlink:href="#bi-sun"></use>`;
@@ -30,11 +26,7 @@ const setActiveScheme = (linkLight, linkDark, mode) => {
   }
 };
 
-const initToggleHandler = async () => {
-  // waiting just a smidge to avoid flash of unstyled content
-  // ...better to flash a transition?
-  await sleep(5);
-
+const initToggleHandler = async (event) => {
   // Access the toggler element
   const toggleEl = document.getElementById("scheme-toggler");
 
@@ -42,14 +34,11 @@ const initToggleHandler = async () => {
   const linkLight = document.getElementById("scheme-link-light");
   const linkDark = document.getElementById("scheme-link-dark");
 
-  // Check for system dark mode
-  const isSystemDarkMode = matchMedia?.("(prefers-color-scheme: dark)").matches;
-
   // Check for user-set value
   let mode = localStorage.getItem(LSSchemeName);
 
   // Determine mode based on values so far
-  if (!mode && isSystemDarkMode) {
+  if (!mode && matchMedia?.("(prefers-color-scheme: dark)").matches) {
     // if no mode was loaded from session storage
     // but dark mode is active, mode is dark
     mode = DARK;
@@ -76,6 +65,4 @@ const initToggleHandler = async () => {
   });
 };
 
-addEventListener("DOMContentLoaded", (event) => {
-  initToggleHandler()
-});
+addEventListener("load", initToggleHandler);
